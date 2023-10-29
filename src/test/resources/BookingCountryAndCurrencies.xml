@@ -1,0 +1,4171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GetAllBookingCountriesAndCurrenciesResponse xml:lang="en-US">
+    <BookingCountryAndCurrenciesList xml:lang="en-US">
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PK</BillingCountry>
+            <BookingCountry>US</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AD</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AN</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BD</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BH</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BW</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BY</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CH</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CY</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>DE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>DK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>EE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>EG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ES</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ET</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>FI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>FR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GB</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>GBP</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>UK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>GBP</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GH</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>HR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>HU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IS</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>JO</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KW</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LB</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LV</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MC</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MD</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ME</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MQ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NO</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>OM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PF</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PS</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>QA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>RO</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>RS</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>RU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TN</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>UA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>UG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>YE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ZA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ZM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ZW</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>CHF</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+                <Currency>AED</Currency>
+                <Currency>DKK</Currency>
+                <Currency>EGP</Currency>
+                <Currency>HUF</Currency>
+                <Currency>ILS</Currency>
+                <Currency>LBP</Currency>
+                <Currency>MAD</Currency>
+                <Currency>ZAR</Currency>
+                <Currency>NOK</Currency>
+                <Currency>QAR</Currency>
+                <Currency>RON</Currency>
+                <Currency>RUB</Currency>
+                <Currency>SEK</Currency>
+                <Currency>TRY</Currency>
+                <Currency>UAH</Currency>
+                <Currency>SAR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AG</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AR</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>ARS</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BB</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BO</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BS</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BZ</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CL</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>CLP</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CO</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>COP</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CR</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>DM</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>EC</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GD</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GT</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>HA</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>HN</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>JM</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KN</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LC</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MX</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>MXN</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NI</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PA</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PE</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PY</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SV</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TT</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>UY</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>VE</BillingCountry>
+            <BookingCountry>HA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>MXN</Currency>
+                <Currency>PEN</Currency>
+                <Currency>ARS</Currency>
+                <Currency>CLP</Currency>
+                <Currency>COP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BR</BillingCountry>
+            <BookingCountry>BR</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>BRL</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>BRL</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TW</BillingCountry>
+            <BookingCountry>TW</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>TWD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>TWD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ID</BillingCountry>
+            <BookingCountry>YM</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>IDR</Currency>
+                <Currency>SGD</Currency>
+                <Currency>MYR</Currency>
+                <Currency>PHP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>IDR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PH</BillingCountry>
+            <BookingCountry>YM</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>IDR</Currency>
+                <Currency>SGD</Currency>
+                <Currency>MYR</Currency>
+                <Currency>PHP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>PHP</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SG</BillingCountry>
+            <BookingCountry>YM</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>IDR</Currency>
+                <Currency>SGD</Currency>
+                <Currency>MYR</Currency>
+                <Currency>PHP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>SGD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TH</BillingCountry>
+            <BookingCountry>YM</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>IDR</Currency>
+                <Currency>SGD</Currency>
+                <Currency>MYR</Currency>
+                <Currency>PHP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>SGD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>VN</BillingCountry>
+            <BookingCountry>YM</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>IDR</Currency>
+                <Currency>SGD</Currency>
+                <Currency>MYR</Currency>
+                <Currency>PHP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MY</BillingCountry>
+            <BookingCountry>YM</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>IDR</Currency>
+                <Currency>SGD</Currency>
+                <Currency>MYR</Currency>
+                <Currency>PHP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>MYR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>HK</BillingCountry>
+            <BookingCountry>HK</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>HKD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>HKD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AU</BillingCountry>
+            <BookingCountry>AU</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>NZD</Currency>
+                <Currency>AUD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>AUD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NZ</BillingCountry>
+            <BookingCountry>NZ</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>NZD</Currency>
+                <Currency>AUD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>NZD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IN</BillingCountry>
+            <BookingCountry>IN</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>INR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>INR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AD</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AN</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>AZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BD</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BH</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BW</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>BY</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CA</BillingCountry>
+            <BookingCountry>CA</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>CAD</Currency>
+                <Currency>USD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>CAD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CH</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CY</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>DE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>DK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>EE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>EG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ES</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ET</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>FI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>FR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GB</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>GBP</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GH</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>GU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>HR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>HU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IS</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>JO</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KW</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>KZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LB</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>LV</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MC</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MD</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ME</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MQ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>MZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>NO</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>OM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PF</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PS</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>PT</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>QA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>RO</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>RS</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>RU</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SI</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>SL</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TN</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TR</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TZ</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>UA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>UG</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>UK</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>GBP</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>US</BillingCountry>
+            <BookingCountry>US</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>AUD</Currency>
+                <Currency>CAD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+                <Currency>JPY</Currency>
+                <Currency>NZD</Currency>
+                <Currency>SGD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>YE</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ZA</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ZM</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>ZW</BillingCountry>
+            <BookingCountry>IE</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>GBP</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+        <BookingCountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CN</BillingCountry>
+            <BookingCountry>US</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </BookingCountryAndCurrencies>
+    </BookingCountryAndCurrenciesList>
+</GetAllBookingCountriesAndCurrenciesResponse>

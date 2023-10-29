@@ -1,0 +1,1068 @@
+{
+  "bookingCountryAndCurrenciesList" : [ {
+    "billingCountry" : "PK",
+    "bookingCountry" : "US",
+    "supportedCurrencies" : [ "USD" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "AD",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AN",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BD",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BH",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BW",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BY",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CH",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CY",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "DE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "DK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "EE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "EG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ES",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ET",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "FI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "FR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GB",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "GBP"
+  }, {
+    "billingCountry" : "UK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "GBP"
+  }, {
+    "billingCountry" : "GH",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "HR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "HU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IS",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "JO",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KW",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LB",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LV",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MC",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MD",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ME",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MQ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NO",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "OM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PF",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PS",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "QA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "RO",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "RS",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "RU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TN",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "UA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "UG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "YE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ZA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ZM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ZW",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP", "AUD", "CAD", "CHF", "JPY", "NZD", "SGD", "AED", "DKK", "EGP", "HUF", "ILS", "LBP", "MAD", "ZAR", "NOK", "QAR", "RON", "RUB", "SEK", "TRY", "UAH", "SAR" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AG",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "AR",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "ARS"
+  }, {
+    "billingCountry" : "BB",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "BO",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "BS",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "BZ",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "CL",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "CLP"
+  }, {
+    "billingCountry" : "CO",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "COP"
+  }, {
+    "billingCountry" : "CR",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "DM",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "EC",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "GD",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "GT",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "HA",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "HN",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "JM",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "KN",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "LC",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "MX",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "MXN"
+  }, {
+    "billingCountry" : "NI",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "PA",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "PE",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "PY",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "SV",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "TT",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "UY",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "VE",
+    "bookingCountry" : "HA",
+    "supportedCurrencies" : [ "USD", "CAD", "EUR", "GBP", "MXN", "PEN", "ARS", "CLP", "COP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "BR",
+    "bookingCountry" : "BR",
+    "supportedCurrencies" : [ "BRL" ],
+    "defaultCurrency" : "BRL"
+  }, {
+    "billingCountry" : "TW",
+    "bookingCountry" : "TW",
+    "supportedCurrencies" : [ "TWD" ],
+    "defaultCurrency" : "TWD"
+  }, {
+    "billingCountry" : "ID",
+    "bookingCountry" : "YM",
+    "supportedCurrencies" : [ "USD", "IDR", "SGD", "MYR", "PHP" ],
+    "defaultCurrency" : "IDR"
+  }, {
+    "billingCountry" : "PH",
+    "bookingCountry" : "YM",
+    "supportedCurrencies" : [ "USD", "IDR", "SGD", "MYR", "PHP" ],
+    "defaultCurrency" : "PHP"
+  }, {
+    "billingCountry" : "SG",
+    "bookingCountry" : "YM",
+    "supportedCurrencies" : [ "USD", "IDR", "SGD", "MYR", "PHP" ],
+    "defaultCurrency" : "SGD"
+  }, {
+    "billingCountry" : "TH",
+    "bookingCountry" : "YM",
+    "supportedCurrencies" : [ "USD", "IDR", "SGD", "MYR", "PHP" ],
+    "defaultCurrency" : "SGD"
+  }, {
+    "billingCountry" : "VN",
+    "bookingCountry" : "YM",
+    "supportedCurrencies" : [ "USD", "IDR", "SGD", "MYR", "PHP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "MY",
+    "bookingCountry" : "YM",
+    "supportedCurrencies" : [ "USD", "IDR", "SGD", "MYR", "PHP" ],
+    "defaultCurrency" : "MYR"
+  }, {
+    "billingCountry" : "HK",
+    "bookingCountry" : "HK",
+    "supportedCurrencies" : [ "HKD" ],
+    "defaultCurrency" : "HKD"
+  }, {
+    "billingCountry" : "AU",
+    "bookingCountry" : "AU",
+    "supportedCurrencies" : [ "USD", "NZD", "AUD" ],
+    "defaultCurrency" : "AUD"
+  }, {
+    "billingCountry" : "NZ",
+    "bookingCountry" : "NZ",
+    "supportedCurrencies" : [ "USD", "NZD", "AUD" ],
+    "defaultCurrency" : "NZD"
+  }, {
+    "billingCountry" : "IN",
+    "bookingCountry" : "IN",
+    "supportedCurrencies" : [ "INR" ],
+    "defaultCurrency" : "INR"
+  }, {
+    "billingCountry" : "AD",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AN",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "AZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BD",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BH",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BW",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "BY",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CA",
+    "bookingCountry" : "CA",
+    "supportedCurrencies" : [ "CAD", "USD" ],
+    "defaultCurrency" : "CAD"
+  }, {
+    "billingCountry" : "CH",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CY",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "DE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "DK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "EE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "EG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ES",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ET",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "FI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "FR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GB",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "GBP"
+  }, {
+    "billingCountry" : "GH",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "GU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "HR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "HU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IS",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "IT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "JO",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KW",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "KZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LB",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "LV",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MC",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MD",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ME",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MQ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "MZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "NO",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "OM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PF",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PS",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "PT",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "QA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "RO",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "RS",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "RU",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SI",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "SL",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TN",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TR",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "TZ",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "UA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "UG",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "UK",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "GBP"
+  }, {
+    "billingCountry" : "US",
+    "bookingCountry" : "US",
+    "supportedCurrencies" : [ "USD", "AUD", "CAD", "EUR", "GBP", "JPY", "NZD", "SGD" ],
+    "defaultCurrency" : "USD"
+  }, {
+    "billingCountry" : "YE",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ZA",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ZM",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "ZW",
+    "bookingCountry" : "IE",
+    "supportedCurrencies" : [ "USD", "EUR", "GBP" ],
+    "defaultCurrency" : "EUR"
+  }, {
+    "billingCountry" : "CN",
+    "bookingCountry" : "US",
+    "supportedCurrencies" : [ "USD" ],
+    "defaultCurrency" : "USD"
+  } ]
+}

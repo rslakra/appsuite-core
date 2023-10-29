@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AllCountryAndCurrencyResponse xml:lang="en-US">
+    <BookingCountryAndCurrenciesList xml:lang="en-US">
+        <CountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>IN</BillingCountry>
+            <BookingCountry>US</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </CountryAndCurrencies>
+        <CountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>US</BillingCountry>
+            <BookingCountry>IN</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+                <Currency>EUR</Currency>
+                <Currency>INR</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>EUR</DefaultCurrency>
+        </CountryAndCurrencies>
+        <CountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>TW</BillingCountry>
+            <BookingCountry>US</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </CountryAndCurrencies>
+        <CountryAndCurrencies xml:lang="en-US">
+            <BillingCountry>CI</BillingCountry>
+            <BookingCountry>US</BookingCountry>
+            <SupportedCurrencies xml:lang="en-US">
+                <Currency>USD</Currency>
+            </SupportedCurrencies>
+            <DefaultCurrency>USD</DefaultCurrency>
+        </CountryAndCurrencies>
+    </BookingCountryAndCurrenciesList>
+</AllCountryAndCurrencyResponse>

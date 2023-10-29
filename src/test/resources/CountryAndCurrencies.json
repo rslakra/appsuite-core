@@ -1,0 +1,39 @@
+{
+  "bookingCountryAndCurrenciesList": [
+    {
+      "bookingCountry": "US",
+      "billingCountry": "IN",
+      "supportedCurrencies": [
+        "USD"
+      ],
+      "defaultCurrency": "USD"
+    },
+    {
+      "bookingCountry": "IN",
+      "billingCountry": "US",
+      "supportedCurrencies": [
+        "USD",
+        "INR",
+        "EUR"
+      ],
+      "defaultCurrency": "EUR"
+    },
+    {
+      "bookingCountry": "US",
+      "billingCountry": "TW",
+      "supportedCurrencies": [
+        "USD"
+      ],
+      "defaultCurrency": "USD"
+    },
+    {
+      "bookingCountry": "US",
+      "billingCountry": "CI",
+      "supportedCurrencies": [
+        "USD",
+        "AFN"
+      ],
+      "defaultCurrency": "USD"
+    }
+  ]
+}
