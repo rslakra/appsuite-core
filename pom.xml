@@ -12,6 +12,7 @@
 
     <!-- Properties -->
     <properties>
+        <!-- revision -->
         <revision>0.0.0</revision>
 
         <!-- sourceEncoding &  outputEncoding -->
