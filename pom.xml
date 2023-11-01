@@ -59,8 +59,6 @@
         <junit-jupiter-params.version>5.9.2</junit-jupiter-params.version>
         <surefire-junit3.version>2.12.4</surefire-junit3.version>
 
-        <!-- <mavenGitRepository>${user.home}/.m2/repository</mavenGitRepository> -->
-
     </properties>
 
     <!-- distributionManagement -->
