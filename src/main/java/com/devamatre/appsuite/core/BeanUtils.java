@@ -489,7 +489,7 @@ public enum BeanUtils {
     public static long getLength(final Object object) {
         if (isNotNull(object)) {
             if (isArray(object)) {
-                return ((Object[]) object).length;
+                return Array.getLength(object);
             } else if (isTypeOfMap(object)) {
                 return ((Map<?, ?>) object).size();
             } else if (isTypeOfCollection(object)) {

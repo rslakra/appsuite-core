@@ -1,4 +1,4 @@
-package com.rslakra.appsuite.core.enums.alert;
+package com.devamatre.appsuite.core.enums.alert;
 
 /**
  * @author Rohtash Lakra

@@ -1,4 +1,4 @@
-package com.rslakra.appsuite.core.enums.alert;
+package com.devamatre.appsuite.core.enums.alert;
 
 /**
  * This service will do all analytics and identify notification usage, trends and do a reporting on top of that. It will

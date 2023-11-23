@@ -581,7 +581,7 @@ public enum TextUtils {
      */
     public static String[] split(String str, String delimiter) {
         String[] elements = null;
-        if (!BeanUtils.isEmpty(str)) {
+        if (BeanUtils.isNotEmpty(str)) {
             if (BeanUtils.isEmpty(delimiter)) {
                 delimiter = STR_SPACE;
             }
@@ -602,7 +602,7 @@ public enum TextUtils {
      */
     public static String[] split(String str, char delimiter) {
         String[] words = null;
-        if (!BeanUtils.isEmpty(str)) {
+        if (BeanUtils.isNotEmpty(str)) {
             List<String> segments = new LinkedList<String>();
             char[] chars = str.toCharArray();
             String newStr = null;
@@ -906,7 +906,7 @@ public enum TextUtils {
      */
     public static int toInteger(String value) {
         int result = -1;
-        if (!BeanUtils.isEmpty(value)) {
+        if (BeanUtils.isNotEmpty(value)) {
             try {
                 result = Integer.parseInt(value);
             } catch (NumberFormatException nfe) {
@@ -924,7 +924,7 @@ public enum TextUtils {
      */
     public static long toLong(String value) {
         long result = -1L;
-        if (!BeanUtils.isEmpty(value)) {
+        if (BeanUtils.isNotEmpty(value)) {
             try {
                 result = Long.parseLong(value);
             } catch (NumberFormatException nfe) {

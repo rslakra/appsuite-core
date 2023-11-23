@@ -33,9 +33,9 @@
         <code-styles.dir>https://raw.githubusercontent.com/rslakra/code-styles/master</code-styles.dir>
         <checkstyle.threshold>0</checkstyle.threshold>
 
-        <!-- logging -->
-        <slf4j-api.version>2.0.6</slf4j-api.version>
-        <!--<slf4j-log4j12.version>2.0.6</slf4j-log4j12.version>-->
+        <!-- slf4j -->
+        <slf4j-api.version>2.0.9</slf4j-api.version>
+        <logback-classic.version>1.4.11</logback-classic.version>
 
         <!-- lombok -->
         <lombok.version>1.18.28</lombok.version>
@@ -85,12 +85,12 @@
             <version>${slf4j-api.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>slf4j-log4j12</artifactId>-->
-        <!--            <version>${slf4j-log4j12.version}</version>-->
-        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>

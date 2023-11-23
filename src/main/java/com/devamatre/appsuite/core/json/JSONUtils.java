@@ -523,7 +523,7 @@ public enum JSONUtils {
      */
     public static byte[] toImageBytes(final String jsonString) {
         byte[] imageBytes = null;
-        if (!BeanUtils.isEmpty(jsonString)) {
+        if (BeanUtils.isNotEmpty(jsonString)) {
             String javaString = fromJSONString(jsonString, String.class);
             imageBytes = javaString.getBytes();
         }
@@ -538,7 +538,7 @@ public enum JSONUtils {
      * @return
      */
     public static byte[] toImageBytes(byte[] responseBytes) {
-        if (!BeanUtils.isEmpty(responseBytes)) {
+        if (BeanUtils.isNotEmpty(responseBytes)) {
             /*
              * JSON String is encoded using the Base64 String which needs to
              * convert back to Java String for images.

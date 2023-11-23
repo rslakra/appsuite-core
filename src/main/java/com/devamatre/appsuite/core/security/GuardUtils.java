@@ -34,10 +34,23 @@ import com.devamatre.appsuite.core.BeanUtils;
 import com.devamatre.appsuite.core.CharSets;
 import com.devamatre.appsuite.core.IOUtils;
 import com.devamatre.appsuite.core.StopWatch;
+import com.devamatre.appsuite.core.security.pbkdf2.PBKDF2Generator;
+import com.devamatre.appsuite.core.security.pbkdf2.PBKDF2Params;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.X509TrustManager;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -47,18 +60,7 @@ import java.math.BigInteger;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
-import java.security.InvalidKeyException;
-import java.security.Key;
-import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.KeyStore;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.PublicKey;
-import java.security.SecureRandom;
-import java.security.Security;
+import java.security.*;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
@@ -68,20 +70,6 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Random;
 import java.util.UUID;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.PBEKeySpec;
-import javax.crypto.spec.SecretKeySpec;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
 
 /**
  * This class handles the security.
@@ -152,33 +140,13 @@ public enum GuardUtils {
 
         try {
             TrustManagerFactory
-                trustManagerFactory =
-                TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+                    trustManagerFactory =
+                    TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init((KeyStore) null);
             mX509TrustManager = (X509TrustManager) trustManagerFactory.getTrustManagers()[0];
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage(), ex);
         }
-    }
-
-    /**
-     * Initialize the PBKDF2 generator only once.
-     */
-    private static PBKDF2Generator getPBKDF2Generator() {
-        if (pbkdf2Generator == null) {
-            synchronized (GuardUtils.class) {
-                if (pbkdf2Generator == null) {
-                    /* pbkdf2Params */
-                    pbkdf2Params =
-                        new PBKDF2Params(PBKDF2Generator.PBKDF2_WITH_HMAC_SHA1, uniqueDeviceIdBytes("."),
-                                         PBKDF2Generator.ITERATIONS);
-                    /* pbkdf2Generator */
-                    pbkdf2Generator = new PBKDF2Generator(pbkdf2Params);
-                }
-            }
-        }
-
-        return pbkdf2Generator;
     }
 
     /**************************************************************************
@@ -473,7 +441,7 @@ public enum GuardUtils {
      * @throws CertificateException
      */
     public static X509Certificate newX509Certificate(InputStream inputStream, boolean closeStream)
-        throws CertificateException {
+            throws CertificateException {
         return newX509Certificate(newCertificateFactory(), inputStream, closeStream);
     }
 
@@ -665,6 +633,49 @@ public enum GuardUtils {
     }
 
     /**
+     * Returns the salt of the provided <code>algorithm</code> and <code>saltSize</code>.
+     *
+     * @param algorithm
+     * @param saltSize
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
+    public static byte[] getSalt(String algorithm, int saltSize) throws NoSuchAlgorithmException {
+        SecureRandom secureRandom = SecureRandom.getInstance(algorithm);
+        byte[] salt = new byte[saltSize];
+        secureRandom.nextBytes(salt);
+        return salt;
+    }
+
+    /**
+     * Returns the salt of the provided <code>algorithm</code> and <code>PBKDF2Generator.KEY_LENGTH</code>.
+     *
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
+    public static byte[] getSalt(String algorithm) throws NoSuchAlgorithmException {
+        return getSalt(algorithm, PBKDF2Generator.KEY_LENGTH);
+    }
+
+    /**
+     * Initialize the <code>PBKDF2</code> generator only once.
+     */
+    private static PBKDF2Generator getPBKDF2Generator() {
+        if (pbkdf2Generator == null) {
+            synchronized (INSTANCE.getClass()) {
+                if (pbkdf2Generator == null) {
+                    /* pbkdf2Params */
+                    pbkdf2Params = new PBKDF2Params(uniqueDeviceIdBytes("."));
+                    /* pbkdf2Generator */
+                    pbkdf2Generator = new PBKDF2Generator(pbkdf2Params);
+                }
+            }
+        }
+
+        return pbkdf2Generator;
+    }
+
+    /**
      * Returns the generated derived key bytes of the given entropyString.
      *
      * @param entropyString
@@ -712,7 +723,7 @@ public enum GuardUtils {
      */
     public static String toHexString(final byte[] dataBytes) {
         String hexString = EMPTY_STRING;
-        if (!BeanUtils.isEmpty(dataBytes)) {
+        if (BeanUtils.isNotEmpty(dataBytes)) {
             StringBuilder hexBuilder = new StringBuilder(2 * dataBytes.length);
             for (int i = 0; i < dataBytes.length; i++) {
                 hexBuilder.append(HEX_DIGITS.charAt((dataBytes[i] >> 4) & 0x0f));
@@ -745,7 +756,7 @@ public enum GuardUtils {
      */
     public static byte[] hexStringAsBytes(final String hexString) {
         byte[] hexaBytes = null;
-        if (!BeanUtils.isEmpty(hexString)) {
+        if (BeanUtils.isNotEmpty(hexString)) {
             int length = hexString.length() / 2;
             hexaBytes = new byte[length];
             for (int i = 0; i < length; i++) {
@@ -813,11 +824,11 @@ public enum GuardUtils {
      * @throws Exception
      */
     public static byte[] encryptWithSymmetricKey(final byte[] dataBytes, final byte[] keyBytes, final byte[] ivBytes)
-        throws Exception {
+            throws Exception {
         final StopWatch stopWatch = new StopWatch();
         stopWatch.startTimer();
         byte[] encryptedBytes = null;
-        if (!BeanUtils.isEmpty(dataBytes) && !BeanUtils.isEmpty(keyBytes)) {
+        if (BeanUtils.isNotEmpty(dataBytes) && BeanUtils.isNotEmpty(keyBytes)) {
             Cipher cipher = null;
             SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytes, ALGO_AES);
             if (BeanUtils.isEmpty(ivBytes)) {
@@ -834,7 +845,7 @@ public enum GuardUtils {
         }
         stopWatch.stopTimer();
         LOGGER.debug("encryptWithSymmetricKey() took {} to encrypt: {} bytets", stopWatch.took(),
-                     BeanUtils.getLength(encryptedBytes));
+                BeanUtils.getLength(encryptedBytes));
 
         return encryptedBytes;
     }
@@ -897,7 +908,7 @@ public enum GuardUtils {
      */
     public static String encryptWithSymmetricKey(String plainString, String key) {
         String encryptedString = null;
-        if (!BeanUtils.isEmpty(plainString) && !BeanUtils.isEmpty(key)) {
+        if (BeanUtils.isNotEmpty(plainString) && BeanUtils.isNotEmpty(key)) {
             try {
                 byte[] encryptedBytes = encryptWithSymmetricKey(IOUtils.toUTF8Bytes(plainString), key);
                 LOGGER.debug("encryptedString:{}", encryptedBytes);
@@ -920,11 +931,11 @@ public enum GuardUtils {
      * @throws Exception
      */
     public static byte[] decryptWithSymmetricKey(final byte[] dataBytes, final byte[] keyBytes, final byte[] ivBytes)
-        throws Exception {
+            throws Exception {
         byte[] rawBytes = null;
         final StopWatch stopWatch = new StopWatch();
         stopWatch.startTimer();
-        if (!BeanUtils.isEmpty(dataBytes) && !BeanUtils.isEmpty(keyBytes)) {
+        if (BeanUtils.isNotEmpty(dataBytes) && BeanUtils.isNotEmpty(keyBytes)) {
             Cipher cipher = null;
             SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytes, ALGO_AES);
             if (BeanUtils.isEmpty(ivBytes)) {
@@ -940,7 +951,7 @@ public enum GuardUtils {
         }
 
         LOGGER.debug("decryptWithSymmetricKey() took {} to encrypt: {} bytets", stopWatch.took(),
-                     BeanUtils.getLength(rawBytes));
+                BeanUtils.getLength(rawBytes));
         return rawBytes;
     }
 
@@ -1049,7 +1060,7 @@ public enum GuardUtils {
             String ivParent = IOUtils.getFileName(filePath, true);
             if (USE_FILE_EXTENSION_AS_IV) {
                 String extension = IOUtils.getExtension(ivParent);
-                if (!BeanUtils.isEmpty(extension)) {
+                if (BeanUtils.isNotEmpty(extension)) {
                     ivParent = extension;
                 }
             }
@@ -1124,7 +1135,8 @@ public enum GuardUtils {
             keyGen.init(bytes);
             SecretKey secretKey = keyGen.generateKey();
             ret = secretKey.getEncoded();
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            LOGGER.debug(ex.getMessage(), ex);
             ret = null;
         }
 
@@ -1146,7 +1158,7 @@ public enum GuardUtils {
      * @throws NoSuchAlgorithmException
      */
     public static KeyPair generateKeyPair(String keyPairAlgorithm, String secureRandomAlgorithm)
-        throws NoSuchAlgorithmException {
+            throws NoSuchAlgorithmException {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(keyPairAlgorithm);
         SecureRandom secureRandom = null;
         if (BeanUtils.isEmpty(secureRandomAlgorithm)) {
@@ -1385,7 +1397,7 @@ public enum GuardUtils {
      */
     public static String getChecksum(byte[] bytes) {
         String checkSumString = "0";
-        if (!BeanUtils.isEmpty(bytes)) {
+        if (BeanUtils.isNotEmpty(bytes)) {
             long startTime = System.currentTimeMillis();
             try {
                 MessageDigest md5 = MessageDigest.getInstance(ALGO_MD5);
@@ -1478,224 +1490,6 @@ public enum GuardUtils {
             System.err.println(e.getMessage());
         }
         return bRet;
-    }
-
-    /**
-     * The parameters for the PBKDF2 generation.
-     *
-     * @author Rohtash Lakra
-     * @date 11/21/2016 04:04:53 PM
-     */
-    public static final class PBKDF2Params {
-
-        private String algorithm;
-        private byte[] salt;
-        private int iterations;
-
-        /**
-         * @param algorithm
-         * @param salt
-         * @param iterations
-         */
-        public PBKDF2Params(final String algorithm, final byte[] salt, final int iterations) {
-            this.algorithm = algorithm;
-            this.salt = salt;
-            this.iterations = iterations;
-        }
-
-        /**
-         * Returns the algorithm.
-         *
-         * @return
-         */
-        public String getAlgorithm() {
-            return algorithm;
-        }
-
-        /**
-         * Returns the salt.
-         *
-         * @return
-         */
-        public byte[] getSalt() {
-            return salt;
-        }
-
-        /**
-         * Returns the iterations.
-         *
-         * @return
-         */
-        public int getIterations() {
-            return iterations;
-        }
-    }
-
-    /**
-     * This class implements the PBKDF2 in pure java.
-     * <p>
-     * https://www.ietf.org/rfc/rfc2898.txt
-     *
-     * @author Rohtash Lakra
-     * @date 11/21/2016 04:04:10 PM
-     */
-    public static final class PBKDF2Generator {
-
-        /* The secret keys algorithm */
-        public static final String PBKDF2_WITH_HMAC_SHA512 = "PBKDF2WithHmacSHA512";
-        public static final String PBKDF2_WITH_HMAC_SHA1 = "PBKDF2WithHmacSHA1";
-
-        /* Secure Random Algorithm */
-        public static final String SHA1PRNG = "SHA1PRNG";
-
-        /* Iterations - Strong */
-        public static final int ITERATIONS = 10000;
-
-        /* Key Length */
-        public static final int KEY_LENGTH = 16;
-
-        /* PBKDF2 parameters */
-        private PBKDF2Params parameters;
-
-        /**
-         * @param parameters
-         */
-        public PBKDF2Generator(PBKDF2Params parameters) {
-            this.parameters = parameters;
-        }
-
-        /**
-         * @return
-         * @throws NoSuchAlgorithmException
-         */
-        public static byte[] getSalt(String algorithm) throws NoSuchAlgorithmException {
-            SecureRandom secureRandom = SecureRandom.getInstance(algorithm);
-            byte[] salt = new byte[16];
-            secureRandom.nextBytes(salt);
-            return salt;
-        }
-
-        /**
-         * Generates the PBKDF2 secret key.
-         *
-         * @param password
-         * @param salt
-         * @param iterations
-         * @param keyLength
-         * @return
-         * @throws NoSuchAlgorithmException
-         */
-        private byte[] pbkdf2(char[] password, byte[] salt, int iterations, int keyLength)
-            throws NoSuchAlgorithmException {
-            try {
-                PBEKeySpec keySpec = new PBEKeySpec(password, salt, iterations, keyLength * 8);
-                SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(parameters.getAlgorithm());
-                return keyFactory.generateSecret(keySpec).getEncoded();
-            } catch (InvalidKeySpecException ex) {
-                throw new IllegalStateException("Invalid SecretKeyFactory", ex);
-            }
-        }
-
-        /**
-         * Returns the PBKDF2 bytes of the given password.
-         *
-         * @param password
-         * @param keyLength
-         * @return
-         * @throws NoSuchAlgorithmException
-         */
-        public byte[] deriveKey(String password, int keyLength) throws NoSuchAlgorithmException {
-            return pbkdf2(password.toCharArray(), parameters.getSalt(), parameters.getIterations(), keyLength);
-        }
-
-        /**
-         * Returns the PBKDF2 hex string of the given password.
-         *
-         * @param password
-         * @param keyLength
-         * @return
-         * @throws NoSuchAlgorithmException
-         */
-        public String keyAsHexString(String password, int keyLength) throws NoSuchAlgorithmException {
-            return IOUtils.toHexString(deriveKey(password, keyLength));
-        }
-
-        /**
-         * Returns the PBKDF2 bytes of the given password.
-         *
-         * @param password
-         * @param keyLength
-         * @return
-         * @throws NoSuchAlgorithmException
-         */
-        public String hashPassword(String password, int keyLength) throws NoSuchAlgorithmException {
-            String pbkdf2String = null;
-            if (!BeanUtils.isEmpty(password)) {
-                String saltHexString = IOUtils.toHexString(parameters.getSalt());
-                String keyAsHexString = keyAsHexString(password, keyLength);
-                pbkdf2String = (parameters.getIterations() + ":" + saltHexString + ":" + keyAsHexString);
-                pbkdf2String = encodeToBase64String(pbkdf2String);
-            }
-
-            return pbkdf2String;
-        }
-
-        /**
-         * Validates the password with the hashed password.
-         *
-         * @param password
-         * @param hashedPassword
-         * @return
-         * @throws NoSuchAlgorithmException
-         * @throws InvalidKeySpecException
-         */
-        public boolean validatePassword(String password, String hashedPassword)
-            throws NoSuchAlgorithmException, InvalidKeySpecException {
-            boolean validPassword = false;
-            if (!BeanUtils.isEmpty(password)) {
-                String[] parts = hashedPassword.split(":");
-                int iterations = Integer.parseInt(parts[0]);
-                byte[] salt = IOUtils.toHexBytes(parts[1]);
-                byte[] hash = IOUtils.toHexBytes(parts[2]);
-                byte[] pbkdf2Hash = pbkdf2(password.toCharArray(), salt, iterations, hash.length);
-
-                int difference = hash.length ^ pbkdf2Hash.length;
-                for (int i = 0; i < hash.length && i < pbkdf2Hash.length; i++) {
-                    difference |= hash[i] ^ pbkdf2Hash[i];
-                }
-
-                validPassword = (difference == 0);
-            }
-
-            return validPassword;
-        }
-
-        /**
-         * authenticate
-         *
-         * @param args
-         * @throws NoSuchAlgorithmException
-         * @throws InvalidKeySpecException
-         */
-
-        /*
-         * public static void main(String[] args) throws
-         * NoSuchAlgorithmException, InvalidKeySpecException { String password =
-         * ""; byte[] salt = PBKDF2Generator.getSalt(PBKDF2Generator.SHA1PRNG);
-         * PBKDF2Params pbkdf2Params = new PBKDF2Params(PBKDF2_WITH_HMAC_SHA1,
-         * salt, ITERATIONS); PBKDF2Generator pbkdf2Generator = new
-         * PBKDF2Generator(pbkdf2Params); String hexPassword =
-         * pbkdf2Generator.keyAsHexString(password, KEY_LENGTH);
-         * System.out.println(hexPassword); String newHexPassword =
-         * pbkdf2Generator.keyAsHexString(password, KEY_LENGTH);
-         * System.out.println(newHexPassword); String hashedPassword =
-         * pbkdf2Generator.hashPassword(password, KEY_LENGTH);
-         * System.out.println(hashedPassword); boolean matched =
-         * pbkdf2Generator.validatePassword(password, hashedPassword);
-         * System.out.println(matched); matched =
-         * pbkdf2Generator.validatePassword("", hashedPassword);
-         * System.out.println(matched); }
-         */
     }
 
 }

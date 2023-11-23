@@ -364,12 +364,18 @@ public class BeanUtilsTest {
         assertEquals(0, BeanUtils.getLength(new Set[0]));
         assertEquals(0, BeanUtils.getLength(new Collection[0]));
 
+        // class types
         assertEquals(1, BeanUtils.getLength(new Class[1]));
         assertEquals(2, BeanUtils.getLength(new Object[2]));
         assertEquals(1, BeanUtils.getLength(new String[1]));
         assertEquals(2, BeanUtils.getLength(new String[]{"Rohtash", "Lakra"}));
         assertEquals(2, BeanUtils.getLength(new Integer[]{1, 2}));
         assertEquals(2, BeanUtils.getLength(Arrays.asList("Rohtash", "Singh")));
+
+        // primitive types
+        assertEquals(2, BeanUtils.getLength(new byte[]{1, 2}));
+        assertEquals(2, BeanUtils.getLength(new short[]{1, 2}));
+        assertEquals(2, BeanUtils.getLength(new boolean[]{Boolean.TRUE, Boolean.FALSE}));
     }
 
     /**
@@ -584,10 +590,10 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> classPathWithClassNameData() {
         return Stream.of(
-            Arguments.of(null, false, BeanUtils.EMPTY_STR),
-            Arguments.of(null, true, BeanUtils.EMPTY_STR),
-            Arguments.of(BeanUtilsTest.class, false, BeanUtils.getClassPath(BeanUtilsTest.class)),
-            Arguments.of(BeanUtilsTest.class, true, BeanUtils.getClassPath(BeanUtilsTest.class, true))
+                Arguments.of(null, false, BeanUtils.EMPTY_STR),
+                Arguments.of(null, true, BeanUtils.EMPTY_STR),
+                Arguments.of(BeanUtilsTest.class, false, BeanUtils.getClassPath(BeanUtilsTest.class)),
+                Arguments.of(BeanUtilsTest.class, true, BeanUtils.getClassPath(BeanUtilsTest.class, true))
         );
     }
 
@@ -609,23 +615,23 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> classPathWithClassNameAndPathsData() {
         return Stream.of(
-            Arguments.of(null, false, null, BeanUtils.EMPTY_STR),
-            Arguments.of(null, false, new String[]{}, BeanUtils.EMPTY_STR),
-            Arguments.of(null, false, new String[]{"data"}, "data"),
+                Arguments.of(null, false, null, BeanUtils.EMPTY_STR),
+                Arguments.of(null, false, new String[]{}, BeanUtils.EMPTY_STR),
+                Arguments.of(null, false, new String[]{"data"}, "data"),
 
-            Arguments.of(null, true, null, BeanUtils.EMPTY_STR),
-            Arguments.of(null, true, new String[]{}, BeanUtils.EMPTY_STR),
-            Arguments.of(null, true, new String[]{"data"}, "data"),
+                Arguments.of(null, true, null, BeanUtils.EMPTY_STR),
+                Arguments.of(null, true, new String[]{}, BeanUtils.EMPTY_STR),
+                Arguments.of(null, true, new String[]{"data"}, "data"),
 
-            Arguments.of(BeanUtilsTest.class, false, null, BeanUtils.getClassPath(BeanUtilsTest.class)),
-            Arguments.of(BeanUtilsTest.class, false, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class)),
-            Arguments.of(BeanUtilsTest.class, false, new String[]{"data"},
-                         BeanUtils.getClassPath(BeanUtilsTest.class) + "/data"),
+                Arguments.of(BeanUtilsTest.class, false, null, BeanUtils.getClassPath(BeanUtilsTest.class)),
+                Arguments.of(BeanUtilsTest.class, false, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class)),
+                Arguments.of(BeanUtilsTest.class, false, new String[]{"data"},
+                        BeanUtils.getClassPath(BeanUtilsTest.class) + "/data"),
 
-            Arguments.of(BeanUtilsTest.class, true, null, BeanUtils.getClassPath(BeanUtilsTest.class, true)),
-            Arguments.of(BeanUtilsTest.class, true, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class, true)),
-            Arguments.of(BeanUtilsTest.class, true, new String[]{"data"},
-                         BeanUtils.getClassPath(BeanUtilsTest.class, true) + "/data")
+                Arguments.of(BeanUtilsTest.class, true, null, BeanUtils.getClassPath(BeanUtilsTest.class, true)),
+                Arguments.of(BeanUtilsTest.class, true, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class, true)),
+                Arguments.of(BeanUtilsTest.class, true, new String[]{"data"},
+                        BeanUtils.getClassPath(BeanUtilsTest.class, true) + "/data")
         );
     }
 
@@ -649,16 +655,16 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> classPathWithPathComponentsData() {
         return Stream.of(
-            Arguments.of(null, (String[]) null, BeanUtils.EMPTY_STR),
-            Arguments.of(null, new String[]{}, BeanUtils.EMPTY_STR),
-            Arguments.of(null, new String[]{"data"}, "data"),
+                Arguments.of(null, (String[]) null, BeanUtils.EMPTY_STR),
+                Arguments.of(null, new String[]{}, BeanUtils.EMPTY_STR),
+                Arguments.of(null, new String[]{"data"}, "data"),
 
-            Arguments.of(BeanUtilsTest.class, null, BeanUtils.getClassPath(BeanUtilsTest.class)),
-            Arguments.of(BeanUtilsTest.class, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class)),
-            Arguments.of(BeanUtilsTest.class, new String[]{"data"},
-                         BeanUtils.getClassPath(BeanUtilsTest.class) + "/data"),
-            Arguments.of(BeanUtilsTest.class, new String[]{"first", "last"},
-                         BeanUtils.getClassPath(BeanUtilsTest.class) + "/first/last")
+                Arguments.of(BeanUtilsTest.class, null, BeanUtils.getClassPath(BeanUtilsTest.class)),
+                Arguments.of(BeanUtilsTest.class, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class)),
+                Arguments.of(BeanUtilsTest.class, new String[]{"data"},
+                        BeanUtils.getClassPath(BeanUtilsTest.class) + "/data"),
+                Arguments.of(BeanUtilsTest.class, new String[]{"first", "last"},
+                        BeanUtils.getClassPath(BeanUtilsTest.class) + "/first/last")
         );
     }
 
@@ -681,18 +687,18 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> partitionListBySizeData() {
         return Stream.of(
-            Arguments.of(null, 4, 0),
-            Arguments.of(Arrays.asList(), 4, 0),
-            Arguments.of(Arrays.asList(1, 2, 3), 3, 1),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
-            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
+                Arguments.of(null, 4, 0),
+                Arguments.of(Arrays.asList(), 4, 0),
+                Arguments.of(Arrays.asList(1, 2, 3), 3, 1),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
         );
     }
 
@@ -720,18 +726,18 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> partitionSetBySizeData() {
         return Stream.of(
-            Arguments.of(null, 4, 0),
-            Arguments.of(Sets.asSet(), 4, 0),
-            Arguments.of(Sets.asSet(1, 2, 3), 3, 1),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
-            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
+                Arguments.of(null, 4, 0),
+                Arguments.of(Sets.asSet(), 4, 0),
+                Arguments.of(Sets.asSet(1, 2, 3), 3, 1),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
+                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
         );
     }
 
@@ -812,8 +818,8 @@ public class BeanUtilsTest {
         Method[] methods = beanUtils.getClass().getMethods();
         assertNotNull(methods);
         Method
-            methodSetter =
-            beanUtils.getClass().getMethod("setBeanProperty", PropertyDescriptor.class, Object.class, Object.class);
+                methodSetter =
+                beanUtils.getClass().getMethod("setBeanProperty", PropertyDescriptor.class, Object.class, Object.class);
         assertNotNull(methodSetter);
 //        assertTrue(BeanUtils.isSetter(methodSetter));
 //        assertEquals("setBeanProperty", methodSetter.getName());
@@ -855,8 +861,8 @@ public class BeanUtilsTest {
     @Test
     public void testFindByPropertyName() {
         PropertyDescriptor
-            propertyDescriptor =
-            BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
+                propertyDescriptor =
+                BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
         assertNotNull(propertyDescriptor);
         assertEquals("copyOnlyNonNullValues", propertyDescriptor.getName());
     }
@@ -878,8 +884,8 @@ public class BeanUtilsTest {
     @Test
     public void testReadObjectProperty() {
         PropertyDescriptor
-            propertyDescriptor =
-            BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
+                propertyDescriptor =
+                BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
         assertNotNull(propertyDescriptor);
         assertEquals("copyOnlyNonNullValues", propertyDescriptor.getName());
         BeanUtils beanUtils = BeanUtils.INSTANCE;
@@ -890,8 +896,8 @@ public class BeanUtilsTest {
     @Test
     public void testSetBeanProperty() {
         PropertyDescriptor
-            copyOnlyNonNullValues =
-            BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
+                copyOnlyNonNullValues =
+                BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
         assertNotNull(copyOnlyNonNullValues);
         assertEquals("copyOnlyNonNullValues", copyOnlyNonNullValues.getName());
         BeanUtils.INSTANCE.setBeanProperty(copyOnlyNonNullValues, BeanUtils.INSTANCE, true);
@@ -1001,13 +1007,13 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> separateCamelCaseData() {
         return Stream.of(
-            Arguments.of(null, ",", null),
-            Arguments.of("FirstName", null, "FirstName"),
-            Arguments.of("FirstName", "-", "First-Name"),
-            Arguments.of("FirstName", ":", "First:Name"),
-            Arguments.of("FirstName", "#", "First#Name"),
-            Arguments.of("FirstName", "$", "First$Name"),
-            Arguments.of("FirstName", ";", "First;Name")
+                Arguments.of(null, ",", null),
+                Arguments.of("FirstName", null, "FirstName"),
+                Arguments.of("FirstName", "-", "First-Name"),
+                Arguments.of("FirstName", ":", "First:Name"),
+                Arguments.of("FirstName", "#", "First#Name"),
+                Arguments.of("FirstName", "$", "First$Name"),
+                Arguments.of("FirstName", ";", "First;Name")
         );
     }
 
@@ -1033,15 +1039,15 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> sentenceCaseData() {
         return Stream.of(
-            Arguments.of(null, null),
-            Arguments.of("FirstName", "FirstName"),
-            Arguments.of("lastName", "LastName"),
-            Arguments.of("Lakra", "Lakra"),
-            Arguments.of("lakra", "Lakra"),
-            Arguments.of("LAKRA", "LAKRA"),
-            Arguments.of("lAKRA", "LAKRA"),
-            Arguments.of("LakRA", "LakRA"),
-            Arguments.of("16 $ firstName", "16 $ FirstName")
+                Arguments.of(null, null),
+                Arguments.of("FirstName", "FirstName"),
+                Arguments.of("lastName", "LastName"),
+                Arguments.of("Lakra", "Lakra"),
+                Arguments.of("lakra", "Lakra"),
+                Arguments.of("LAKRA", "LAKRA"),
+                Arguments.of("lAKRA", "LAKRA"),
+                Arguments.of("LakRA", "LakRA"),
+                Arguments.of("16 $ firstName", "16 $ FirstName")
         );
     }
 
@@ -1066,10 +1072,10 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> toStringWithThrowableData() {
         return Stream.of(
-            Arguments.of(null, BeanUtils.EMPTY_STR),
-            Arguments.of(new NullPointerException(), "java.lang.NullPointerException"),
-            Arguments.of(new RuntimeException(), "java.lang.RuntimeException"),
-            Arguments.of(new NumberFormatException(), "java.lang.NumberFormatException")
+                Arguments.of(null, BeanUtils.EMPTY_STR),
+                Arguments.of(new NullPointerException(), "java.lang.NullPointerException"),
+                Arguments.of(new RuntimeException(), "java.lang.RuntimeException"),
+                Arguments.of(new NumberFormatException(), "java.lang.NumberFormatException")
         );
     }
 
@@ -1175,10 +1181,10 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> replaceUnderscoresWithDashesData() {
         return Stream.of(
-            Arguments.of(null, null),
-            Arguments.of("Rohtash_Lakra", "Rohtash-Lakra"),
-            Arguments.of("Rohtash_Singh_Lakra", "Rohtash-Singh-Lakra"),
-            Arguments.of("Rohtash_16_Lakra", "Rohtash-16-Lakra")
+                Arguments.of(null, null),
+                Arguments.of("Rohtash_Lakra", "Rohtash-Lakra"),
+                Arguments.of("Rohtash_Singh_Lakra", "Rohtash-Singh-Lakra"),
+                Arguments.of("Rohtash_16_Lakra", "Rohtash-16-Lakra")
         );
     }
 
