@@ -60,8 +60,7 @@ public enum NetUtils {
      * @return
      */
     public static String randomIPAddress(int ipRange) {
-        return (RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "."
-                + RND_IP.nextInt(ipRange));
+        return (RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange));
     }
 
     /**
@@ -73,40 +72,29 @@ public enum NetUtils {
 
 
     /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        int num = 351617594;
-        String ipAddress = LOCAL_HOST;
-        System.out.println("\nOriginal Values, num : " + num + ", ipAddress : " + ipAddress);
-        String newIPAddress = NetUtils.toIPAddress(num);
-        long ipToNum = NetUtils.toIPNumber(newIPAddress);
-        System.out.println("\nAfter Conversion, ipToNum : " + ipToNum + ", newIPAddress : " + newIPAddress);
-    }
-
-    /**
      * @param ipNumber
      * @return
      */
     public static String toIPAddress(int ipNumber) {
-        return (ipNumber & 0xFF) + "." + ((ipNumber >> 8) & 0xFF) + "." + ((ipNumber >> 16) & 0xFF) + "." + (
-            (ipNumber >> 24) & 0xFF);
+        return (ipNumber & 0xFF) + "." + ((ipNumber >> 8) & 0xFF) + "." + ((ipNumber >> 16) & 0xFF) + "." + ((ipNumber >> 24) & 0xFF);
     }
 
     /**
+     * Returns the long IP address of the provided <code>ipAddress</code> text.
+     *
      * @param ipAddress
      * @return
      */
-    public static long toIPNumber(String ipAddress) {
-        String[] addrArray = ipAddress.split("\\.");
+    public static long toIPAddress(String ipAddress) {
+        String[] ipTokens = ipAddress.split("\\.");
         long ipNumber = 0;
-        for (int i = 0; i < addrArray.length; i++) {
-            ipNumber += ((Integer.parseInt(addrArray[i]) % 256 * Math.pow(256, i)));
+        for (int i = 0; i < ipTokens.length; i++) {
+            // IP address range is 0-255, so implicit casting it to the range.
+            ipNumber += ((Integer.parseInt(ipTokens[i]) % 256 * Math.pow(256, i)));
         }
 
         return ipNumber;
     }
-
 
     /**
      * Returns the integer equivalent.
@@ -193,6 +181,5 @@ public enum NetUtils {
         /* autoFlush set to be true */
         return (new PrintWriter(socket.getOutputStream(), true));
     }
-
 
 }
