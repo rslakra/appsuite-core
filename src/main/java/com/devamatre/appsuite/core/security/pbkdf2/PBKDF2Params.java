@@ -1,7 +1,5 @@
 package com.devamatre.appsuite.core.security.pbkdf2;
 
-import com.devamatre.appsuite.core.security.GuardUtils;
-
 /**
  * The parameters for the <code>PBKDF2</code> generation.
  *
