@@ -4,6 +4,11 @@
 
 The ```appsuite-core``` project is the core re-usable component.
 
+## Maven Packages
+
+[![Maven Package](https://github.com/rslakra/appsuite-core/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/rslakra/appsuite-core/actions/workflows/maven-publish.yml)
+
+
 ## How to set up
 
 ---
