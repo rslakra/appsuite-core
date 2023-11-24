@@ -84,10 +84,6 @@ import java.util.jar.JarFile;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-import javax.net.ssl.SSLServerSocket;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
-
 /**
  * This class handles the file handling operations.
  *
@@ -143,20 +139,20 @@ public enum IOUtils {
 
     // ALL_PERMISSIONS
     public static FileAttribute<Set<PosixFilePermission>>
-        ALL_PERMISSIONS =
-        PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE,
-                                                        PosixFilePermission.OWNER_EXECUTE));
+            ALL_PERMISSIONS =
+            PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE,
+                    PosixFilePermission.OWNER_EXECUTE));
 
     // WRITE_PERMISSION
     public static FileAttribute<Set<PosixFilePermission>>
-        WRITE_PERMISSION =
-        PosixFilePermissions.asFileAttribute(
-            EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE));
+            WRITE_PERMISSION =
+            PosixFilePermissions.asFileAttribute(
+                    EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE));
 
     // READ_PERMISSION
     public static FileAttribute<Set<PosixFilePermission>>
-        READ_PERMISSION =
-        PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ));
+            READ_PERMISSION =
+            PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ));
 
     /**
      * Returns the OS name.
