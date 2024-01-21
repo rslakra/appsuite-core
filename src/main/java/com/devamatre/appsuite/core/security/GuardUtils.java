@@ -68,6 +68,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
@@ -108,32 +109,32 @@ public enum GuardUtils {
     private static final Integer ENCRYPTION_KEY_LENGTH = 32;
 
     /* pbkdf2Params */
-    private static PBKDF2Params pbkdf2Params = null;
+    private static PBKDF2Params PBKDF2_PARAMS;
 
     /* pbkdf2Generator */
-    private static PBKDF2Generator pbkdf2Generator = null;
+    private static PBKDF2Generator PBKDF2_GENERATOR;
 
     /* uniqueDeviceUUID */
-    private static String uniqueDeviceUUID;
+    private static String UNIQUE_DEVICE_UUID;
 
     /* _offlineEncryptionKey */
-    private static String offlineEncryptionKey;
+    private static String OFFLINE_ENC_KEY;
 
     /* publicKey */
-    private static PublicKey publicKey;
+    private static PublicKey PUBLIC_KEY;
 
     /* messageDigest */
-    private static MessageDigest sha256MessageDigest;
+    private static MessageDigest SHA_256_MESSAGE_DIGEST;
 
     /* Initialize X509TrustManager for the app's lifetime. */
-    private static X509TrustManager mX509TrustManager;
+    private static X509TrustManager X509_TRUST_MANAGER;
 
     static {
         try {
             /* add provider. */
             Security.addProvider(new BouncyCastleProvider());
             // initialized message digest
-            sha256MessageDigest = MessageDigest.getInstance(AlgoType.SHA_256.getEncType());
+            SHA_256_MESSAGE_DIGEST = MessageDigest.getInstance(AlgoType.SHA_256.getEncType());
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage(), ex);
         }
@@ -143,7 +144,7 @@ public enum GuardUtils {
                     trustManagerFactory =
                     TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init((KeyStore) null);
-            mX509TrustManager = (X509TrustManager) trustManagerFactory.getTrustManagers()[0];
+            X509_TRUST_MANAGER = (X509TrustManager) trustManagerFactory.getTrustManagers()[0];
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage(), ex);
         }
@@ -160,9 +161,9 @@ public enum GuardUtils {
      */
     public static byte[] uniqueDeviceIdBytes(final String parentFolder) {
         byte[] deviceIDBytes = null;
-        if (BeanUtils.isEmpty(uniqueDeviceUUID)) {
+        if (BeanUtils.isEmpty(UNIQUE_DEVICE_UUID)) {
             synchronized (GuardUtils.class) {
-                if (BeanUtils.isEmpty(uniqueDeviceUUID)) {
+                if (BeanUtils.isEmpty(UNIQUE_DEVICE_UUID)) {
                     File installation = new File(parentFolder, INSTALLATION);
                     try {
                         if (!installation.exists()) {
@@ -170,7 +171,7 @@ public enum GuardUtils {
                         }
                         deviceIDBytes = IOUtils.readFile(installation);
                         if (BeanUtils.isNotEmpty(deviceIDBytes)) {
-                            uniqueDeviceUUID = IOUtils.toUTF8String(deviceIDBytes);
+                            UNIQUE_DEVICE_UUID = IOUtils.toUTF8String(deviceIDBytes);
                         }
                     } catch (Exception e) {
                         throw new RuntimeException("Failed to read/write uniqueDeviceID to filesystem.", e);
@@ -178,7 +179,7 @@ public enum GuardUtils {
                 }
             }
         } else {
-            deviceIDBytes = IOUtils.toUTF8Bytes(uniqueDeviceUUID);
+            deviceIDBytes = IOUtils.toUTF8Bytes(UNIQUE_DEVICE_UUID);
         }
 
         return deviceIDBytes;
@@ -392,7 +393,7 @@ public enum GuardUtils {
      * @return
      */
     public static String encryptWithPublicKey(final String rawText) {
-        return encryptWithPublicKey(rawText, publicKey);
+        return encryptWithPublicKey(rawText, PUBLIC_KEY);
     }
 
     /**
@@ -604,7 +605,7 @@ public enum GuardUtils {
      * @param base64Key
      */
     public static void createPublicKeyFromString(String base64Key) {
-        publicKey = createPublicKeyFromBase64Key(base64Key);
+        PUBLIC_KEY = createPublicKeyFromBase64Key(base64Key);
     }
 
     /**************************************************************************
@@ -661,18 +662,18 @@ public enum GuardUtils {
      * Initialize the <code>PBKDF2</code> generator only once.
      */
     private static PBKDF2Generator getPBKDF2Generator() {
-        if (pbkdf2Generator == null) {
+        if (PBKDF2_GENERATOR == null) {
             synchronized (INSTANCE.getClass()) {
-                if (pbkdf2Generator == null) {
+                if (Objects.isNull(PBKDF2_GENERATOR)) {
                     /* pbkdf2Params */
-                    pbkdf2Params = new PBKDF2Params(uniqueDeviceIdBytes("."));
+                    PBKDF2_PARAMS = new PBKDF2Params(uniqueDeviceIdBytes("."));
                     /* pbkdf2Generator */
-                    pbkdf2Generator = new PBKDF2Generator(pbkdf2Params);
+                    PBKDF2_GENERATOR = new PBKDF2Generator(PBKDF2_PARAMS);
                 }
             }
         }
 
-        return pbkdf2Generator;
+        return PBKDF2_GENERATOR;
     }
 
     /**
@@ -1088,11 +1089,11 @@ public enum GuardUtils {
      * @return
      */
     public static String offlineEncryptionKey() {
-        if (BeanUtils.isEmpty(offlineEncryptionKey)) {
-            offlineEncryptionKey = getPBKDF2KeyAsString(uniqueDeviceIdString());
+        if (BeanUtils.isEmpty(OFFLINE_ENC_KEY)) {
+            OFFLINE_ENC_KEY = getPBKDF2KeyAsString(uniqueDeviceIdString());
         }
 
-        return offlineEncryptionKey;
+        return OFFLINE_ENC_KEY;
     }
 
     /**
@@ -1229,7 +1230,7 @@ public enum GuardUtils {
     public static byte[] getSHA256Hash(byte[] bytes) throws SecurityException {
         if (BeanUtils.isNotNull(bytes)) {
             try {
-                return sha256MessageDigest.digest(bytes);
+                return SHA_256_MESSAGE_DIGEST.digest(bytes);
             } catch (Exception ex) {
                 throw new SecurityException(ex);
             }
@@ -1484,7 +1485,7 @@ public enum GuardUtils {
         try {
             X509Certificate[] x509Certs = (X509Certificate[]) connectionHttps.getServerCertificates();
             // TODO: Test with an invalid certificate and see if it fails.
-            mX509TrustManager.checkServerTrusted(x509Certs, "SHA1withRSA");
+            X509_TRUST_MANAGER.checkServerTrusted(x509Certs, "SHA1withRSA");
             bRet = true;
         } catch (Exception e) {
             System.err.println(e.getMessage());

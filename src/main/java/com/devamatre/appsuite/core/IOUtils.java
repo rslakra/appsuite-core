@@ -134,25 +134,16 @@ public enum IOUtils {
     /**
      * imageTypes
      */
-    private static List<String> imageTypes;
-
+    private final List<String> imageTypes = new ArrayList<>();
 
     // ALL_PERMISSIONS
-    public static FileAttribute<Set<PosixFilePermission>>
-        ALL_PERMISSIONS =
-        PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE,
-                                                        PosixFilePermission.OWNER_EXECUTE));
+    public static FileAttribute<Set<PosixFilePermission>> ALL_PERMISSIONS = PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE, PosixFilePermission.OWNER_EXECUTE));
 
     // WRITE_PERMISSION
-    public static FileAttribute<Set<PosixFilePermission>>
-        WRITE_PERMISSION =
-        PosixFilePermissions.asFileAttribute(
-            EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE));
+    public static FileAttribute<Set<PosixFilePermission>> WRITE_PERMISSION = PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE));
 
     // READ_PERMISSION
-    public static FileAttribute<Set<PosixFilePermission>>
-        READ_PERMISSION =
-        PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ));
+    public static FileAttribute<Set<PosixFilePermission>> READ_PERMISSION = PosixFilePermissions.asFileAttribute(EnumSet.of(PosixFilePermission.OWNER_READ));
 
     /**
      * Returns the OS name.
@@ -434,12 +425,12 @@ public enum IOUtils {
      * Returns true if the given extension exists in the list otherwise false.
      *
      * @param extension
+     * @param forceReload
      * @return
      */
-    public static boolean isImageType(String extension) {
+    private boolean isImageType(String extension, boolean forceReload) {
         // populate with supported images types.
-        if (BeanUtils.isNull(imageTypes)) {
-            imageTypes = new ArrayList<String>();
+        if (BeanUtils.isEmpty(imageTypes)) {
             imageTypes.add("tif");
             imageTypes.add("tiff");
             imageTypes.add("jpg");
@@ -458,11 +449,22 @@ public enum IOUtils {
             imageTypes.add("cur");
         }
 
+        // extract the extension of the image type
         if (extension.startsWith(".") && extension.length() > 1) {
             extension = extension.substring(1);
         }
 
         return imageTypes.contains(extension);
+    }
+
+    /**
+     * Returns true if the given extension exists in the list otherwise false.
+     *
+     * @param extension
+     * @return
+     */
+    public static boolean isImageType(String extension) {
+        return INSTANCE.isImageType(extension, false);
     }
 
     /**

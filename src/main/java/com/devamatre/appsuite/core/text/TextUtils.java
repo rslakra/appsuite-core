@@ -96,16 +96,18 @@ public enum TextUtils {
 
     /* valid email expression. */
     private static String
-        VALID_EMAIL_EXPRESSION =
-        "\\b(^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@([A-Za-z0-9-])+(\\.[A-Za-z0-9-]+)*((\\.[A-Za-z0-9]{2,})|(\\.[A-Za-z0-9]{2,}\\.[A-Za-z0-9]{2,}))$)\\b";
+            VALID_EMAIL_EXPRESSION =
+            "\\b(^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@([A-Za-z0-9-])+(\\.[A-Za-z0-9-]+)*((\\.[A-Za-z0-9]{2,})|(\\.[A-Za-z0-9]{2,}\\.[A-Za-z0-9]{2,}))$)\\b";
 
     private static final String[] UNITS = {" ", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
     private static final String[]
-        TENS =
-        {" ", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+            TENS =
+            {" ", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
     private static final String[]
-        HUNDREDS =
-        {" ", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+            HUNDREDS =
+            {" ", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+
+    private static final String[] PREFIXES = {" ", "Thousand", "Lakhs", "Million"};
 
     /**
      * Removes leading whitespace of the specified string using expressions.
@@ -1008,7 +1010,7 @@ public enum TextUtils {
         String str = " ";
         System.out.println("(num / 1000) : " + (num / 1000));
         if ((num / 1000) > 0) {
-            str += twosConverter(num / 1000) + " " + Prefixes[num / 1000];
+            str += twosConverter(num / 1000) + " " + PREFIXES[num / 1000];
             System.out.println("threesConverter str : " + str);
         }
         System.out.println("(num % 1000) : " + (num % 1000));
@@ -1023,8 +1025,8 @@ public enum TextUtils {
         int ctr = 0;
         if (num > 0) {
             System.out.println("numerToWord (num % 1000) : " + (num % 1000));
-            while (ctr < Prefixes.length && num > 0) {
-                str += Prefixes[ctr] + threesConverter(num % 1000) + Prefixes[ctr];
+            while (ctr < PREFIXES.length && num > 0) {
+                str += PREFIXES[ctr] + threesConverter(num % 1000) + PREFIXES[ctr];
                 System.out.println("numerToWord str : " + str);
                 System.out.println("numerToWord Before Dividing Num : " + num);
                 num = num / 1000;
@@ -1034,8 +1036,6 @@ public enum TextUtils {
         }
         return str;
     }
-
-    static String[] Prefixes = {" ", "Thousand", "Lakhs", "Million"};
 
     /**
      * Returns the reversed string using recursion.
