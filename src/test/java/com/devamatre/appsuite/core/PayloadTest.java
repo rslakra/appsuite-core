@@ -42,8 +42,8 @@ public class PayloadTest {
         Payload<String, Object> payload = Payload.newBuilder(objectMap);
         assertNotNull(payload);
         assertPayload(objectMap, payload);
-//        assertEquals(objectMap.get("name"), payload.get("name"));
-//        assertEquals(objectMap.get("age"), payload.get("age"));
+// assertEquals(objectMap.get("name"), payload.get("name"));
+// assertEquals(objectMap.get("age"), payload.get("age"));
     }
 
     /**

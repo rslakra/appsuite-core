@@ -34,9 +34,9 @@ public class WeekDaySerializer extends StdSerializer<WeekDays> {
     public void serialize(WeekDays weekDays, JsonGenerator generator, SerializerProvider provider)
         throws IOException, JsonProcessingException {
         generator.writeString(weekDays.name().toLowerCase());
-//        generator.writeStartObject();
-//        generator.writeFieldName(weekDays.getValue());
+// generator.writeStartObject();
+// generator.writeFieldName(weekDays.getValue());
 ////        generator.writeString(weekDays.name().toLowerCase());
-//        generator.writeEndObject();
+// generator.writeEndObject();
     }
 }

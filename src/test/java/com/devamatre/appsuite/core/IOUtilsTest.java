@@ -138,7 +138,7 @@ public class IOUtilsTest {
         Set<String> jarEntries = IOUtils.getJarEntries(new File(JAR_PATH));
         LOGGER.debug("jarEntries: {}", jarEntries);
         assertTrue(jarEntries.containsAll(expectedJarEntries));
-//        assertEquals(expectedJarEntries, jarEntries);
+// assertEquals(expectedJarEntries, jarEntries);
         LOGGER.debug("-testGetJarEntries()");
     }
 
@@ -199,8 +199,8 @@ public class IOUtilsTest {
         LOGGER.debug("expectedClassNames: {}", expectedClassNames);
         File jarFile = new File(IOUtils.pathString(IOUtils.getUserDir(), "target/test-classes/jarFile.jar"));
         LOGGER.debug("jarFile: {}", jarFile.getAbsolutePath());
-//        Set<String> jarFileClassNames = IOUtils.getJarFileClassNames(jarFile);
-//        LOGGER.debug("jarFileClassNames: {}", jarFileClassNames);
+// Set<String> jarFileClassNames = IOUtils.getJarFileClassNames(jarFile);
+// LOGGER.debug("jarFileClassNames: {}", jarFileClassNames);
         Set<Class> jarFileClasses = IOUtils.getJarFileClasses(jarFile);
         LOGGER.debug("jarFileClasses: {}", jarFileClasses);
         Set<String> jarClasses = jarFileClasses.stream().map(Class::getName).collect(Collectors.toSet());

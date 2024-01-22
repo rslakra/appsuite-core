@@ -24,7 +24,7 @@ public class CallerBySecurityManager extends AbstractCaller implements Caller {
 //     */
 //    @Override
 //    public int getOffset() {
-//        return getOffset(Thread.currentThread().getStackTrace(), getClass()) + 1;
+// return getOffset(Thread.currentThread().getStackTrace(), getClass()) + 1;
 //    }
 
     /**

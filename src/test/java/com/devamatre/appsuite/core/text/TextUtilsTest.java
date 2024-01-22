@@ -44,10 +44,10 @@ public class TextUtilsTest {
     public void testToStringWithList() {
         List<String> valueList = Arrays.asList("Rohtash", "Singh", "Lakra");
         LOGGER.debug("valueList:{}", valueList);
-//        String result = TextUtils.toString(valueList);
-//        LOGGER.debug("result:{}", result);
-//        assertNotNull(result);
-//        assertEquals(result, "[]{Rohtash, Singh, Lakra}");
+// String result = TextUtils.toString(valueList);
+// LOGGER.debug("result:{}", result);
+// assertNotNull(result);
+// assertEquals(result, "[]{Rohtash, Singh, Lakra}");
     }
 
     @Test
@@ -57,9 +57,9 @@ public class TextUtilsTest {
         valueMap.put("middleName", "Singh");
         valueMap.put("lastName", "Lakra");
         LOGGER.debug("valueMap:{}", valueMap);
-//        String result = TextUtils.toString(valueMap);
-//        LOGGER.debug("result:{}", result);
-//        assertNotNull(result);
-//        assertEquals(result, "[keySet=null, values=null]");
+// String result = TextUtils.toString(valueMap);
+// LOGGER.debug("result:{}", result);
+// assertNotNull(result);
+// assertEquals(result, "[keySet=null, values=null]");
     }
 }

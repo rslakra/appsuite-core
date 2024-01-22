@@ -800,12 +800,12 @@ public class BeanUtilsTest {
         assertNotNull(beanUtils);
         Method[] methods = beanUtils.getClass().getMethods();
         assertNotNull(methods);
-//        Method methodGetter = beanUtils.getClass().getMethod("isClassPropertyDescriptor");
-//        assertNotNull(methodGetter);
-//        assertTrue(BeanUtils.isGetter(methodGetter));
-//        assertEquals("isClassPropertyDescriptor", methodGetter.getName());
-//        Method methodIsActive = beanUtils.getClass().getMethod("isActive");
-//        assertTrue(BeanUtils.isGetter(methodIsActive));
+// Method methodGetter = beanUtils.getClass().getMethod("isClassPropertyDescriptor");
+// assertNotNull(methodGetter);
+// assertTrue(BeanUtils.isGetter(methodGetter));
+// assertEquals("isClassPropertyDescriptor", methodGetter.getName());
+// Method methodIsActive = beanUtils.getClass().getMethod("isActive");
+// assertTrue(BeanUtils.isGetter(methodIsActive));
     }
 
     /**
@@ -821,10 +821,10 @@ public class BeanUtilsTest {
                 methodSetter =
                 beanUtils.getClass().getMethod("setBeanProperty", PropertyDescriptor.class, Object.class, Object.class);
         assertNotNull(methodSetter);
-//        assertTrue(BeanUtils.isSetter(methodSetter));
-//        assertEquals("setBeanProperty", methodSetter.getName());
-//        Method methodSetActive = beanUtils.getClass().getMethod("setActive", boolean.class);
-//        assertTrue(BeanUtils.isSetter(methodSetActive));
+// assertTrue(BeanUtils.isSetter(methodSetter));
+// assertEquals("setBeanProperty", methodSetter.getName());
+// Method methodSetActive = beanUtils.getClass().getMethod("setActive", boolean.class);
+// assertTrue(BeanUtils.isSetter(methodSetActive));
     }
 
     //------------
@@ -1134,46 +1134,46 @@ public class BeanUtilsTest {
 
 //    @Test
 //    public void testCopyProperties() {
-//        Payload payload = Payload.builder()
+// Payload payload = Payload.builder()
 //            .of("firstName", "Rohtash")
 //            .of("lastName", "Lakra");
-//        LOGGER.debug("payload:{}", payload);
-//        Payload tempPayload = Payload.builder();
-//        BeanUtils.copyProperties(payload, tempPayload);
-//        LOGGER.debug("tempPayload:{}", tempPayload);
-//        assertNotNull(tempPayload);
+// LOGGER.debug("payload:{}", payload);
+// Payload tempPayload = Payload.builder();
+// BeanUtils.copyProperties(payload, tempPayload);
+// LOGGER.debug("tempPayload:{}", tempPayload);
+// assertNotNull(tempPayload);
 //
-//        Payload copyPayload = Payload.builder();
-//        BeanUtils.copyProperties(tempPayload, copyPayload);
-//        LOGGER.debug("copyPayload:{}", copyPayload);
-//        assertNotNull(copyPayload);
-//        assertEquals(payload, copyPayload);
+// Payload copyPayload = Payload.builder();
+// BeanUtils.copyProperties(tempPayload, copyPayload);
+// LOGGER.debug("copyPayload:{}", copyPayload);
+// assertNotNull(copyPayload);
+// assertEquals(payload, copyPayload);
 //    }
 //
 //
 //    @Test
 //    public void testDeepCopyProperties() {
-//        Payload phones = Payload.builder()
+// Payload phones = Payload.builder()
 //            .of("home", "4085108759")
 //            .of("mobile", "4085108759")
 //            .of("office", "4085108759");
 //
-//        Payload payload = Payload.builder()
+// Payload payload = Payload.builder()
 //            .of("firstName", "Rohtash")
 //            .of("lastName", "Lakra")
 //            .of("phones", phones);
 //
-//        LOGGER.debug("payload:{}", payload);
-//        Payload tempPayload = Payload.builder();
-//        BeanUtils.deepCopyProperties(payload, tempPayload);
-//        LOGGER.debug("tempPayload:{}", tempPayload);
-//        assertNotNull(tempPayload);
+// LOGGER.debug("payload:{}", payload);
+// Payload tempPayload = Payload.builder();
+// BeanUtils.deepCopyProperties(payload, tempPayload);
+// LOGGER.debug("tempPayload:{}", tempPayload);
+// assertNotNull(tempPayload);
 //
-//        Payload copyPayload = Payload.builder();
-//        BeanUtils.deepCopyProperties(tempPayload, copyPayload);
-//        LOGGER.debug("copyPayload:{}", copyPayload);
-//        assertNotNull(copyPayload);
-//        assertEquals(payload, copyPayload);
+// Payload copyPayload = Payload.builder();
+// BeanUtils.deepCopyProperties(tempPayload, copyPayload);
+// LOGGER.debug("copyPayload:{}", copyPayload);
+// assertNotNull(copyPayload);
+// assertEquals(payload, copyPayload);
 //    }
 
     /**

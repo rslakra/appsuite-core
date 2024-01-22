@@ -276,10 +276,10 @@ public enum JWTUtils {
 //         * PKCS#! has the 'BEGIN RSA PRIVATE KEY' header, and
 //         * PKCS#8 has the 'BEGIN PRIVATE KEY' header.
 //         */
-//        if (keyLines.get(0).contains("BEGIN PRIVATE KEY")) {
+// if (keyLines.get(0).contains("BEGIN PRIVATE KEY")) {
 //            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
 //            privateKey = keyFactory.generatePrivate(keySpec);
-//        } else if (keyLines.get(0).contains(ALGO_RSA)) {
+// } else if (keyLines.get(0).contains(ALGO_RSA)) {
 //            final DerInputStream derReader = new DerInputStream(keyBytes);
 //            final DerValue[] seq = derReader.getSequence(0);
 //            // skip version seq[0];
@@ -297,11 +297,11 @@ public enum JWTUtils {
 //                                         primeExponentP,
 //                                         primeExponentQ, crtCoefficient);
 //            privateKey = keyFactory.generatePrivate(keySpec);
-//        } else {
+// } else {
 //            throw new RuntimeException("Unsupported PEM Key!");
-//        }
+// }
 //
-//        return privateKey;
+// return privateKey;
 //    }
 
     /**
@@ -309,7 +309,7 @@ public enum JWTUtils {
      * @throws Exception
      */
     public PrivateKey loadPrivateKey() throws Exception {
-//        return loadPrivateKey(getPrivateKeyFile());
+// return loadPrivateKey(getPrivateKeyFile());
         return null;
     }
 
@@ -395,11 +395,11 @@ public enum JWTUtils {
 //     * @throws InvalidKeySpecException
 //     */
 //    public KeyPair toKeyPair(final byte[] priKeyBytes, final byte[] pubKeyBytes)
-//        throws InvalidKeySpecException {
-//        final KeyFactory keyFactory = getKeyFactory(ALGO_RSA);
-//        PrivateKey priKey = keyFactory.generatePrivate(new PKCS8EncodedKeySpec(priKeyBytes));
-//        PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(pubKeyBytes));
-//        return new KeyPair(pubKey, priKey);
+// throws InvalidKeySpecException {
+// final KeyFactory keyFactory = getKeyFactory(ALGO_RSA);
+// PrivateKey priKey = keyFactory.generatePrivate(new PKCS8EncodedKeySpec(priKeyBytes));
+// PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(pubKeyBytes));
+// return new KeyPair(pubKey, priKey);
 //    }
 
     /**

@@ -57,7 +57,7 @@ public enum RoleType {
      * @return
      */
 //    public static Set<GrantedAuthority> toAuthorities(final Set<Role> roles) {
-//        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getRole().name()))
+// return roles.stream().map(role -> new SimpleGrantedAuthority(role.getRole().name()))
 //            .collect(Collectors.toSet());
 //    }
 
@@ -68,7 +68,7 @@ public enum RoleType {
      * @return
      */
 //    public static List<GrantedAuthority> toAuthorities(final RoleType... roleTypes) {
-//        return Arrays.asList(roleTypes).stream().map(roleType -> new SimpleGrantedAuthority(roleType.name()))
+// return Arrays.asList(roleTypes).stream().map(roleType -> new SimpleGrantedAuthority(roleType.name()))
 //            .collect(Collectors.toList());
 //    }
 

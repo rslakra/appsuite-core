@@ -64,7 +64,7 @@ public final class Pair<L, R> implements Map.Entry<L, R>, Comparable<Pair<L, R>>
         if (result == 0) {
             result = ((Comparable) this.getRight()).compareTo(other.getRight());
         }
-//        return (new CompareToBuilder()).append(this.getLeft(), other.getLeft())
+// return (new CompareToBuilder()).append(this.getLeft(), other.getLeft())
 //            .append(this.getRight(), other.getRight()).toComparison();
         return result;
     }
@@ -99,7 +99,7 @@ public final class Pair<L, R> implements Map.Entry<L, R>, Comparable<Pair<L, R>>
     @Override
     public String toString() {
         return toString("(%s, %s)");
-//        return "(" + this.getLeft() + ',' + this.getRight() + ')';
+// return "(" + this.getLeft() + ',' + this.getRight() + ')';
     }
 
     /**

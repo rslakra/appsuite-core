@@ -25,7 +25,7 @@ public class CallerByStackTrace extends AbstractCaller implements Caller {
 //     */
 //    @Override
 //    public int getOffset() {
-//        return getOffset(Thread.currentThread().getStackTrace(), getClass());
+// return getOffset(Thread.currentThread().getStackTrace(), getClass());
 //    }
 
     /**
