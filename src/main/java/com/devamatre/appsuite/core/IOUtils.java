@@ -2266,7 +2266,9 @@ public enum IOUtils {
             while (jarEntries.hasMoreElements()) {
                 JarEntry jarEntry = jarEntries.nextElement();
                 if (jarEntry.getName().endsWith(".class")) {
-                    String className = jarEntry.getName().replace("/", ".").replace(".class", "");
+                    String className = jarEntry.getName()
+                        .replace("/", ".")
+                        .replace(".class", "");
 //                    className = className.substring(className.indexOf(".") + 1);
                     classNames.add(className);
                 }

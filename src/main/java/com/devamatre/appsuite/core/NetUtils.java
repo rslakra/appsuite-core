@@ -60,7 +60,8 @@ public enum NetUtils {
      * @return
      */
     public static String randomIPAddress(int ipRange) {
-        return (RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange));
+        return (RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "." + RND_IP.nextInt(ipRange) + "."
+                + RND_IP.nextInt(ipRange));
     }
 
     /**
@@ -76,7 +77,8 @@ public enum NetUtils {
      * @return
      */
     public static String toIPAddress(int ipNumber) {
-        return (ipNumber & 0xFF) + "." + ((ipNumber >> 8) & 0xFF) + "." + ((ipNumber >> 16) & 0xFF) + "." + ((ipNumber >> 24) & 0xFF);
+        return (ipNumber & 0xFF) + "." + ((ipNumber >> 8) & 0xFF) + "." + ((ipNumber >> 16) & 0xFF) + "." + (
+            (ipNumber >> 24) & 0xFF);
     }
 
     /**

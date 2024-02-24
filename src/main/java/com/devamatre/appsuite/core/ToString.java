@@ -10,6 +10,7 @@ import java.util.Objects;
  */
 public final class ToString {
 
+    public static final String SPACE = " ";
     public static final String EMPTY_STR = "";
     public static final String DELIMITER = ", ";
     public static final String PREFIX = "<";
@@ -71,14 +72,20 @@ public final class ToString {
     }
 
     /**
+     * Copies characters from <code>self</code> string into the destination <code>chars</code> array.
+     *
      * @param self
      * @param chars
-     * @param start
+     * @param startOffset
      * @return
      */
-    private int getChars(final String self, char[] chars, int start) {
-        int length = self.length();
-        self.getChars(0, length, chars, start);
+    private int fillChars(String self, char[] chars, int startOffset) {
+        int length = 0;
+        if (Objects.nonNull(self)) {
+            length = self.length();
+            self.getChars(0, length, chars, startOffset);
+        }
+
         return length;
     }
 
@@ -100,9 +107,9 @@ public final class ToString {
             if (excludeClassName) {
                 return new ToString(delimiter, prefix, suffix);
             } else if (excludePackageName) {
-                return new ToString(delimiter, classType.getSimpleName() + " " + prefix, suffix);
+                return new ToString(delimiter, classType.getSimpleName() + SPACE + prefix, suffix);
             } else {
-                return new ToString(delimiter, classType.getName() + " " + prefix, suffix);
+                return new ToString(delimiter, classType.getName() + SPACE + prefix, suffix);
             }
         }
     }
@@ -118,7 +125,7 @@ public final class ToString {
      */
     public static <T> ToString of(Class<T> classType, boolean excludePackageName, CharSequence delimiter,
                                   CharSequence prefix, CharSequence suffix) {
-        return of(classType, classType == null, excludePackageName, delimiter, prefix, suffix);
+        return of(classType, Objects.isNull(classType), excludePackageName, delimiter, prefix, suffix);
     }
 
     /**
@@ -241,16 +248,16 @@ public final class ToString {
 
         final String delimiter = this.delimiter;
         final char[] allElements = new char[length + addLength];
-        int charIndex = getChars(prefix, allElements, 0);
+        int charIndex = fillChars(prefix, allElements, 0);
         if (size > 0) {
-            charIndex += getChars(elements[0], allElements, charIndex);
+            charIndex += fillChars(elements[0], allElements, charIndex);
             for (int i = 1; i < size; i++) {
-                charIndex += getChars(delimiter, allElements, charIndex);
-                charIndex += getChars(elements[i], allElements, charIndex);
+                charIndex += fillChars(delimiter, allElements, charIndex);
+                charIndex += fillChars(elements[i], allElements, charIndex);
             }
         }
 
-        charIndex += getChars(suffix, allElements, charIndex);
+        charIndex += fillChars(suffix, allElements, charIndex);
         return new String(allElements);
     }
 
@@ -276,15 +283,15 @@ public final class ToString {
     }
 
     /**
-     * Adds the <code>key</code>
+     * Adds the <code>key</code> and <code>value</code> to the string.
      *
      * @param key
      * @return
      */
-    public ToString add(final CharSequence key, final Object value) {
-        if (key != null && value != null) {
+    public ToString add(CharSequence key, Object value) {
+        if (Objects.nonNull(key) && Objects.nonNull(value)) {
             return add(key + SEPARATOR + value);
-        } else if (key == null && value != null) {
+        } else if (Objects.isNull(key) && Objects.nonNull(value)) {
             return add(Objects.toString(value));
         } else {
             return add(key);
@@ -321,12 +328,17 @@ public final class ToString {
     private void compactElements() {
         if (size > 1) {
             final char[] chars = new char[length];
-            int i = 1, startIndex = getChars(elements[0], chars, 0);
-            do {
-                startIndex += getChars(delimiter, chars, startIndex);
-                startIndex += getChars(elements[i], chars, startIndex);
-                elements[i] = null;
-            } while (++i < size);
+            int index = 0;
+            int startIndex = 0;
+            while (index < size) {
+                if (startIndex > 0) {
+                    startIndex += fillChars(delimiter, chars, startIndex);
+                }
+                startIndex += fillChars(elements[index], chars, startIndex);
+                elements[index] = null;
+                index++;
+            }
+
             size = 1;
             elements[0] = new String(chars);
         }
@@ -340,7 +352,7 @@ public final class ToString {
      * @return the length of the current value of {@code ToString}
      */
     public int length() {
-        return (size == 0 && emptyValue != null) ? emptyValue.length() :
-               length + prefix.length() + suffix.length();
+        return (size == 0 && Objects.nonNull(emptyValue)) ? emptyValue.length()
+                                                          : length + prefix.length() + suffix.length();
     }
 }

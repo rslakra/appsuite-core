@@ -37,13 +37,13 @@ public class TimeUtilsTest {
     @Test
     public void testTimeZone() {
         TimeZone defaultTimeZone = TimeZone.getDefault();
-        LOGGER.debug("defaultTimeZone:" + defaultTimeZone);
+        LOGGER.debug("defaultTimeZone:{}", defaultTimeZone);
 
         TimeZone timeZoneById = TimeZone.getTimeZone("Brazil/East");
-        LOGGER.debug("timeZoneById:" + timeZoneById);
+        LOGGER.debug("timeZoneById:{}", timeZoneById);
 
         timeZoneById = TimeZone.getTimeZone("America/Sao_Paulo");
-        LOGGER.debug("timeZoneById:" + timeZoneById);
+        LOGGER.debug("timeZoneById:{}", timeZoneById);
     }
 
     @Test

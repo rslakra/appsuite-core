@@ -40,6 +40,38 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.nio.charset.Charset;
+import java.security.InvalidKeyException;
+import java.security.Key;
+import java.security.KeyFactory;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.KeyStore;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.PublicKey;
+import java.security.SecureRandom;
+import java.security.Security;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.Objects;
+import java.util.Random;
+import java.util.UUID;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -51,26 +83,6 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.nio.charset.Charset;
-import java.security.*;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.X509EncodedKeySpec;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.Objects;
-import java.util.Random;
-import java.util.UUID;
 
 /**
  * This class handles the security.
@@ -141,8 +153,8 @@ public enum GuardUtils {
 
         try {
             TrustManagerFactory
-                    trustManagerFactory =
-                    TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+                trustManagerFactory =
+                TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init((KeyStore) null);
             X509_TRUST_MANAGER = (X509TrustManager) trustManagerFactory.getTrustManagers()[0];
         } catch (Exception ex) {
@@ -442,7 +454,7 @@ public enum GuardUtils {
      * @throws CertificateException
      */
     public static X509Certificate newX509Certificate(InputStream inputStream, boolean closeStream)
-            throws CertificateException {
+        throws CertificateException {
         return newX509Certificate(newCertificateFactory(), inputStream, closeStream);
     }
 
@@ -825,7 +837,7 @@ public enum GuardUtils {
      * @throws Exception
      */
     public static byte[] encryptWithSymmetricKey(final byte[] dataBytes, final byte[] keyBytes, final byte[] ivBytes)
-            throws Exception {
+        throws Exception {
         final StopWatch stopWatch = new StopWatch();
         stopWatch.startTimer();
         byte[] encryptedBytes = null;
@@ -846,7 +858,7 @@ public enum GuardUtils {
         }
         stopWatch.stopTimer();
         LOGGER.debug("encryptWithSymmetricKey() took {} to encrypt: {} bytets", stopWatch.took(),
-                BeanUtils.getLength(encryptedBytes));
+                     BeanUtils.getLength(encryptedBytes));
 
         return encryptedBytes;
     }
@@ -932,7 +944,7 @@ public enum GuardUtils {
      * @throws Exception
      */
     public static byte[] decryptWithSymmetricKey(final byte[] dataBytes, final byte[] keyBytes, final byte[] ivBytes)
-            throws Exception {
+        throws Exception {
         byte[] rawBytes = null;
         final StopWatch stopWatch = new StopWatch();
         stopWatch.startTimer();
@@ -952,7 +964,7 @@ public enum GuardUtils {
         }
 
         LOGGER.debug("decryptWithSymmetricKey() took {} to encrypt: {} bytets", stopWatch.took(),
-                BeanUtils.getLength(rawBytes));
+                     BeanUtils.getLength(rawBytes));
         return rawBytes;
     }
 
@@ -1159,7 +1171,7 @@ public enum GuardUtils {
      * @throws NoSuchAlgorithmException
      */
     public static KeyPair generateKeyPair(String keyPairAlgorithm, String secureRandomAlgorithm)
-            throws NoSuchAlgorithmException {
+        throws NoSuchAlgorithmException {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(keyPairAlgorithm);
         SecureRandom secureRandom = null;
         if (BeanUtils.isEmpty(secureRandomAlgorithm)) {

@@ -38,7 +38,7 @@ Run the program with the following command
 
 ---
 
-* [**Rohtash Lakra**](https://github.com/rslakra)
+* [**Rohtash Lakra**](https://github.com/rslakra/AppSuite.git)
 
 ## Contributors
 

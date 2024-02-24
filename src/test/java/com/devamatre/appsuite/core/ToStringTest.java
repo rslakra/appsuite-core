@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class ToStringTest {
 
     // LOGGER
-    private final Logger LOGGER = LoggerFactory.getLogger(ToStringTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ToStringTest.class);
     private static final String CLASS_NAME = ToStringTest.class.getSimpleName();
     private static final String PACKAGE_NAME = ToStringTest.class.getPackageName();
     private static final String CLASS_NAME_WITH_PACKAGE = ToStringTest.class.getName();
@@ -33,13 +33,11 @@ public class ToStringTest {
 
     @Test
     public void testOfWithDelimiterAndPrefixAndSuffix() {
-        String
-            strObject =
-            ToString.of(ToStringTest.class, ";", "{", "}")
-                .add("firstName", "Rohtash")
-                .add("lastName", "Lakra")
-                .toString();
-        LOGGER.debug(strObject);
+        String strObject = ToString.of(ToStringTest.class, ";", "{", "}")
+            .add("firstName", "Rohtash")
+            .add("lastName", "Lakra")
+            .toString();
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME_WITH_PACKAGE + " {firstName=Rohtash;lastName=Lakra}", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -48,13 +46,11 @@ public class ToStringTest {
 
     @Test
     public void testOfWithExcludePackageWithDelimiterAndPrefixAndSuffix() {
-        String
-            strObject =
-            ToString.of(ToStringTest.class, true, ";", "{", "}")
-                .add("firstName", "Rohtash")
-                .add("lastName", "Lakra")
-                .toString();
-        LOGGER.debug(strObject);
+        String strObject = ToString.of(ToStringTest.class, true, ";", "{", "}")
+            .add("firstName", "Rohtash")
+            .add("lastName", "Lakra")
+            .toString();
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME + " {firstName=Rohtash;lastName=Lakra}", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -63,13 +59,11 @@ public class ToStringTest {
 
     @Test
     public void testOfWithCustomDelimiterAndPrefixAndSuffix() {
-        String
-            strObject =
-            ToString.of(ToStringTest.class, ";", "{", "}")
-                .add("firstName", "Rohtash")
-                .add("lastName", "Lakra")
-                .toString();
-        LOGGER.debug(strObject);
+        String strObject = ToString.of(ToStringTest.class, ";", "{", "}")
+            .add("firstName", "Rohtash")
+            .add("lastName", "Lakra")
+            .toString();
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME_WITH_PACKAGE + " {firstName=Rohtash;lastName=Lakra}", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -78,13 +72,11 @@ public class ToStringTest {
 
     @Test
     public void testOfWithIncludePackage() {
-        String
-            strObject =
-            ToString.of(ToStringTest.class, false, ";")
-                .add("firstName", "Rohtash")
-                .add("lastName", "Lakra")
-                .toString();
-        LOGGER.debug(strObject);
+        String strObject = ToString.of(ToStringTest.class, false, ";")
+            .add("firstName", "Rohtash")
+            .add("lastName", "Lakra")
+            .toString();
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME_WITH_PACKAGE + " <firstName=Rohtash;lastName=Lakra>", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -93,13 +85,11 @@ public class ToStringTest {
 
     @Test
     public void testOfWithExcludePackage() {
-        String
-            strObject =
-            ToString.of(ToStringTest.class, true, ";")
-                .add("firstName", "Rohtash")
-                .add("lastName", "Lakra")
-                .toString();
-        LOGGER.debug(strObject);
+        String strObject = ToString.of(ToStringTest.class, true, ";")
+            .add("firstName", "Rohtash")
+            .add("lastName", "Lakra")
+            .toString();
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME + " <firstName=Rohtash;lastName=Lakra>", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -108,13 +98,11 @@ public class ToStringTest {
 
     @Test
     public void testOfWithPrefixAndSuffix() {
-        String
-            strObject =
-            ToString.of(ToStringTest.class, "[", "]")
-                .add("firstName", "Rohtash")
-                .add("lastName", "Lakra")
-                .toString();
-        LOGGER.debug(strObject);
+        String strObject = ToString.of(ToStringTest.class, "[", "]")
+            .add("firstName", "Rohtash")
+            .add("lastName", "Lakra")
+            .toString();
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME_WITH_PACKAGE + " [firstName=Rohtash, lastName=Lakra]", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -123,13 +111,11 @@ public class ToStringTest {
 
     @Test
     public void testOfWithDelimiter() {
-        String
-            strObject =
-            ToString.of(ToStringTest.class, ":")
-                .add("firstName", "Rohtash")
-                .add("lastName", "Lakra")
-                .toString();
-        LOGGER.debug(strObject);
+        String strObject = ToString.of(ToStringTest.class, ":")
+            .add("firstName", "Rohtash")
+            .add("lastName", "Lakra")
+            .toString();
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME_WITH_PACKAGE + " <firstName=Rohtash:lastName=Lakra>", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -142,7 +128,7 @@ public class ToStringTest {
             .add("firstName", "Rohtash")
             .add("lastName", "Lakra")
             .toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME_WITH_PACKAGE + " <firstName=Rohtash, lastName=Lakra>", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -155,7 +141,7 @@ public class ToStringTest {
             .add("firstName", "Rohtash")
             .add("lastName", "Lakra")
             .toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals("<firstName=Rohtash, lastName=Lakra>", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -168,7 +154,7 @@ public class ToStringTest {
             .add("firstName", "Rohtash")
             .add("lastName", "Lakra")
             .toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals("{firstName=Rohtash,lastName=Lakra}", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -178,7 +164,7 @@ public class ToStringTest {
             .add("firstName", "Rohtash")
             .add("lastName", "Lakra")
             .toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals("firstName=Rohtash&lastName=Lakra", strObject);
         assertTrue(strObject.contains("firstName"));
@@ -189,7 +175,7 @@ public class ToStringTest {
     public void testAdd() {
         // test null value
         String strObject = ToString.of().add(null).toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertTrue(strObject.contains("<null>"));
 
@@ -206,7 +192,7 @@ public class ToStringTest {
         String strObject = ToString.of()
             .add(null, "Rohtash Lakra")
             .toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertTrue(strObject.contains("<Rohtash Lakra>"));
 
@@ -214,7 +200,7 @@ public class ToStringTest {
         strObject = ToString.of()
             .add("name", null)
             .toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertTrue(strObject.contains("<name>"));
 
@@ -223,7 +209,7 @@ public class ToStringTest {
             .add("firstName", "Rohtash")
             .add("lastName", "Lakra")
             .toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertTrue(strObject.contains("firstName="));
         assertTrue(strObject.contains("lastName="));
@@ -232,8 +218,24 @@ public class ToStringTest {
     @Test
     public void testToString() {
         String strObject = new ToStringTest().toString();
-        LOGGER.debug(strObject);
+        LOGGER.debug("strObject:{}", strObject);
         assertNotNull(strObject);
         assertEquals(CLASS_NAME_WITH_PACKAGE + " <>", strObject);
+    }
+
+    @Test
+    public void testToStringTestIncludePackageName() {
+        String strObject = ToString.of(ToStringTest.class, false).toString();
+        LOGGER.debug("strObject:{}", strObject);
+        assertNotNull(strObject);
+        assertEquals(CLASS_NAME_WITH_PACKAGE + " <>", strObject);
+    }
+
+    @Test
+    public void testToStringTestExcludePackageName() {
+        String strObject = ToString.of(ToStringTest.class, true).toString();
+        LOGGER.debug("strObject:{}", strObject);
+        assertNotNull(strObject);
+        assertEquals(CLASS_NAME + " <>", strObject);
     }
 }
