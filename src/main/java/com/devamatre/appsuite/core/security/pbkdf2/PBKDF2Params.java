@@ -3,7 +3,7 @@ package com.devamatre.appsuite.core.security.pbkdf2;
 /**
  * The parameters for the <code>PBKDF2</code> generation.
  *
- * @author Rohtash Lakra (rslakra.work@gmail.com)
+ * @author Rohtash Lakra
  * @version 1.0.0
  * @since 11/21/2016 04:04:53 PM
  */
