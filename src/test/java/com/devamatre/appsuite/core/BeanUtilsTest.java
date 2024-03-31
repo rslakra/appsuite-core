@@ -1,5 +1,48 @@
 package com.devamatre.appsuite.core;
 
+import static com.devamatre.appsuite.core.BeanUtils.asType;
+import static com.devamatre.appsuite.core.BeanUtils.copyProperties;
+import static com.devamatre.appsuite.core.BeanUtils.deepCopyProperties;
+import static com.devamatre.appsuite.core.BeanUtils.findEnumByClass;
+import static com.devamatre.appsuite.core.BeanUtils.findMethodByName;
+import static com.devamatre.appsuite.core.BeanUtils.getAllFields;
+import static com.devamatre.appsuite.core.BeanUtils.getClassPath;
+import static com.devamatre.appsuite.core.BeanUtils.getLength;
+import static com.devamatre.appsuite.core.BeanUtils.hasBlanks;
+import static com.devamatre.appsuite.core.BeanUtils.hasSetter;
+import static com.devamatre.appsuite.core.BeanUtils.isArray;
+import static com.devamatre.appsuite.core.BeanUtils.isAssignable;
+import static com.devamatre.appsuite.core.BeanUtils.isBlank;
+import static com.devamatre.appsuite.core.BeanUtils.isEmpty;
+import static com.devamatre.appsuite.core.BeanUtils.isEnumType;
+import static com.devamatre.appsuite.core.BeanUtils.isKindOf;
+import static com.devamatre.appsuite.core.BeanUtils.isNotBlank;
+import static com.devamatre.appsuite.core.BeanUtils.isNotEmpty;
+import static com.devamatre.appsuite.core.BeanUtils.isNotNull;
+import static com.devamatre.appsuite.core.BeanUtils.isNull;
+import static com.devamatre.appsuite.core.BeanUtils.isPositive;
+import static com.devamatre.appsuite.core.BeanUtils.isPrimitive;
+import static com.devamatre.appsuite.core.BeanUtils.isSameType;
+import static com.devamatre.appsuite.core.BeanUtils.isSimpleType;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOf;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfBigDecimal;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfCharSequence;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfCollection;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfDate;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfList;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfMap;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfSet;
+import static com.devamatre.appsuite.core.BeanUtils.isTypeOfString;
+import static com.devamatre.appsuite.core.BeanUtils.isZero;
+import static com.devamatre.appsuite.core.BeanUtils.nextUuid;
+import static com.devamatre.appsuite.core.BeanUtils.notEquals;
+import static com.devamatre.appsuite.core.BeanUtils.partitionBySize;
+import static com.devamatre.appsuite.core.BeanUtils.pathSegments;
+import static com.devamatre.appsuite.core.BeanUtils.replaceUnderscoresWithDashes;
+import static com.devamatre.appsuite.core.BeanUtils.separateCamelCase;
+import static com.devamatre.appsuite.core.BeanUtils.toBytes;
+import static com.devamatre.appsuite.core.BeanUtils.toSentenceCase;
+import static com.devamatre.appsuite.core.BeanUtils.toTitleCase;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -61,8 +104,8 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsNull() {
-        assertTrue(BeanUtils.isNull(null));
-        assertFalse(BeanUtils.isNull(new Object()));
+        assertTrue(isNull(null));
+        assertFalse(isNull(new Object()));
     }
 
     /**
@@ -70,8 +113,8 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsNotNull() {
-        assertFalse(BeanUtils.isNotNull(null));
-        assertTrue(BeanUtils.isNotNull(new Object()));
+        assertFalse(isNotNull(null));
+        assertTrue(isNotNull(new Object()));
     }
 
     /**
@@ -79,10 +122,10 @@ public class BeanUtilsTest {
      */
     @Test
     public void testHasBlanks() {
-        assertFalse(BeanUtils.hasBlanks(null));
-        assertFalse(BeanUtils.hasBlanks(""));
-        assertTrue(BeanUtils.hasBlanks(" "));
-        assertTrue(BeanUtils.hasBlanks(" rsl"));
+        assertFalse(hasBlanks(null));
+        assertFalse(hasBlanks(""));
+        assertTrue(hasBlanks(" "));
+        assertTrue(hasBlanks(" rsl"));
     }
 
     /**
@@ -90,10 +133,10 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsBlank() {
-        assertTrue(BeanUtils.isBlank(null));
-        assertTrue(BeanUtils.isBlank(""));
-        assertTrue(BeanUtils.isBlank(" "));
-        assertFalse(BeanUtils.isBlank(" rsl"));
+        assertTrue(isBlank(null));
+        assertTrue(isBlank(""));
+        assertTrue(isBlank(" "));
+        assertFalse(isBlank(" rsl"));
     }
 
     /**
@@ -101,10 +144,10 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsNotBlank() {
-        assertFalse(BeanUtils.isNotBlank(null));
-        assertFalse(BeanUtils.isNotBlank(""));
-        assertFalse(BeanUtils.isNotBlank(" "));
-        assertTrue(BeanUtils.isNotBlank(" rsl"));
+        assertFalse(isNotBlank(null));
+        assertFalse(isNotBlank(""));
+        assertFalse(isNotBlank(" "));
+        assertTrue(isNotBlank(" rsl"));
     }
 
     /**
@@ -112,12 +155,12 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsArray() {
-        assertFalse(BeanUtils.isArray(null));
-        assertTrue(BeanUtils.isArray(new String[1]));
-        assertTrue(BeanUtils.isArray(new Integer[]{1, 2}));
-        assertTrue(BeanUtils.isArray(new Class[1]));
-        assertTrue(BeanUtils.isArray(Class[].class));
-        assertFalse(BeanUtils.isArray(String.class));
+        assertFalse(isArray(null));
+        assertTrue(isArray(new String[1]));
+        assertTrue(isArray(new Integer[]{1, 2}));
+        assertTrue(isArray(new Class[1]));
+        assertTrue(isArray(Class[].class));
+        assertFalse(isArray(String.class));
     }
 
     /**
@@ -125,19 +168,19 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOf() {
-        assertFalse(BeanUtils.isTypeOf(null, Object.class));
-        assertFalse(BeanUtils.isTypeOf(null, Class.class));
-        assertFalse(BeanUtils.isTypeOf(null, String.class));
-        assertFalse(BeanUtils.isTypeOf(null, Integer.class));
-        assertFalse(BeanUtils.isTypeOf(null, List.class));
-        assertFalse(BeanUtils.isTypeOf(null, Map.class));
+        assertFalse(isTypeOf(null, Object.class));
+        assertFalse(isTypeOf(null, Class.class));
+        assertFalse(isTypeOf(null, String.class));
+        assertFalse(isTypeOf(null, Integer.class));
+        assertFalse(isTypeOf(null, List.class));
+        assertFalse(isTypeOf(null, Map.class));
 
-        assertTrue(BeanUtils.isTypeOf(new Object(), Object.class));
-        assertTrue(BeanUtils.isTypeOf(new Object().getClass(), Class.class));
-        assertTrue(BeanUtils.isTypeOf(new String(), String.class));
-        assertTrue(BeanUtils.isTypeOf(Integer.valueOf("10"), Integer.class));
-        assertTrue(BeanUtils.isTypeOf(new ArrayList<>(), List.class));
-        assertTrue(BeanUtils.isTypeOf(new HashMap<>(), Map.class));
+        assertTrue(isTypeOf(new Object(), Object.class));
+        assertTrue(isTypeOf(new Object().getClass(), Class.class));
+        assertTrue(isTypeOf(new String(), String.class));
+        assertTrue(isTypeOf(Integer.valueOf("10"), Integer.class));
+        assertTrue(isTypeOf(new ArrayList<>(), List.class));
+        assertTrue(isTypeOf(new HashMap<>(), Map.class));
     }
 
     /**
@@ -145,25 +188,25 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsAssignableFrom() {
-        assertFalse(BeanUtils.isAssignableFrom(null, Object.class));
-        assertFalse(BeanUtils.isAssignableFrom(null, Class.class));
-        assertFalse(BeanUtils.isAssignableFrom(null, String.class));
-        assertFalse(BeanUtils.isAssignableFrom(null, Integer.class));
-        assertFalse(BeanUtils.isAssignableFrom(null, List.class));
-        assertFalse(BeanUtils.isAssignableFrom(null, Map.class));
-        assertFalse(BeanUtils.isAssignableFrom(new Object(), Object.class));
-        assertTrue(BeanUtils.isAssignableFrom(new Object().getClass(), Object.class));
-        assertTrue(BeanUtils.isAssignableFrom(Object.class, Object.class));
-        assertTrue(BeanUtils.isAssignableFrom(Class.class, Class.class));
-        assertTrue(BeanUtils.isAssignableFrom(String.class, CharSequence.class));
-        assertTrue(BeanUtils.isAssignableFrom(Integer.class, Number.class));
-        assertTrue(BeanUtils.isAssignableFrom(ArrayList.class, List.class));
-        assertTrue(BeanUtils.isAssignableFrom(Vector.class, List.class));
-        assertTrue(BeanUtils.isAssignableFrom(AbstractList.class, List.class));
-        assertTrue(BeanUtils.isAssignableFrom(HashMap.class, Map.class));
-        assertTrue(BeanUtils.isAssignableFrom(ConcurrentHashMap.class, Map.class));
-        assertTrue(BeanUtils.isAssignableFrom(Dictionary.class, Dictionary.class));
-        assertTrue(BeanUtils.isAssignableFrom(Hashtable.class, Dictionary.class));
+        assertFalse(isAssignable(null, Object.class));
+        assertFalse(isAssignable(null, Class.class));
+        assertFalse(isAssignable(null, String.class));
+        assertFalse(isAssignable(null, Integer.class));
+        assertFalse(isAssignable(null, List.class));
+        assertFalse(isAssignable(null, Map.class));
+        assertFalse(isAssignable(new Object(), Object.class));
+        assertTrue(isAssignable(new Object().getClass(), Object.class));
+        assertTrue(isAssignable(Object.class, Object.class));
+        assertTrue(isAssignable(Class.class, Class.class));
+        assertTrue(isAssignable(String.class, CharSequence.class));
+        assertTrue(isAssignable(Integer.class, Number.class));
+        assertTrue(isAssignable(ArrayList.class, List.class));
+        assertTrue(isAssignable(Vector.class, List.class));
+        assertTrue(isAssignable(AbstractList.class, List.class));
+        assertTrue(isAssignable(HashMap.class, Map.class));
+        assertTrue(isAssignable(ConcurrentHashMap.class, Map.class));
+        assertTrue(isAssignable(Dictionary.class, Dictionary.class));
+        assertTrue(isAssignable(Hashtable.class, Dictionary.class));
     }
 
     /**
@@ -171,29 +214,29 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsKindOf() {
-        assertFalse(BeanUtils.isKindOf(null, Object.class));
-        assertFalse(BeanUtils.isKindOf(null, Class.class));
-        assertFalse(BeanUtils.isKindOf(null, String.class));
-        assertFalse(BeanUtils.isKindOf(null, Integer.class));
-        assertFalse(BeanUtils.isKindOf(null, List.class));
-        assertFalse(BeanUtils.isKindOf(null, Map.class));
-        assertTrue(BeanUtils.isKindOf(new Object(), Object.class));
-        assertTrue(BeanUtils.isKindOf(new Object().getClass(), Object.class));
-        assertTrue(BeanUtils.isKindOf(Object.class, Object.class));
-        assertTrue(BeanUtils.isKindOf(Class.class, Class.class));
-        assertTrue(BeanUtils.isKindOf(String.class, CharSequence.class));
-        assertTrue(BeanUtils.isKindOf(Integer.class, Number.class));
+        assertFalse(isKindOf(null, Object.class));
+        assertFalse(isKindOf(null, Class.class));
+        assertFalse(isKindOf(null, String.class));
+        assertFalse(isKindOf(null, Integer.class));
+        assertFalse(isKindOf(null, List.class));
+        assertFalse(isKindOf(null, Map.class));
+        assertTrue(isKindOf(new Object(), Object.class));
+        assertTrue(isKindOf(new Object().getClass(), Object.class));
+        assertTrue(isKindOf(Object.class, Object.class));
+        assertTrue(isKindOf(Class.class, Class.class));
+        assertTrue(isKindOf(String.class, CharSequence.class));
+        assertTrue(isKindOf(Integer.class, Number.class));
 
-        assertTrue(BeanUtils.isKindOf(ArrayList.class, List.class));
-        assertTrue(BeanUtils.isKindOf(Vector.class, List.class));
-        assertTrue(BeanUtils.isKindOf(AbstractList.class, List.class));
+        assertTrue(isKindOf(ArrayList.class, List.class));
+        assertTrue(isKindOf(Vector.class, List.class));
+        assertTrue(isKindOf(AbstractList.class, List.class));
 
-        assertTrue(BeanUtils.isKindOf(AbstractMap.class, Map.class));
-        assertTrue(BeanUtils.isKindOf(Hashtable.class, Map.class));
-        assertTrue(BeanUtils.isKindOf(HashMap.class, Map.class));
-        assertTrue(BeanUtils.isKindOf(ConcurrentHashMap.class, Map.class));
-        assertTrue(BeanUtils.isKindOf(Dictionary.class, Dictionary.class));
-        assertTrue(BeanUtils.isKindOf(Hashtable.class, Dictionary.class));
+        assertTrue(isKindOf(AbstractMap.class, Map.class));
+        assertTrue(isKindOf(Hashtable.class, Map.class));
+        assertTrue(isKindOf(HashMap.class, Map.class));
+        assertTrue(isKindOf(ConcurrentHashMap.class, Map.class));
+        assertTrue(isKindOf(Dictionary.class, Dictionary.class));
+        assertTrue(isKindOf(Hashtable.class, Dictionary.class));
     }
 
     /**
@@ -201,13 +244,13 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfMap() {
-        assertFalse(BeanUtils.isTypeOfMap(null));
-        assertFalse(BeanUtils.isTypeOfMap(Dictionary.class));
-        assertTrue(BeanUtils.isTypeOfMap(AbstractMap.class));
-        assertTrue(BeanUtils.isTypeOfMap(Map.class));
-        assertFalse(BeanUtils.isTypeOfMap(new Object()));
-        assertTrue(BeanUtils.isTypeOfMap(new HashMap<>()));
-        assertTrue(BeanUtils.isTypeOfMap(new Hashtable<>()));
+        assertFalse(isTypeOfMap(null));
+        assertFalse(isTypeOfMap(Dictionary.class));
+        assertTrue(isTypeOfMap(AbstractMap.class));
+        assertTrue(isTypeOfMap(Map.class));
+        assertFalse(isTypeOfMap(new Object()));
+        assertTrue(isTypeOfMap(new HashMap<>()));
+        assertTrue(isTypeOfMap(new Hashtable<>()));
     }
 
     /**
@@ -215,12 +258,12 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfList() {
-        assertFalse(BeanUtils.isTypeOfList(null));
-        assertTrue(BeanUtils.isTypeOfList(AbstractList.class));
-        assertTrue(BeanUtils.isTypeOfList(List.class));
-        assertFalse(BeanUtils.isTypeOfList(new Object()));
-        assertTrue(BeanUtils.isTypeOfList(new ArrayList<>()));
-        assertTrue(BeanUtils.isTypeOfList(new Vector<>()));
+        assertFalse(isTypeOfList(null));
+        assertTrue(isTypeOfList(AbstractList.class));
+        assertTrue(isTypeOfList(List.class));
+        assertFalse(isTypeOfList(new Object()));
+        assertTrue(isTypeOfList(new ArrayList<>()));
+        assertTrue(isTypeOfList(new Vector<>()));
     }
 
     /**
@@ -228,11 +271,11 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfSet() {
-        assertFalse(BeanUtils.isTypeOfSet(null));
-        assertTrue(BeanUtils.isTypeOfSet(AbstractSet.class));
-        assertTrue(BeanUtils.isTypeOfSet(Set.class));
-        assertFalse(BeanUtils.isTypeOfSet(new Object()));
-        assertTrue(BeanUtils.isTypeOfSet(new HashSet<>()));
+        assertFalse(isTypeOfSet(null));
+        assertTrue(isTypeOfSet(AbstractSet.class));
+        assertTrue(isTypeOfSet(Set.class));
+        assertFalse(isTypeOfSet(new Object()));
+        assertTrue(isTypeOfSet(new HashSet<>()));
     }
 
     /**
@@ -240,21 +283,21 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfCollection() {
-        assertFalse(BeanUtils.isTypeOfCollection(null));
-        assertFalse(BeanUtils.isTypeOfCollection(new Object()));
+        assertFalse(isTypeOfCollection(null));
+        assertFalse(isTypeOfCollection(new Object()));
 
         // list
-        assertTrue(BeanUtils.isTypeOfCollection(AbstractList.class));
-        assertTrue(BeanUtils.isTypeOfCollection(List.class));
-        assertTrue(BeanUtils.isTypeOfCollection(new ArrayList<>()));
-        assertTrue(BeanUtils.isTypeOfCollection(new Vector<>()));
+        assertTrue(isTypeOfCollection(AbstractList.class));
+        assertTrue(isTypeOfCollection(List.class));
+        assertTrue(isTypeOfCollection(new ArrayList<>()));
+        assertTrue(isTypeOfCollection(new Vector<>()));
         // set
-        assertTrue(BeanUtils.isTypeOfCollection(AbstractSet.class));
-        assertTrue(BeanUtils.isTypeOfCollection(Set.class));
-        assertTrue(BeanUtils.isTypeOfCollection(new HashSet<>()));
+        assertTrue(isTypeOfCollection(AbstractSet.class));
+        assertTrue(isTypeOfCollection(Set.class));
+        assertTrue(isTypeOfCollection(new HashSet<>()));
         //collection
-        assertTrue(BeanUtils.isTypeOfCollection(AbstractCollection.class));
-        assertTrue(BeanUtils.isTypeOfCollection(Collection.class));
+        assertTrue(isTypeOfCollection(AbstractCollection.class));
+        assertTrue(isTypeOfCollection(Collection.class));
     }
 
     /**
@@ -262,14 +305,14 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfCharSequence() {
-        assertFalse(BeanUtils.isTypeOfCharSequence(null));
-        assertFalse(BeanUtils.isTypeOfCharSequence(new Object()));
-        assertTrue(BeanUtils.isTypeOfCharSequence(""));
-        assertTrue(BeanUtils.isTypeOfCharSequence(new String()));
-        assertTrue(BeanUtils.isTypeOfCharSequence(CharSequence.class));
-        assertTrue(BeanUtils.isTypeOfCharSequence(String.class));
-        assertTrue(BeanUtils.isTypeOfCharSequence(new StringBuilder()));
-        assertTrue(BeanUtils.isTypeOfCharSequence(new StringBuffer()));
+        assertFalse(isTypeOfCharSequence(null));
+        assertFalse(isTypeOfCharSequence(new Object()));
+        assertTrue(isTypeOfCharSequence(""));
+        assertTrue(isTypeOfCharSequence(new String()));
+        assertTrue(isTypeOfCharSequence(CharSequence.class));
+        assertTrue(isTypeOfCharSequence(String.class));
+        assertTrue(isTypeOfCharSequence(new StringBuilder()));
+        assertTrue(isTypeOfCharSequence(new StringBuffer()));
     }
 
     /**
@@ -277,13 +320,13 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfString() {
-        assertFalse(BeanUtils.isTypeOfString(null));
-        assertFalse(BeanUtils.isTypeOfString(new Object()));
-        assertTrue(BeanUtils.isTypeOfString(""));
-        assertTrue(BeanUtils.isTypeOfString(new String()));
-        assertTrue(BeanUtils.isTypeOfString(String.class));
-        assertFalse(BeanUtils.isTypeOfString(new StringBuilder()));
-        assertFalse(BeanUtils.isTypeOfString(new StringBuffer()));
+        assertFalse(isTypeOfString(null));
+        assertFalse(isTypeOfString(new Object()));
+        assertTrue(isTypeOfString(""));
+        assertTrue(isTypeOfString(new String()));
+        assertTrue(isTypeOfString(String.class));
+        assertFalse(isTypeOfString(new StringBuilder()));
+        assertFalse(isTypeOfString(new StringBuffer()));
     }
 
     /**
@@ -291,12 +334,12 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfBigDecimal() {
-        assertFalse(BeanUtils.isTypeOfBigDecimal(null));
-        assertFalse(BeanUtils.isTypeOfBigDecimal(new Object()));
-        assertFalse(BeanUtils.isTypeOfBigDecimal(""));
-        assertTrue(BeanUtils.isTypeOfBigDecimal(BigDecimal.ZERO));
-        assertTrue(BeanUtils.isTypeOfBigDecimal(BigDecimal.class));
-        assertFalse(BeanUtils.isTypeOfBigDecimal(new Integer(0)));
+        assertFalse(isTypeOfBigDecimal(null));
+        assertFalse(isTypeOfBigDecimal(new Object()));
+        assertFalse(isTypeOfBigDecimal(""));
+        assertTrue(isTypeOfBigDecimal(BigDecimal.ZERO));
+        assertTrue(isTypeOfBigDecimal(BigDecimal.class));
+        assertFalse(isTypeOfBigDecimal(new Integer(0)));
     }
 
     /**
@@ -304,11 +347,11 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsTypeOfDate() {
-        assertFalse(BeanUtils.isTypeOfDate(null));
-        assertFalse(BeanUtils.isTypeOfDate(new Object()));
-        assertFalse(BeanUtils.isTypeOfDate(""));
-        assertTrue(BeanUtils.isTypeOfDate(new Date()));
-        assertFalse(BeanUtils.isTypeOfDate(new Integer(0)));
+        assertFalse(isTypeOfDate(null));
+        assertFalse(isTypeOfDate(new Object()));
+        assertFalse(isTypeOfDate(""));
+        assertTrue(isTypeOfDate(new Date()));
+        assertFalse(isTypeOfDate(new Integer(0)));
     }
 
     /**
@@ -318,26 +361,27 @@ public class BeanUtilsTest {
     public void testAsType() {
         // compare number
         String text = "1601";
-        assertEquals(new BigDecimal(text), BeanUtils.asType(text, BigDecimal.class));
-        assertEquals(new BigInteger(text), BeanUtils.asType(text, BigInteger.class));
-        assertEquals(Double.valueOf(text), BeanUtils.asType(text, Double.class));
-        assertEquals(Float.valueOf(text), BeanUtils.asType(text, Float.class));
-        assertEquals(Long.valueOf(text), BeanUtils.asType(text, Long.class));
-        assertEquals(Integer.valueOf(text), BeanUtils.asType(text, Integer.class));
+        assertEquals(new BigDecimal(text), asType(text, BigDecimal.class));
+        assertEquals(new BigInteger(text), asType(text, BigInteger.class));
+        assertEquals(Double.valueOf(text), asType(text, Double.class));
+        assertEquals(Float.valueOf(text), asType(text, Float.class));
+        assertEquals(Long.valueOf(text), asType(text, Long.class));
+        assertEquals(Integer.valueOf(text), asType(text, Integer.class));
 
         // compare date
         text = "2023/01/16";
-        assertEquals(new Date(text), BeanUtils.asType(text, Date.class));
+        assertEquals(new Date(text), asType(text, Date.class));
 
         // compare small number
         text = "16";
-        assertEquals(Short.valueOf(text), BeanUtils.asType(text, Short.class));
-        assertEquals(Integer.valueOf(text), BeanUtils.asType(text, Integer.class));
-        assertEquals(Long.valueOf(text), BeanUtils.asType(text, Long.class));
+        assertEquals(Short.valueOf(text), asType(text, Short.class));
+        assertEquals(Integer.valueOf(text), asType(text, Integer.class));
+        assertEquals(Long.valueOf(text), asType(text, Long.class));
 
         // compare boolean
         text = "true";
-        assertEquals(Boolean.valueOf(text), BeanUtils.asType(text, Boolean.class));
+        assertTrue(asType(text, Boolean.class));
+        assertFalse(asType(null, Boolean.class));
     }
 
     /**
@@ -346,36 +390,36 @@ public class BeanUtilsTest {
     @Test
     public void testGetLength() {
         // Object
-        assertEquals(0, BeanUtils.getLength(null));
-        assertEquals(0, BeanUtils.getLength(new Object()));
-        assertEquals(0, BeanUtils.getLength(new BeanUtilsTest()));
+        assertEquals(0, getLength(null));
+        assertEquals(0, getLength(new Object()));
+        assertEquals(0, getLength(new BeanUtilsTest()));
 
         // String
-        assertEquals(0, BeanUtils.getLength(""));
-        assertEquals(1, BeanUtils.getLength(" "));
-        assertEquals(3, BeanUtils.getLength("rsl"));
+        assertEquals(0, getLength(""));
+        assertEquals(1, getLength(" "));
+        assertEquals(3, getLength("rsl"));
 
         // Array
-        assertEquals(0, BeanUtils.getLength(new Class[0]));
-        assertEquals(0, BeanUtils.getLength(new Object[0]));
-        assertEquals(0, BeanUtils.getLength(new String[0]));
-        assertEquals(0, BeanUtils.getLength(new Map[0]));
-        assertEquals(0, BeanUtils.getLength(new List[0]));
-        assertEquals(0, BeanUtils.getLength(new Set[0]));
-        assertEquals(0, BeanUtils.getLength(new Collection[0]));
+        assertEquals(0, getLength(new Class[0]));
+        assertEquals(0, getLength(new Object[0]));
+        assertEquals(0, getLength(new String[0]));
+        assertEquals(0, getLength(new Map[0]));
+        assertEquals(0, getLength(new List[0]));
+        assertEquals(0, getLength(new Set[0]));
+        assertEquals(0, getLength(new Collection[0]));
 
         // class types
-        assertEquals(1, BeanUtils.getLength(new Class[1]));
-        assertEquals(2, BeanUtils.getLength(new Object[2]));
-        assertEquals(1, BeanUtils.getLength(new String[1]));
-        assertEquals(2, BeanUtils.getLength(new String[]{"Rohtash", "Lakra"}));
-        assertEquals(2, BeanUtils.getLength(new Integer[]{1, 2}));
-        assertEquals(2, BeanUtils.getLength(Arrays.asList("Rohtash", "Singh")));
+        assertEquals(1, getLength(new Class[1]));
+        assertEquals(2, getLength(new Object[2]));
+        assertEquals(1, getLength(new String[1]));
+        assertEquals(2, getLength(new String[]{"Rohtash", "Lakra"}));
+        assertEquals(2, getLength(new Integer[]{1, 2}));
+        assertEquals(2, getLength(Arrays.asList("Rohtash", "Singh")));
 
         // primitive types
-        assertEquals(2, BeanUtils.getLength(new byte[]{1, 2}));
-        assertEquals(2, BeanUtils.getLength(new short[]{1, 2}));
-        assertEquals(2, BeanUtils.getLength(new boolean[]{Boolean.TRUE, Boolean.FALSE}));
+        assertEquals(2, getLength(new byte[]{1, 2}));
+        assertEquals(2, getLength(new short[]{1, 2}));
+        assertEquals(2, getLength(new boolean[]{Boolean.TRUE, Boolean.FALSE}));
     }
 
     /**
@@ -383,17 +427,17 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsEmpty() {
-        assertTrue(BeanUtils.isEmpty(null));
-        assertTrue(BeanUtils.isEmpty(""));
-        assertFalse(BeanUtils.isEmpty(" "));
-        assertFalse(BeanUtils.isEmpty(" rsl"));
-        assertFalse(BeanUtils.isEmpty(new Object()));
-        assertTrue(BeanUtils.isEmpty(new Class[0]));
-        assertTrue(BeanUtils.isEmpty(new Object[0]));
-        assertTrue(BeanUtils.isEmpty(new String[0]));
-        assertTrue(BeanUtils.isEmpty(new Map[0]));
-        assertTrue(BeanUtils.isEmpty(new List[0]));
-        assertTrue(BeanUtils.isEmpty(new Set[0]));
+        assertTrue(isEmpty(null));
+        assertTrue(isEmpty(""));
+        assertFalse(isEmpty(" "));
+        assertFalse(isEmpty(" rsl"));
+        assertFalse(isEmpty(new Object()));
+        assertTrue(isEmpty(new Class[0]));
+        assertTrue(isEmpty(new Object[0]));
+        assertTrue(isEmpty(new String[0]));
+        assertTrue(isEmpty(new Map[0]));
+        assertTrue(isEmpty(new List[0]));
+        assertTrue(isEmpty(new Set[0]));
     }
 
     /**
@@ -401,22 +445,22 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsNotEmpty() {
-        assertFalse(BeanUtils.isNotEmpty(null));
-        assertFalse(BeanUtils.isNotEmpty(""));
-        assertTrue(BeanUtils.isNotEmpty(" "));
-        assertTrue(BeanUtils.isNotEmpty(" rsl"));
-        assertTrue(BeanUtils.isNotEmpty(new String("Lakra")));
-        assertTrue(BeanUtils.isNotEmpty(new Object()));
-        assertTrue(BeanUtils.isNotEmpty(new Object(), new String("RS")));
-        assertTrue(BeanUtils.isNotEmpty(new Class[]{BeanUtils.class}));
-        assertTrue(BeanUtils.isNotEmpty(new Class[1], new Class[1]));
-        assertFalse(BeanUtils.isNotEmpty(new Object[1]));
-        assertFalse(BeanUtils.isNotEmpty(new String[1]));
-        assertFalse(BeanUtils.isNotEmpty(new Map[1]));
-        assertFalse(BeanUtils.isNotEmpty(new HashMap<>()));
-        assertFalse(BeanUtils.isNotEmpty(new Hashtable<>()));
-        assertFalse(BeanUtils.isNotEmpty(new List[1]));
-        assertFalse(BeanUtils.isNotEmpty(new Set[1]));
+        assertFalse(isNotEmpty(null));
+        assertFalse(isNotEmpty(""));
+        assertTrue(isNotEmpty(" "));
+        assertTrue(isNotEmpty(" rsl"));
+        assertTrue(isNotEmpty(new String("Lakra")));
+        assertTrue(isNotEmpty(new Object()));
+        assertTrue(isNotEmpty(new Object(), new String("RS")));
+        assertTrue(isNotEmpty(new Class[]{BeanUtils.class}));
+        assertTrue(isNotEmpty(new Class[1], new Class[1]));
+        assertFalse(isNotEmpty(new Object[1]));
+        assertFalse(isNotEmpty(new String[1]));
+        assertFalse(isNotEmpty(new Map[1]));
+        assertFalse(isNotEmpty(new HashMap<>()));
+        assertFalse(isNotEmpty(new Hashtable<>()));
+        assertFalse(isNotEmpty(new List[1]));
+        assertFalse(isNotEmpty(new Set[1]));
     }
 
     /**
@@ -437,39 +481,39 @@ public class BeanUtilsTest {
 
     @Test
     public void testIsPrimitive() {
-        assertTrue(BeanUtils.isPrimitive(Boolean.class));
-        assertTrue(BeanUtils.isPrimitive(Byte.class));
-        assertTrue(BeanUtils.isPrimitive(Character.class));
-        assertTrue(BeanUtils.isPrimitive(Short.class));
-        assertTrue(BeanUtils.isPrimitive(Integer.class));
-        assertTrue(BeanUtils.isPrimitive(Long.class));
-        assertTrue(BeanUtils.isPrimitive(Float.class));
-        assertTrue(BeanUtils.isPrimitive(Double.class));
-        assertTrue(BeanUtils.isPrimitive(Void.class));
-        assertFalse(BeanUtils.isPrimitive(Enum.class));
+        assertTrue(isPrimitive(Boolean.class));
+        assertTrue(isPrimitive(Byte.class));
+        assertTrue(isPrimitive(Character.class));
+        assertTrue(isPrimitive(Short.class));
+        assertTrue(isPrimitive(Integer.class));
+        assertTrue(isPrimitive(Long.class));
+        assertTrue(isPrimitive(Float.class));
+        assertTrue(isPrimitive(Double.class));
+        assertTrue(isPrimitive(Void.class));
+        assertFalse(isPrimitive(Enum.class));
     }
 
     @Test
     public void testIsEnumType() {
-        assertTrue(BeanUtils.isEnumType(BeanUtils.class));
-        assertFalse(BeanUtils.isEnumType(Void.class));
+        assertTrue(isEnumType(BeanUtils.class));
+        assertFalse(isEnumType(Void.class));
     }
 
     @Test
     public void testIsSimpleType() {
-        assertTrue(BeanUtils.isSimpleType(CharSequence.class));
-        assertTrue(BeanUtils.isSimpleType(Number.class));
-        assertTrue(BeanUtils.isSimpleType(Date.class));
-        assertFalse(BeanUtils.isSimpleType(Void.class));
+        assertTrue(isSimpleType(CharSequence.class));
+        assertTrue(isSimpleType(Number.class));
+        assertTrue(isSimpleType(Date.class));
+        assertFalse(isSimpleType(Void.class));
     }
 
     @Test
     public void testIsSameType() {
-        assertTrue(BeanUtils.isSameType(Class.class));
-        assertTrue(BeanUtils.isSameType(Locale.class));
-        assertTrue(BeanUtils.isSameType(URI.class));
-        assertTrue(BeanUtils.isSameType(URL.class));
-        assertFalse(BeanUtils.isSameType(Void.class));
+        assertTrue(isSameType(Class.class));
+        assertTrue(isSameType(Locale.class));
+        assertTrue(isSameType(URI.class));
+        assertTrue(isSameType(URL.class));
+        assertFalse(isSameType(Void.class));
     }
 
     @Test
@@ -498,9 +542,9 @@ public class BeanUtilsTest {
      */
     @Test
     public void testToTitleCase() {
-        assertEquals(BeanUtils.EMPTY_STR, BeanUtils.toTitleCase(null));
-        assertEquals("Rohtash", BeanUtils.toTitleCase("rohtash"));
-        assertEquals("Rohtash Lakra", BeanUtils.toTitleCase("rohtash Lakra"));
+        assertEquals(BeanUtils.EMPTY_STR, toTitleCase(null));
+        assertEquals("Rohtash", toTitleCase("rohtash"));
+        assertEquals("Rohtash Lakra", toTitleCase("rohtash Lakra"));
     }
 
     /**
@@ -508,9 +552,9 @@ public class BeanUtilsTest {
      */
     @Test
     public void testPathSegments() {
-        assertEquals(BeanUtils.EMPTY_STR, BeanUtils.pathSegments(BeanUtils.EMPTY_STR));
-        assertEquals("rohtash", BeanUtils.pathSegments("rohtash"));
-        assertEquals("rohtash/lakra", BeanUtils.pathSegments("rohtash", "lakra"));
+        assertEquals(BeanUtils.EMPTY_STR, pathSegments(BeanUtils.EMPTY_STR));
+        assertEquals("rohtash", pathSegments("rohtash"));
+        assertEquals("rohtash/lakra", pathSegments("rohtash", "lakra"));
     }
 
     /**
@@ -518,7 +562,7 @@ public class BeanUtilsTest {
      */
     @Test
     public void testNextUuid() {
-        String nextUuid = BeanUtils.nextUuid();
+        String nextUuid = nextUuid();
         LOGGER.debug("nextUuid:{}", nextUuid);
         assertNotNull(nextUuid);
     }
@@ -555,26 +599,26 @@ public class BeanUtilsTest {
      */
     @Test
     public void testNotEquals() {
-        assertFalse(BeanUtils.notEquals(null, null));
+        assertFalse(notEquals(null, null));
         Object leftObject = new Object();
         Object rightObject = new Object();
         Object lastObject = rightObject;
-        assertTrue(BeanUtils.notEquals(leftObject, null));
-        assertTrue(BeanUtils.notEquals(null, rightObject));
-        assertTrue(BeanUtils.notEquals(leftObject, rightObject));
-        assertFalse(BeanUtils.notEquals(lastObject, rightObject));
-        assertTrue(BeanUtils.notEquals(lastObject, leftObject));
+        assertTrue(notEquals(leftObject, null));
+        assertTrue(notEquals(null, rightObject));
+        assertTrue(notEquals(leftObject, rightObject));
+        assertFalse(notEquals(lastObject, rightObject));
+        assertTrue(notEquals(lastObject, leftObject));
         String leftString = new String();
         String rightString = new String();
         String lastString = rightString;
-        assertTrue(BeanUtils.notEquals(leftString, null));
-        assertTrue(BeanUtils.notEquals(null, rightString));
-        assertFalse(BeanUtils.notEquals(leftString, rightString));
-        assertFalse(BeanUtils.notEquals(lastString, rightString));
+        assertTrue(notEquals(leftString, null));
+        assertTrue(notEquals(null, rightString));
+        assertFalse(notEquals(leftString, rightString));
+        assertFalse(notEquals(lastString, rightString));
 
-        assertFalse(BeanUtils.notEquals("", ""));
-        assertFalse(BeanUtils.notEquals(Integer.valueOf(10), Integer.valueOf(10)));
-        assertFalse(BeanUtils.notEquals("rohtash", String.valueOf("rohtash")));
+        assertFalse(notEquals("", ""));
+        assertFalse(notEquals(Integer.valueOf(10), Integer.valueOf(10)));
+        assertFalse(notEquals("rohtash", String.valueOf("rohtash")));
     }
 
     /**
@@ -582,7 +626,7 @@ public class BeanUtilsTest {
      */
     @Test
     public void testToBytes() {
-        assertNotNull(BeanUtils.toBytes(TextUtils.NULL));
+        assertNotNull(toBytes(TextUtils.NULL));
     }
 
     /**
@@ -590,10 +634,10 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> classPathWithClassNameData() {
         return Stream.of(
-                Arguments.of(null, false, BeanUtils.EMPTY_STR),
-                Arguments.of(null, true, BeanUtils.EMPTY_STR),
-                Arguments.of(BeanUtilsTest.class, false, BeanUtils.getClassPath(BeanUtilsTest.class)),
-                Arguments.of(BeanUtilsTest.class, true, BeanUtils.getClassPath(BeanUtilsTest.class, true))
+            Arguments.of(null, false, BeanUtils.EMPTY_STR),
+            Arguments.of(null, true, BeanUtils.EMPTY_STR),
+            Arguments.of(BeanUtilsTest.class, false, getClassPath(BeanUtilsTest.class)),
+            Arguments.of(BeanUtilsTest.class, true, getClassPath(BeanUtilsTest.class, true))
         );
     }
 
@@ -606,7 +650,7 @@ public class BeanUtilsTest {
     @ParameterizedTest
     @MethodSource("classPathWithClassNameData")
     public <T> void testGetClassPathWithClassName(Class<T> classType, boolean withClassName, String expectedPath) {
-        String classPath = BeanUtils.getClassPath(classType, withClassName);
+        String classPath = getClassPath(classType, withClassName);
         assertEquals(expectedPath, classPath);
     }
 
@@ -615,23 +659,23 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> classPathWithClassNameAndPathsData() {
         return Stream.of(
-                Arguments.of(null, false, null, BeanUtils.EMPTY_STR),
-                Arguments.of(null, false, new String[]{}, BeanUtils.EMPTY_STR),
-                Arguments.of(null, false, new String[]{"data"}, "data"),
+            Arguments.of(null, false, null, BeanUtils.EMPTY_STR),
+            Arguments.of(null, false, new String[]{}, BeanUtils.EMPTY_STR),
+            Arguments.of(null, false, new String[]{"data"}, "data"),
 
-                Arguments.of(null, true, null, BeanUtils.EMPTY_STR),
-                Arguments.of(null, true, new String[]{}, BeanUtils.EMPTY_STR),
-                Arguments.of(null, true, new String[]{"data"}, "data"),
+            Arguments.of(null, true, null, BeanUtils.EMPTY_STR),
+            Arguments.of(null, true, new String[]{}, BeanUtils.EMPTY_STR),
+            Arguments.of(null, true, new String[]{"data"}, "data"),
 
-                Arguments.of(BeanUtilsTest.class, false, null, BeanUtils.getClassPath(BeanUtilsTest.class)),
-                Arguments.of(BeanUtilsTest.class, false, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class)),
-                Arguments.of(BeanUtilsTest.class, false, new String[]{"data"},
-                        BeanUtils.getClassPath(BeanUtilsTest.class) + "/data"),
+            Arguments.of(BeanUtilsTest.class, false, null, getClassPath(BeanUtilsTest.class)),
+            Arguments.of(BeanUtilsTest.class, false, new String[]{}, getClassPath(BeanUtilsTest.class)),
+            Arguments.of(BeanUtilsTest.class, false, new String[]{"data"},
+                         getClassPath(BeanUtilsTest.class) + "/data"),
 
-                Arguments.of(BeanUtilsTest.class, true, null, BeanUtils.getClassPath(BeanUtilsTest.class, true)),
-                Arguments.of(BeanUtilsTest.class, true, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class, true)),
-                Arguments.of(BeanUtilsTest.class, true, new String[]{"data"},
-                        BeanUtils.getClassPath(BeanUtilsTest.class, true) + "/data")
+            Arguments.of(BeanUtilsTest.class, true, null, getClassPath(BeanUtilsTest.class, true)),
+            Arguments.of(BeanUtilsTest.class, true, new String[]{}, getClassPath(BeanUtilsTest.class, true)),
+            Arguments.of(BeanUtilsTest.class, true, new String[]{"data"},
+                         getClassPath(BeanUtilsTest.class, true) + "/data")
         );
     }
 
@@ -646,7 +690,7 @@ public class BeanUtilsTest {
     @MethodSource("classPathWithClassNameAndPathsData")
     public <T> void testGetClassPathWithClassNameAndPaths(Class<T> classType, boolean withClassName,
                                                           String[] pathComponents, String expectedPath) {
-        String classPath = BeanUtils.getClassPath(classType, withClassName, pathComponents);
+        String classPath = getClassPath(classType, withClassName, pathComponents);
         assertEquals(expectedPath, classPath);
     }
 
@@ -655,16 +699,16 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> classPathWithPathComponentsData() {
         return Stream.of(
-                Arguments.of(null, (String[]) null, BeanUtils.EMPTY_STR),
-                Arguments.of(null, new String[]{}, BeanUtils.EMPTY_STR),
-                Arguments.of(null, new String[]{"data"}, "data"),
+            Arguments.of(null, (String[]) null, BeanUtils.EMPTY_STR),
+            Arguments.of(null, new String[]{}, BeanUtils.EMPTY_STR),
+            Arguments.of(null, new String[]{"data"}, "data"),
 
-                Arguments.of(BeanUtilsTest.class, null, BeanUtils.getClassPath(BeanUtilsTest.class)),
-                Arguments.of(BeanUtilsTest.class, new String[]{}, BeanUtils.getClassPath(BeanUtilsTest.class)),
-                Arguments.of(BeanUtilsTest.class, new String[]{"data"},
-                        BeanUtils.getClassPath(BeanUtilsTest.class) + "/data"),
-                Arguments.of(BeanUtilsTest.class, new String[]{"first", "last"},
-                        BeanUtils.getClassPath(BeanUtilsTest.class) + "/first/last")
+            Arguments.of(BeanUtilsTest.class, null, getClassPath(BeanUtilsTest.class)),
+            Arguments.of(BeanUtilsTest.class, new String[]{}, getClassPath(BeanUtilsTest.class)),
+            Arguments.of(BeanUtilsTest.class, new String[]{"data"},
+                         getClassPath(BeanUtilsTest.class) + "/data"),
+            Arguments.of(BeanUtilsTest.class, new String[]{"first", "last"},
+                         getClassPath(BeanUtilsTest.class) + "/first/last")
         );
     }
 
@@ -678,7 +722,7 @@ public class BeanUtilsTest {
     @MethodSource("classPathWithPathComponentsData")
     public <T> void testGetClassPathWithPathComponents(Class<T> classType, String[] pathComponents,
                                                        String expectedPath) {
-        String classPath = BeanUtils.getClassPath(classType, pathComponents);
+        String classPath = getClassPath(classType, pathComponents);
         assertEquals(expectedPath, classPath);
     }
 
@@ -687,18 +731,18 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> partitionListBySizeData() {
         return Stream.of(
-                Arguments.of(null, 4, 0),
-                Arguments.of(Arrays.asList(), 4, 0),
-                Arguments.of(Arrays.asList(1, 2, 3), 3, 1),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
-                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
+            Arguments.of(null, 4, 0),
+            Arguments.of(Arrays.asList(), 4, 0),
+            Arguments.of(Arrays.asList(1, 2, 3), 3, 1),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
+            Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
         );
     }
 
@@ -710,7 +754,7 @@ public class BeanUtilsTest {
     @ParameterizedTest
     @MethodSource("partitionListBySizeData")
     public void testPartitionListBySizeData(List<Integer> listIntegers, int partitionSize, int expectedPartitionSize) {
-        List<List<Integer>> partitionList = BeanUtils.partitionBySize(listIntegers, partitionSize);
+        List<List<Integer>> partitionList = partitionBySize(listIntegers, partitionSize);
         LOGGER.debug("partitionList size:{}, elements:{}", partitionList.size(), partitionList);
         assertNotNull(partitionList);
         assertEquals(partitionList.size(), expectedPartitionSize);
@@ -726,18 +770,18 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> partitionSetBySizeData() {
         return Stream.of(
-                Arguments.of(null, 4, 0),
-                Arguments.of(Sets.asSet(), 4, 0),
-                Arguments.of(Sets.asSet(1, 2, 3), 3, 1),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
-                Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
+            Arguments.of(null, 4, 0),
+            Arguments.of(Sets.asSet(), 4, 0),
+            Arguments.of(Sets.asSet(1, 2, 3), 3, 1),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 0, 0),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 1, 9),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 2, 5),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 3, 3),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 4, 3),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 2),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 6, 2),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 9, 1),
+            Arguments.of(Sets.asSet(1, 2, 3, 4, 5, 6, 7, 8, 9), 10, 1)
         );
     }
 
@@ -749,7 +793,7 @@ public class BeanUtilsTest {
     @ParameterizedTest
     @MethodSource("partitionSetBySizeData")
     public void testPartitionSetBySize(Set<Integer> setInts, int partitionSize, int expectedPartitionSize) {
-        Set<Set<Integer>> partitionSet = BeanUtils.partitionBySize(setInts, partitionSize);
+        Set<Set<Integer>> partitionSet = partitionBySize(setInts, partitionSize);
         LOGGER.debug("partitionSet size:{}, elements:{}", partitionSet.size(), partitionSet);
         assertNotNull(partitionSet);
         assertEquals(partitionSet.size(), expectedPartitionSize);
@@ -763,12 +807,12 @@ public class BeanUtilsTest {
      */
     @Test
     public void testFindEnumByClass() {
-        assertNotNull(BeanUtils.findEnumByClass(EntityStatus.class, "active"));
-        assertNotNull(BeanUtils.findEnumByClass(EntityStatus.class, "inactive"));
-        assertNotNull(BeanUtils.findEnumByClass(EntityStatus.class, "deleted"));
-        assertNull(BeanUtils.findEnumByClass(EntityStatus.class, "fake"));
-        assertNotNull(BeanUtils.findEnumByClass(RoleType.class, "admin"));
-        assertNotNull(BeanUtils.findEnumByClass(RoleType.class, "user"));
+        assertNotNull(findEnumByClass(EntityStatus.class, "active"));
+        assertNotNull(findEnumByClass(EntityStatus.class, "inactive"));
+        assertNotNull(findEnumByClass(EntityStatus.class, "deleted"));
+        assertNull(findEnumByClass(EntityStatus.class, "fake"));
+        assertNotNull(findEnumByClass(RoleType.class, "admin"));
+        assertNotNull(findEnumByClass(RoleType.class, "user"));
     }
 
     /**
@@ -776,9 +820,9 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsZero() {
-        assertEquals(true, BeanUtils.isZero(BigDecimal.ZERO));
-        assertEquals(false, BeanUtils.isZero(BigDecimal.TEN));
-        assertEquals(false, BeanUtils.isZero(BigDecimal.TEN.negate()));
+        assertEquals(true, isZero(BigDecimal.ZERO));
+        assertEquals(false, isZero(BigDecimal.TEN));
+        assertEquals(false, isZero(BigDecimal.TEN.negate()));
     }
 
     /**
@@ -786,9 +830,9 @@ public class BeanUtilsTest {
      */
     @Test
     public void testIsPositive() {
-        assertEquals(true, BeanUtils.isPositive(BigDecimal.TEN));
-        assertEquals(false, BeanUtils.isPositive(BigDecimal.TEN.negate()));
-        assertEquals(false, BeanUtils.isPositive(BigDecimal.ZERO));
+        assertEquals(true, isPositive(BigDecimal.TEN));
+        assertEquals(false, isPositive(BigDecimal.TEN.negate()));
+        assertEquals(false, isPositive(BigDecimal.ZERO));
     }
 
     /**
@@ -800,12 +844,12 @@ public class BeanUtilsTest {
         assertNotNull(beanUtils);
         Method[] methods = beanUtils.getClass().getMethods();
         assertNotNull(methods);
-// Method methodGetter = beanUtils.getClass().getMethod("isClassPropertyDescriptor");
-// assertNotNull(methodGetter);
-// assertTrue(BeanUtils.isGetter(methodGetter));
-// assertEquals("isClassPropertyDescriptor", methodGetter.getName());
-// Method methodIsActive = beanUtils.getClass().getMethod("isActive");
-// assertTrue(BeanUtils.isGetter(methodIsActive));
+        // Method methodGetter = beanUtils.getClass().getMethod("isClassPropertyDescriptor");
+        // assertNotNull(methodGetter);
+        // assertTrue(BeanUtils.isGetter(methodGetter));
+        // assertEquals("isClassPropertyDescriptor", methodGetter.getName());
+        // Method methodIsActive = beanUtils.getClass().getMethod("isActive");
+        // assertTrue(BeanUtils.isGetter(methodIsActive));
     }
 
     /**
@@ -818,27 +862,27 @@ public class BeanUtilsTest {
         Method[] methods = beanUtils.getClass().getMethods();
         assertNotNull(methods);
         Method
-                methodSetter =
-                beanUtils.getClass().getMethod("setBeanProperty", PropertyDescriptor.class, Object.class, Object.class);
+            methodSetter =
+            beanUtils.getClass().getMethod("setBeanProperty", PropertyDescriptor.class, Object.class, Object.class);
         assertNotNull(methodSetter);
-// assertTrue(BeanUtils.isSetter(methodSetter));
-// assertEquals("setBeanProperty", methodSetter.getName());
-// Method methodSetActive = beanUtils.getClass().getMethod("setActive", boolean.class);
-// assertTrue(BeanUtils.isSetter(methodSetActive));
+        // assertTrue(BeanUtils.isSetter(methodSetter));
+        // assertEquals("setBeanProperty", methodSetter.getName());
+        // Method methodSetActive = beanUtils.getClass().getMethod("setActive", boolean.class);
+        // assertTrue(BeanUtils.isSetter(methodSetActive));
     }
 
     //------------
 
     @Test
     public void testFindMethodByName() {
-        Method getByMethodName = BeanUtils.findMethodByName(BeanUtils.class, "isCopyOnlyNonNullValues");
+        Method getByMethodName = findMethodByName(BeanUtils.class, "isCopyOnlyNonNullValues");
         assertNotNull(getByMethodName);
         assertEquals("isCopyOnlyNonNullValues", getByMethodName.getName());
     }
 
     @Test
     public void testHasSetter() {
-        assertEquals(true, BeanUtils.hasSetter(BeanUtils.class, "setCopyOnlyNonNullValues", boolean.class));
+        assertEquals(true, hasSetter(BeanUtils.class, "setCopyOnlyNonNullValues", boolean.class));
     }
 
     @Test
@@ -853,7 +897,7 @@ public class BeanUtilsTest {
 
     @Test
     public void testEnsurePublic() {
-        Method getByMethodName = BeanUtils.findMethodByName(BeanUtils.class, "isCopyOnlyNonNullValues");
+        Method getByMethodName = findMethodByName(BeanUtils.class, "isCopyOnlyNonNullValues");
         assertNotNull(getByMethodName);
         BeanUtils.INSTANCE.ensurePublic(getByMethodName);
     }
@@ -861,8 +905,8 @@ public class BeanUtilsTest {
     @Test
     public void testFindByPropertyName() {
         PropertyDescriptor
-                propertyDescriptor =
-                BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
+            propertyDescriptor =
+            BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
         assertNotNull(propertyDescriptor);
         assertEquals("copyOnlyNonNullValues", propertyDescriptor.getName());
     }
@@ -876,7 +920,7 @@ public class BeanUtilsTest {
 
     @Test
     public void testGetAllFields() {
-        List<Field> allFields = BeanUtils.getAllFields(BeanUtils.class);
+        List<Field> allFields = getAllFields(BeanUtils.class);
         assertNotNull(allFields);
         assertEquals(22, allFields.size());
     }
@@ -884,8 +928,8 @@ public class BeanUtilsTest {
     @Test
     public void testReadObjectProperty() {
         PropertyDescriptor
-                propertyDescriptor =
-                BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
+            propertyDescriptor =
+            BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
         assertNotNull(propertyDescriptor);
         assertEquals("copyOnlyNonNullValues", propertyDescriptor.getName());
         BeanUtils beanUtils = BeanUtils.INSTANCE;
@@ -896,8 +940,8 @@ public class BeanUtilsTest {
     @Test
     public void testSetBeanProperty() {
         PropertyDescriptor
-                copyOnlyNonNullValues =
-                BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
+            copyOnlyNonNullValues =
+            BeanUtils.INSTANCE.findByPropertyName(BeanUtils.class, "copyOnlyNonNullValues");
         assertNotNull(copyOnlyNonNullValues);
         assertEquals("copyOnlyNonNullValues", copyOnlyNonNullValues.getName());
         BeanUtils.INSTANCE.setBeanProperty(copyOnlyNonNullValues, BeanUtils.INSTANCE, true);
@@ -949,7 +993,7 @@ public class BeanUtilsTest {
         LOGGER.debug("sourceInstance: {}", sourceInstance);
 
         Instance targetInstance = new Instance();
-        BeanUtils.copyProperties(sourceInstance, targetInstance);
+        copyProperties(sourceInstance, targetInstance);
         LOGGER.debug("targetInstance: {}", targetInstance);
         assertNotNull(targetInstance);
         assertEquals(sourceInstance.getFamily(), targetInstance.getFamily());
@@ -991,7 +1035,7 @@ public class BeanUtilsTest {
         LOGGER.debug("sourceInstance: {}", sourceInstance);
 
         TestBean targetInstance = new TestBean();
-        BeanUtils.deepCopyProperties(sourceInstance, targetInstance);
+        deepCopyProperties(sourceInstance, targetInstance);
         LOGGER.debug("targetInstance: {}", targetInstance);
         assertNotNull(targetInstance);
         assertEquals(sourceInstance.getName(), targetInstance.getName());
@@ -1007,13 +1051,13 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> separateCamelCaseData() {
         return Stream.of(
-                Arguments.of(null, ",", null),
-                Arguments.of("FirstName", null, "FirstName"),
-                Arguments.of("FirstName", "-", "First-Name"),
-                Arguments.of("FirstName", ":", "First:Name"),
-                Arguments.of("FirstName", "#", "First#Name"),
-                Arguments.of("FirstName", "$", "First$Name"),
-                Arguments.of("FirstName", ";", "First;Name")
+            Arguments.of(null, ",", null),
+            Arguments.of("FirstName", null, "FirstName"),
+            Arguments.of("FirstName", "-", "First-Name"),
+            Arguments.of("FirstName", ":", "First:Name"),
+            Arguments.of("FirstName", "#", "First#Name"),
+            Arguments.of("FirstName", "$", "First$Name"),
+            Arguments.of("FirstName", ";", "First;Name")
         );
     }
 
@@ -1026,7 +1070,7 @@ public class BeanUtilsTest {
     @MethodSource("separateCamelCaseData")
     public void testSeparateCamelCase(final CharSequence charSequence, final String separator, CharSequence expected) {
         LOGGER.info("+testSeparateCamelCase({}, {}, {})", charSequence, separator, expected);
-        String separatedCamelCase = BeanUtils.separateCamelCase(charSequence, separator);
+        String separatedCamelCase = separateCamelCase(charSequence, separator);
         LOGGER.info("separatedCamelCase: {}", separatedCamelCase);
         assertEquals(expected, separatedCamelCase);
         LOGGER.info("-testSeparateCamelCase()");
@@ -1039,15 +1083,15 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> sentenceCaseData() {
         return Stream.of(
-                Arguments.of(null, null),
-                Arguments.of("FirstName", "FirstName"),
-                Arguments.of("lastName", "LastName"),
-                Arguments.of("Lakra", "Lakra"),
-                Arguments.of("lakra", "Lakra"),
-                Arguments.of("LAKRA", "LAKRA"),
-                Arguments.of("lAKRA", "LAKRA"),
-                Arguments.of("LakRA", "LakRA"),
-                Arguments.of("16 $ firstName", "16 $ FirstName")
+            Arguments.of(null, null),
+            Arguments.of("FirstName", "FirstName"),
+            Arguments.of("lastName", "LastName"),
+            Arguments.of("Lakra", "Lakra"),
+            Arguments.of("lakra", "Lakra"),
+            Arguments.of("LAKRA", "LAKRA"),
+            Arguments.of("lAKRA", "LAKRA"),
+            Arguments.of("LakRA", "LakRA"),
+            Arguments.of("16 $ firstName", "16 $ FirstName")
         );
     }
 
@@ -1059,7 +1103,7 @@ public class BeanUtilsTest {
     @MethodSource("sentenceCaseData")
     public void testToSentenceCase(CharSequence text, CharSequence expected) {
         LOGGER.info("+testToSentenceCase({}, {}, {})", text, expected);
-        String sentenceCase = BeanUtils.toSentenceCase(text);
+        String sentenceCase = toSentenceCase(text);
         LOGGER.info("sentenceCase: {}", sentenceCase);
         assertEquals(expected, sentenceCase);
         LOGGER.info("-testToSentenceCase()");
@@ -1072,10 +1116,10 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> toStringWithThrowableData() {
         return Stream.of(
-                Arguments.of(null, BeanUtils.EMPTY_STR),
-                Arguments.of(new NullPointerException(), "java.lang.NullPointerException"),
-                Arguments.of(new RuntimeException(), "java.lang.RuntimeException"),
-                Arguments.of(new NumberFormatException(), "java.lang.NumberFormatException")
+            Arguments.of(null, BeanUtils.EMPTY_STR),
+            Arguments.of(new NullPointerException(), "java.lang.NullPointerException"),
+            Arguments.of(new RuntimeException(), "java.lang.RuntimeException"),
+            Arguments.of(new NumberFormatException(), "java.lang.NumberFormatException")
         );
     }
 
@@ -1132,25 +1176,24 @@ public class BeanUtilsTest {
         assertEquals("[Rohtash, Lakra]", str);
     }
 
-//    @Test
-//    public void testCopyProperties() {
-// Payload payload = Payload.builder()
-//            .of("firstName", "Rohtash")
-//            .of("lastName", "Lakra");
-// LOGGER.debug("payload:{}", payload);
-// Payload tempPayload = Payload.builder();
-// BeanUtils.copyProperties(payload, tempPayload);
-// LOGGER.debug("tempPayload:{}", tempPayload);
-// assertNotNull(tempPayload);
-//
-// Payload copyPayload = Payload.builder();
-// BeanUtils.copyProperties(tempPayload, copyPayload);
-// LOGGER.debug("copyPayload:{}", copyPayload);
-// assertNotNull(copyPayload);
-// assertEquals(payload, copyPayload);
-//    }
-//
-//
+    //    @Test
+    //    public void testCopyProperties() {
+    // Payload payload = Payload.builder()
+    //            .of("firstName", "Rohtash")
+    //            .of("lastName", "Lakra");
+    // LOGGER.debug("payload:{}", payload);
+    // Payload tempPayload = Payload.builder();
+    // BeanUtils.copyProperties(payload, tempPayload);
+    // LOGGER.debug("tempPayload:{}", tempPayload);
+    // assertNotNull(tempPayload);
+    //
+    // Payload copyPayload = Payload.builder();
+    // BeanUtils.copyProperties(tempPayload, copyPayload);
+    // LOGGER.debug("copyPayload:{}", copyPayload);
+    // assertNotNull(copyPayload);
+    // assertEquals(payload, copyPayload);
+    //    }
+
 //    @Test
 //    public void testDeepCopyProperties() {
 // Payload phones = Payload.builder()
@@ -1181,10 +1224,10 @@ public class BeanUtilsTest {
      */
     private static Stream<Arguments> replaceUnderscoresWithDashesData() {
         return Stream.of(
-                Arguments.of(null, null),
-                Arguments.of("Rohtash_Lakra", "Rohtash-Lakra"),
-                Arguments.of("Rohtash_Singh_Lakra", "Rohtash-Singh-Lakra"),
-                Arguments.of("Rohtash_16_Lakra", "Rohtash-16-Lakra")
+            Arguments.of(null, null),
+            Arguments.of("Rohtash_Lakra", "Rohtash-Lakra"),
+            Arguments.of("Rohtash_Singh_Lakra", "Rohtash-Singh-Lakra"),
+            Arguments.of("Rohtash_16_Lakra", "Rohtash-16-Lakra")
         );
     }
 
@@ -1195,7 +1238,7 @@ public class BeanUtilsTest {
     @ParameterizedTest
     @MethodSource("replaceUnderscoresWithDashesData")
     public void testReplaceUnderscoresWithDashes(String input, String expected) {
-        String result = BeanUtils.replaceUnderscoresWithDashes(input);
+        String result = replaceUnderscoresWithDashes(input);
         LOGGER.debug("input: {}, result: {}, expected: {}", input, result, expected);
         assertEquals(expected, result);
     }

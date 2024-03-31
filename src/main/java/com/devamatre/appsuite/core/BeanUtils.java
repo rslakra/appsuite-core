@@ -249,15 +249,15 @@ public enum BeanUtils {
     }
 
     /**
-     * Returns true if the provided Object is assignment-compatible with the object represented by the
-     * <code>Class<T></code> otherwise false.
+     * Returns true if the provided <code>object</code> is an instance of the provided <code>classType<T></code>
+     * otherwise false.
      *
      * @param object
      * @param classType
      * @param <T>
      * @return
      */
-    public static <T> boolean isTypeOf(final Object object, final Class<T> classType) {
+    public static <T> boolean isTypeOf(Object object, Class<T> classType) {
         return (isNotNull(classType) && classType.isInstance(object));
     }
 
@@ -273,7 +273,7 @@ public enum BeanUtils {
      * @param <T>
      * @return
      */
-    public static <T> boolean isAssignableFrom(final Object classObject, final Class<T> classType) {
+    public static <T> boolean isAssignable(Object classObject, Class<T> classType) {
         return (isTypeOf(classObject, Class.class) && classType.isAssignableFrom((Class<?>) classObject));
     }
 
@@ -286,8 +286,8 @@ public enum BeanUtils {
      * @param <T>
      * @return
      */
-    public static <T> boolean isKindOf(final Object object, final Class<T> classType) {
-        return (isTypeOf(object, classType) || isAssignableFrom(object, classType));
+    public static <T> boolean isKindOf(Object object, Class<T> classType) {
+        return (isTypeOf(object, classType) || isAssignable(object, classType));
     }
 
     /**
@@ -331,6 +331,8 @@ public enum BeanUtils {
     }
 
     /**
+     * Returns true if the <code>object</code> is a type of <code>Iterable</code> otherwise false.
+     *
      * @param object
      * @return
      */
@@ -339,6 +341,8 @@ public enum BeanUtils {
     }
 
     /**
+     * Returns true if the <code>object</code> is a type of <code>Iterator</code> otherwise false.
+     *
      * @param object
      * @return
      */
@@ -347,6 +351,8 @@ public enum BeanUtils {
     }
 
     /**
+     * Returns true if the <code>object</code> is a type of <code>Enumeration</code> otherwise false.
+     *
      * @param object
      * @return
      */
@@ -395,6 +401,8 @@ public enum BeanUtils {
     }
 
     /**
+     * Returns true if the <code>object</code> is a type of <code>Throwable</code> otherwise false.
+     *
      * @param object
      * @return
      */
@@ -403,52 +411,58 @@ public enum BeanUtils {
     }
 
     /**
-     * Returns the value as type of <code>Class<T></code> type.
+     * Converts the provided <code>object</code> into <code>classType</code> object.
      *
-     * @param text
+     * @param object
      * @param classType
      * @param <T>
      * @return
      */
-    public static <T> T asType(String text, Class<T> classType) {
-        if (isNotNull(text) && isNotNull(classType)) {
-            if (isAssignableFrom(classType, BigDecimal.class)) {
-                return (T) new BigDecimal(text);
-            } else if (isAssignableFrom(classType, BigInteger.class)) {
-                return (T) new BigInteger(text);
-            } else if (isAssignableFrom(classType, Double.class)) {
-                return (T) Double.valueOf(text);
-            } else if (isAssignableFrom(classType, Float.class)) {
-                return (T) Float.valueOf(text);
-            } else if (isAssignableFrom(classType, Long.class)) {
-                return (T) Long.valueOf(text);
-            } else if (isAssignableFrom(classType, Integer.class)) {
-                return (T) Integer.valueOf(text);
-            } else if (isAssignableFrom(classType, Short.class)) {
-                return (T) Short.valueOf(text);
-            } else if (isAssignableFrom(classType, Byte.class)) {
-                return (T) Byte.valueOf(text);
-            } else if (isAssignableFrom(classType, Date.class)) {
-                return (T) new Date(text);
-            } else if (isAssignableFrom(classType, Boolean.class)) {
-                return (T) Boolean.valueOf(text);
+    public static <T> T asType(Object object, Class<T> classType) {
+        if (isNotNull(object) && isNotNull(classType)) {
+            if (isAssignable(classType, BigDecimal.class)) {
+                return (T) new BigDecimal(Objects.toString(object));
+            } else if (isAssignable(classType, BigInteger.class)) {
+                return (T) new BigInteger(Objects.toString(object));
+            } else if (isAssignable(classType, Double.class)) {
+                return (T) Double.valueOf(Objects.toString(object));
+            } else if (isAssignable(classType, Float.class)) {
+                return (T) Float.valueOf(Objects.toString(object));
+            } else if (isAssignable(classType, Long.class)) {
+                return (T) Long.valueOf(Objects.toString(object));
+            } else if (isAssignable(classType, Integer.class)) {
+                return (T) Integer.valueOf(Objects.toString(object));
+            } else if (isAssignable(classType, Short.class)) {
+                return (T) Short.valueOf(Objects.toString(object));
+            } else if (isAssignable(classType, Byte.class)) {
+                return (T) Byte.valueOf(Objects.toString(object));
+            } else if (isAssignable(classType, Date.class)) {
+                return (T) new Date(Objects.toString(object));
+            } else if (isAssignable(classType, Boolean.class)) {
+                return (T) Boolean.valueOf(Objects.toString(object));
             } else {
                 try {
-                    return (T) text;
+                    return (T) object;
                 } catch (ClassCastException ex) {
                     LOGGER.error(ex.getMessage());
                 }
             }
+        } else if (isNotNull(classType)) {
+            if (isAssignable(classType, Boolean.class)) {
+                return (T) Boolean.valueOf(Objects.toString(object));
+            }
         }
 
-        return (T) null;
+        return null;
     }
 
     /**
+     * Converts the <code>charSequence</code> into masked object.
+     *
      * @param charSequence
      * @return
      */
-    public static CharSequence maskObjects(final CharSequence charSequence) {
+    public static CharSequence maskObject(CharSequence charSequence) {
         return charSequence;
     }
 
@@ -818,6 +832,8 @@ public enum BeanUtils {
     }
 
     /**
+     * Partition the provided <code>inputValues</code> by the size of <code>partitionSize</code>.
+     *
      * @param inputValues
      * @param partitionSize
      * @param <T>
@@ -837,6 +853,8 @@ public enum BeanUtils {
     }
 
     /**
+     * Partition the provided <code>inputValues</code> by the size of <code>partitionSize</code>.
+     *
      * @param inputValues
      * @param partitionSize
      * @param <T>
@@ -849,22 +867,28 @@ public enum BeanUtils {
             return Collections.singleton(inputValues);
         } else {
             final AtomicInteger counter = new AtomicInteger(0);
-            final Collection<Set<T>> partitions = inputValues.stream()
-                .collect(Collectors.groupingBy(item -> counter.getAndIncrement() / partitionSize, Collectors.toSet()))
-                .values();
+            final Collection<Set<T>>
+                partitions =
+                inputValues.stream().collect(
+                        Collectors.groupingBy(item -> counter.getAndIncrement() / partitionSize, Collectors.toSet()))
+                    .values();
             return new HashSet<>(partitions);
         }
     }
 
     /**
-     * @param typeClass
-     * @param name
+     * Returns the enum type of the provided <code>nameOfEnum</code>.
+     *
+     * @param classType
+     * @param nameOfEnum
      * @param <T>
      * @return
      */
-    public static <T> T findEnumByClass(final Class<T> typeClass, final String name) {
-        return Arrays.stream(typeClass.getEnumConstants())
-            .filter(e -> ((Enum<?>) e).name().equalsIgnoreCase(name)).findAny().orElse(null);
+    public static <T> T findEnumByClass(final Class<T> classType, final String nameOfEnum) {
+        return Arrays.stream(classType.getEnumConstants())
+            .filter(e -> ((Enum<?>) e).name().equalsIgnoreCase(nameOfEnum))
+            .findAny()
+            .orElse(null);
     }
 
 
@@ -911,8 +935,7 @@ public enum BeanUtils {
             for (int index = 0; index < 6; index++) {
                 StackTraceElement element = stackTraces[index];
                 LOGGER.debug(String.format("index=%d, lineNumber=%d, className=%s, methodName=%s", index,
-                                           element.getLineNumber(), element.getClassName(),
-                                           element.getMethodName()));
+                                           element.getLineNumber(), element.getClassName(), element.getMethodName()));
             }
 
             // check stack-traces size
@@ -1061,8 +1084,7 @@ public enum BeanUtils {
      */
     public static String capitalize(final CharSequence self) {
         return isEmpty(self) ? EMPTY_STR
-                             : EMPTY_STR + Character.toUpperCase(self.charAt(0))
-                               + self.subSequence(1, self.length());
+                             : EMPTY_STR + Character.toUpperCase(self.charAt(0)) + self.subSequence(1, self.length());
     }
 
     /**
@@ -1098,8 +1120,8 @@ public enum BeanUtils {
             final String setterMethod = getSetterMethod(propertyDescriptor);
             final Class<?> propType = getReturnType(propertyDescriptor);
             for (Method method : classType.getMethods()) {
-                if (setterMethod.equals(method.getName()) && method.getParameterTypes().length == 1 && method
-                    .getParameterTypes()[0].isAssignableFrom(propType)) {
+                if (setterMethod.equals(method.getName()) && method.getParameterTypes().length == 1
+                    && method.getParameterTypes()[0].isAssignableFrom(propType)) {
                     propertyDescriptor.setWriteMethod(method);
                     return;
                 }
@@ -1676,8 +1698,7 @@ public enum BeanUtils {
 
         int firstLetterIndex = 0;
         for (int limit = text.length() - 1;
-             !Character.isLetter(text.charAt(firstLetterIndex)) && firstLetterIndex < limit;
-             ++firstLetterIndex) {
+             !Character.isLetter(text.charAt(firstLetterIndex)) && firstLetterIndex < limit; ++firstLetterIndex) {
             // do nothing
         }
 

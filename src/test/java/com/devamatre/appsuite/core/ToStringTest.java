@@ -45,6 +45,16 @@ public class ToStringTest {
     }
 
     @Test
+    public void testOfWithPackageName() {
+        String strObject = ToString.of(ToStringTest.class).toString();
+        LOGGER.debug("strObject:{}", strObject);
+        assertNotNull(strObject);
+        assertEquals(PACKAGE_NAME + ".ToStringTest <>", strObject);
+        assertTrue(strObject.endsWith(".ToStringTest <>"));
+    }
+
+
+    @Test
     public void testOfWithExcludePackageWithDelimiterAndPrefixAndSuffix() {
         String strObject = ToString.of(ToStringTest.class, true, ";", "{", "}")
             .add("firstName", "Rohtash")

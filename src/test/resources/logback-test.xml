@@ -12,10 +12,11 @@
         <appender-ref ref="CONSOLE"/>
     </root>
 
+
     <!-- slf4j -->
     <logger name="ch.qos.logback.core.joran" level="WARN"/>
 
-    <!-- rslakra -->
+    <!-- devamatre -->
     <logger name="com.devamatre" level="DEBUG"/>
     <!-- zaxxer -->
     <logger name="com.zaxxer" level="WARN"/>

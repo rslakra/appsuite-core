@@ -140,7 +140,7 @@ public class JWTUtilsTest {
      * eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1ZDRhMDk0NzRjM2M2ODZlNDBkZTQ3YTgiLCJjbGkiOiJnZW1pbmkiLCJpc3MiOiJmb3JkZXZ0ZXN0IiwiZXhwIjoxNTkxOTA1NzE1LCJpYXQiOjE1ODQxMjk2NTV9.dF1K6mSe8FE9JNwbZQI6knxoyOJEWEc39D1WAlMsw3o3PKKEjTg-qtN7udrLNpiOQLYF_OLNVcThsfR3axJ5sC-5_HRJqxruQmVxNHFlky1HKIbnL8QPsKDkIg5Q0iFZrYP76zAEegZG9n42I2ikV_x0pflQyiAC1F0f_bM1DNCoFQ-Vtln4cg4wQ09P7U1wLPx_-sqau2krX9eL0CvHzztyfCKbwM_d_OqEtOw4zbYgX4dD2uE0mvYlBDwc08R0cEWT_kOrYbFAqRpN2VhnzIFH9bm7rnAev1DmHDCLw1MzrPTfnR_TFvS8qmxO0Aja57t7UjF4xhD9MGek2OeY0g
      * </p>
      * <p>
-     * Encoded with ePay Private Key [epay.developer.fordevtest.jwt.pvtkey] using https://jwt.io/.
+     * Encoded with Private Key [pay.dev.jwt.pvtkey] using https://jwt.io/.
      * <p>
      * eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1ZDRhMDk0NzRjM2M2ODZlNDBkZTQ3YTgiLCJjbGkiOiJnZW1pbmkiLCJpc3MiOiJmb3JkZXZ0ZXN0IiwiZXhwIjoxNTkxOTA1NzE1LCJpYXQiOjE1ODQxMjk2NTV9.iSxQFvb8CQRet6hG0SCEAYcjqfoBEfcXdk3FOkJZVu-h_O2tohbex44ga7MM0_faABqquinBudEZBuAXx4HOcjZer3VqAyHL3ZH_czmROlnmsj72rolzO5lsmUvT6Y4ggEu5kw_iiYE3p4K1eGP6VI2ATrSqHCbLv92Tj4WDL7jeupZAN0V3Ooi67u2YaO5OmInTkNd5QNUAsvgSfi9nfVSC5YCVY6oluR1gBh6o7Q4moKRc8m_clRfioZVse4TKXMOOCv7imUytZd-G5DvliYbstY-CHXYINSnu1IL4nYmayHBvNvqymWovGZ4e97WdM8BFUfUZACfex18puoxLOg
      * </p>
@@ -150,9 +150,9 @@ public class JWTUtilsTest {
         final String subject = "5d4a09474c3c686e40de47a8";
         final String audience = "audience";
         final String keyId = "keyId";
-        final String issuer = "fordevtest";
+        final String issuer = "rslakra.com";
         final Date issuedAt = new Date();
-        final String keyFolderPath = "~/Documents/ePay";
+        final String keyFolderPath = "src/test/resources/certs";
         final String serviceName = "payment-service";
 
         JWTUtils.INSTANCE.setKeyFolderPath(keyFolderPath);
@@ -170,16 +170,16 @@ public class JWTUtilsTest {
             assertEquals(subject, jwtClaims.getSubject());
             assertEquals(issuer, jwtClaims.getIssuer());
             assertFalse(JWTUtils.isTokenExpired(jwtToken));
-//           assertTrue(new Date().before(jwtClaims.getExpirationTime()));
+            // assertTrue(new Date().before(jwtClaims.getExpirationTime()));
         } catch (ParseException | JOSEException ex) {
-            ex.printStackTrace();
+            LOGGER.error(ex.getMessage(), ex);
         }
     }
 
     @Test
     public void testEncryptAndDecrypt() {
         try {
-            String text = "Rohtash Singh Lakra";
+            String text = "Rohtash Lakra";
             LOGGER.debug("text:{}", text);
             LOGGER.debug("text length:{}", text.getBytes(JWTUtils.UTF_8).length);
             //encrypt the text.
@@ -194,8 +194,8 @@ public class JWTUtilsTest {
             cipher.init(Cipher.DECRYPT_MODE, privateKey);
             byte[] decrypted = cipher.doFinal(encrypted);
             LOGGER.debug("Decrypted:{}", JWTUtils.INSTANCE.toUTF8String(decrypted));
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            LOGGER.error(ex.getMessage(), ex);
         }
     }
 
@@ -211,8 +211,7 @@ public class JWTUtilsTest {
             LOGGER.debug(jwtToken);
             jwtClaims = JWTUtils.jwtMACVerifiedClaims(jwtToken, clientSecret);
         } catch (JOSEException | ParseException ex) {
-            LOGGER.error(ex.getLocalizedMessage(), ex);
-            ex.printStackTrace();
+            LOGGER.error(ex.getMessage(), ex);
         }
 
         assertNotNull(jwtToken);

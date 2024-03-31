@@ -262,13 +262,13 @@ public final class ToString {
     }
 
     /**
-     * Adds the <code>newElement</code>
+     * Adds the <code>newValue</code> into the string object.
      *
-     * @param newElement
+     * @param newValue
      * @return
      */
-    public ToString add(final CharSequence newElement) {
-        final String element = String.valueOf(newElement);
+    public ToString add(CharSequence newValue) {
+        final String element = String.valueOf(newValue);
         if (this.elements == null) {
             this.elements = new String[8];
         } else {
@@ -283,7 +283,7 @@ public final class ToString {
     }
 
     /**
-     * Adds the <code>key</code> and <code>value</code> to the string.
+     * Adds the <code>key</code> and <code>value</code> to the string object.
      *
      * @param key
      * @return
@@ -315,7 +315,7 @@ public final class ToString {
      */
     public ToString merge(final ToString other) {
         Objects.requireNonNull(other);
-        if (other.elements == null) {
+        if (Objects.isNull(other.elements)) {
             return this;
         }
         other.compactElements();

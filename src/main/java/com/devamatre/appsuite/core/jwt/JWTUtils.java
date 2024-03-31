@@ -1,6 +1,7 @@
 package com.devamatre.appsuite.core.jwt;
 
 import com.devamatre.appsuite.core.BeanUtils;
+import com.devamatre.appsuite.core.Payload;
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JOSEObjectType;
 import com.nimbusds.jose.JWSAlgorithm;
@@ -15,7 +16,6 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.gen.RSAKeyGenerator;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
-import com.devamatre.appsuite.core.Payload;
 import org.jose4j.jwk.HttpsJwks;
 import org.jose4j.jwk.JsonWebKey;
 import org.jose4j.jws.AlgorithmIdentifiers;
@@ -33,6 +33,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -42,6 +43,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.interfaces.RSAPublicKey;
+import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.text.ParseException;
 import java.util.Base64;
@@ -60,7 +62,7 @@ public enum JWTUtils {
     // LOGGER
     private static final Logger LOGGER = LoggerFactory.getLogger(JWTUtils.class);
     public static final String ALGO_RSA = "RSA";
-    public static final String UTF_8 = "UTF-8";
+    public static final String UTF_8 = StandardCharsets.UTF_8.name();
     public static final String NEW_LINE = "\n";
     public static final String PRIVATE_KEY = "_private.key";
     public static final String PUBLIC_KEY = "_public.key";
@@ -73,8 +75,8 @@ public enum JWTUtils {
     private String keyFolderPath;
     private String service;
 
-    // payloadBuilder
-    private final Payload<String, HttpsJwks> payload = new Payload();
+    // payload
+    private final Payload<String, HttpsJwks> payload = new Payload<>();
 
     /**
      * @return
@@ -152,12 +154,12 @@ public enum JWTUtils {
      * @param algorithm
      * @return
      */
-    public KeyFactory getKeyFactory(final String algorithm) {
+    public KeyFactory getKeyFactory(String algorithm) {
         if (rsaKeyFactory == null) {
             try {
                 rsaKeyFactory = KeyFactory.getInstance(algorithm);
             } catch (NoSuchAlgorithmException ex) {
-                ex.printStackTrace();
+                LOGGER.error(ex.getMessage(), ex);
             }
         }
 
@@ -168,11 +170,11 @@ public enum JWTUtils {
      * @param rawBytes
      * @return
      */
-    public String toUTF8String(final byte[] rawBytes) {
+    public String toUTF8String(byte[] rawBytes) {
         try {
             return new String(rawBytes, UTF_8);
         } catch (UnsupportedEncodingException ex) {
-            ex.printStackTrace();
+            LOGGER.error(ex.getMessage(), ex);
         }
 
         return null;
@@ -182,7 +184,7 @@ public enum JWTUtils {
      * @param pathString
      * @return
      */
-    public Path getPath(final String pathString) {
+    public Path getPath(String pathString) {
         if (BeanUtils.isEmpty(getKeyFolderPath())) {
             final String pkgString = BeanUtils.getClassPath(JWTUtils.class, pathString);
             return Paths.get("src/main/java", pkgString);
@@ -198,7 +200,7 @@ public enum JWTUtils {
      * @return
      * @throws IOException
      */
-    public byte[] readAllBytes(final String pathString) throws IOException {
+    public byte[] readAllBytes(String pathString) throws IOException {
         return Files.readAllBytes(getPath(pathString));
     }
 
@@ -209,7 +211,7 @@ public enum JWTUtils {
      */
     public String toString(final List<String> keyLines, final boolean removeKeyLines) {
         final StringBuilder sBuilder = new StringBuilder();
-        if (keyLines != null) {
+        if (Objects.nonNull(keyLines)) {
             keyLines.forEach(line -> {
                 if (removeKeyLines) {
                     if (!(startsWithBegin(line) || startsWithEnd(line))) {
@@ -230,7 +232,7 @@ public enum JWTUtils {
      * @return
      * @throws IOException
      */
-    public String readKeyContents(final String pathString, final boolean removeKeyLines) throws IOException {
+    public String readKeyContents(String pathString, boolean removeKeyLines) throws IOException {
         return toString(Files.readAllLines(getPath(pathString)), removeKeyLines);
     }
 
@@ -240,7 +242,7 @@ public enum JWTUtils {
      * @return
      * @throws IOException
      */
-    public String readContents(final InputStream inputStream, final boolean addNewLines)
+    public String readContents(InputStream inputStream, boolean addNewLines)
         throws IOException {
         final StringBuilder sBuilder = new StringBuilder();
         try (BufferedReader bReader = new BufferedReader(new InputStreamReader(inputStream))) {
@@ -259,58 +261,57 @@ public enum JWTUtils {
         return sBuilder.toString();
     }
 
-// /**
-//     * Returns the <code>PrivateKey</code> for the <code>pathString</code>.
-//     *
-//     * @param pathString
-//     * @return
-//     * @throws Exception
-//     */
-// public PrivateKey loadPrivateKey(final String pathString) throws Exception {
-// PrivateKey privateKey = null;
-// final KeyFactory keyFactory = getKeyFactory(ALGO_RSA);
-// final List<String> keyLines = Files.readAllLines(getPath(pathString));
-// final String keyContents = toString(keyLines, true);
-// byte[] keyBytes = Base64.getDecoder().decode(keyContents);
-// /*
-//         * PKCS#! has the 'BEGIN RSA PRIVATE KEY' header, and
-//         * PKCS#8 has the 'BEGIN PRIVATE KEY' header.
-//         */
-// if (keyLines.get(0).contains("BEGIN PRIVATE KEY")) {
-//            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
-//            privateKey = keyFactory.generatePrivate(keySpec);
-// } else if (keyLines.get(0).contains(ALGO_RSA)) {
-//            final DerInputStream derReader = new DerInputStream(keyBytes);
-//            final DerValue[] seq = derReader.getSequence(0);
-//            // skip version seq[0];
-//            final BigInteger modulus = seq[1].getBigInteger();
-//            final BigInteger publicExponent = seq[2].getBigInteger();
-//            final BigInteger privateExponent = seq[3].getBigInteger();
-//            final BigInteger primeP = seq[4].getBigInteger();
-//            final BigInteger primeQ = seq[5].getBigInteger();
-//            final BigInteger primeExponentP = seq[6].getBigInteger();
-//            final BigInteger primeExponentQ = seq[7].getBigInteger();
-//            final BigInteger crtCoefficient = seq[8].getBigInteger();
-//            RSAPrivateCrtKeySpec
-//                keySpec =
-//                new RSAPrivateCrtKeySpec(modulus, publicExponent, privateExponent, primeP, primeQ,
-//                                         primeExponentP,
-//                                         primeExponentQ, crtCoefficient);
-//            privateKey = keyFactory.generatePrivate(keySpec);
-// } else {
-//            throw new RuntimeException("Unsupported PEM Key!");
-// }
-//
-// return privateKey;
-//    }
+    /**
+     * Returns the <code>PrivateKey</code> for the <code>pathString</code>.
+     *
+     * @param pathString
+     * @return
+     * @throws Exception
+     */
+    public PrivateKey loadPrivateKey(String pathString) throws Exception {
+        PrivateKey privateKey = null;
+        final KeyFactory keyFactory = getKeyFactory(ALGO_RSA);
+        final List<String> keyLines = Files.readAllLines(getPath(pathString));
+        final String keyContents = toString(keyLines, true);
+        byte[] keyBytes = Base64.getDecoder().decode(keyContents);
+        /*
+         * PKCS#! has the 'BEGIN RSA PRIVATE KEY' header, and
+         * PKCS#8 has the 'BEGIN PRIVATE KEY' header.
+         */
+        if (keyLines.get(0).contains("BEGIN PRIVATE KEY")) {
+            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
+            privateKey = keyFactory.generatePrivate(keySpec);
+        } else if (keyLines.get(0).contains(ALGO_RSA)) {
+            // final DerInputStream derReader = new DerInputStream(keyBytes);
+            // final DerValue[] seq = derReader.getSequence(0);
+            // // skip version seq[0];
+            // final BigInteger modulus = seq[1].getBigInteger();
+            // final BigInteger publicExponent = seq[2].getBigInteger();
+            // final BigInteger privateExponent = seq[3].getBigInteger();
+            // final BigInteger primeP = seq[4].getBigInteger();
+            // final BigInteger primeQ = seq[5].getBigInteger();
+            // final BigInteger primeExponentP = seq[6].getBigInteger();
+            // final BigInteger primeExponentQ = seq[7].getBigInteger();
+            // final BigInteger crtCoefficient = seq[8].getBigInteger();
+            // RSAPrivateCrtKeySpec
+            //     keySpec =
+            //     new RSAPrivateCrtKeySpec(modulus, publicExponent, privateExponent, primeP, primeQ,
+            //                   primeExponentP,
+            //                   primeExponentQ, crtCoefficient);
+            // privateKey = keyFactory.generatePrivate(keySpec);
+        } else {
+            throw new RuntimeException("Unsupported PEM Key!");
+        }
+
+        return privateKey;
+    }
 
     /**
      * @return
      * @throws Exception
      */
     public PrivateKey loadPrivateKey() throws Exception {
-// return loadPrivateKey(getPrivateKeyFile());
-        return null;
+        return loadPrivateKey(getPrivateKeyFile());
     }
 
     /**
@@ -321,13 +322,13 @@ public enum JWTUtils {
      * @return
      * @throws Exception
      */
-    public PublicKey loadPublicKey(final String pathString, final String keyAlgo) throws Exception {
+    public PublicKey loadPublicKey(String pathString, String keyAlgo) throws Exception {
         PublicKey publicKey = null;
         final KeyFactory keyFactory = getKeyFactory(keyAlgo);
         final List<String> keyLines = Files.readAllLines(getPath(pathString));
         final String keyContents = toString(keyLines, true);
-// keyContents = keyContents.replaceAll("(-+BEGIN PUBLIC KEY-+\\r?\\n|-+END PUBLIC KEY-+\\r?\\n?)", "");
-// keyContents = keyContents.replace("\\s+", "");
+        // keyContents = keyContents.replaceAll("(-+BEGIN PUBLIC KEY-+\\r?\\n|-+END PUBLIC KEY-+\\r?\\n?)", "");
+        // keyContents = keyContents.replace("\\s+", "");
         byte[] keyBytes = Base64.getDecoder().decode(keyContents);
         return keyFactory.generatePublic(new X509EncodedKeySpec(keyBytes));
     }
@@ -395,11 +396,11 @@ public enum JWTUtils {
 //     * @throws InvalidKeySpecException
 //     */
 //    public KeyPair toKeyPair(final byte[] priKeyBytes, final byte[] pubKeyBytes)
-// throws InvalidKeySpecException {
-// final KeyFactory keyFactory = getKeyFactory(ALGO_RSA);
-// PrivateKey priKey = keyFactory.generatePrivate(new PKCS8EncodedKeySpec(priKeyBytes));
-// PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(pubKeyBytes));
-// return new KeyPair(pubKey, priKey);
+//        throws InvalidKeySpecException {
+//        final KeyFactory keyFactory = getKeyFactory(ALGO_RSA);
+//        PrivateKey priKey = keyFactory.generatePrivate(new PKCS8EncodedKeySpec(priKeyBytes));
+//        PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(pubKeyBytes));
+//        return new KeyPair(pubKey, priKey);
 //    }
 
     /**
@@ -410,8 +411,7 @@ public enum JWTUtils {
     private void setRSAKey() throws JOSEException {
         if (Objects.isNull(getRSAKey())) {
             try {
-//                PrivateKey privateKey = loadPrivateKey(getPrivateKeyFile());
-                PrivateKey privateKey = null;
+                PrivateKey privateKey = loadPrivateKey(getPrivateKeyFile());
                 PublicKey publicKey = loadPublicKey(getPublicKeyFile());
                 RSAKey.Builder rsaKeyBuilder = new RSAKey.Builder((RSAPublicKey) publicKey).privateKey(privateKey);
                 rsaKey = rsaKeyBuilder.build();
@@ -437,7 +437,7 @@ public enum JWTUtils {
      * }
      * </pre>
      */
-    private JWSHeader jwtHeader(final JWSAlgorithm algorithm, final JOSEObjectType type) {
+    private JWSHeader jwtHeader(JWSAlgorithm algorithm, final JOSEObjectType type) {
         return new JWSHeader.Builder(algorithm).type(type).build();
     }
 
@@ -445,11 +445,11 @@ public enum JWTUtils {
      * JWT Claims
      * <pre>
      * {
-     * "aud": "{protocol}://{b2b.host}/identity/oauth2/access_token?realm=<your-realm>",
-     * "iss": "{client_id}",
-     * "sub": "{client_id}",
-     * "exp": “{expiry time in seconds}”,
-     * "iat": “{issued time in seconds}”
+     *  "aud": "{protocol}://{b2b.host}/identity/oauth2/access_token?realm=<your-realm>",
+     *  "iss": "{client_id}",
+     *  "sub": "{client_id}",
+     *  "exp": “{expiry time in seconds}”,
+     *  "iat": “{issued time in seconds}”
      * }
      * </pre>
      *
@@ -630,7 +630,6 @@ public enum JWTUtils {
      * @param jwtToken
      * @return
      * @throws ParseException
-     * @throws JOSEException
      */
     public JWSHeader jwtHeaders(final String jwtToken) throws ParseException {
         // parse the JWS and verify its signature
@@ -731,19 +730,19 @@ public enum JWTUtils {
      * JWT Header
      * <pre>
      * {
-     * "alg": "HS256",
-     * "typ": "JWT"
+     *  "alg": "HS256",
+     *  "typ": "JWT"
      * }
      * </pre>
      * <p>
      * JWT Claims
      * <pre>
      * {
-     * "aud": "{protocol}://{b2b.host}/identity/oauth2/access_token?realm=<your-realm>",
-     * "iss": "{client_id}",
-     * "sub": "{client_id}",
-     * "exp": “{expiry time in seconds}”,
-     * "iat": “{issued time in seconds}”
+     *  "aud": "{protocol}://{b2b.host}/identity/oauth2/access_token?realm=<your-realm>",
+     *  "iss": "{client_id}",
+     *  "sub": "{client_id}",
+     *  "exp": “{expiry time in seconds}”,
+     *  "iat": “{issued time in seconds}”
      * }
      * </pre>
      *
@@ -755,9 +754,9 @@ public enum JWTUtils {
     public static String jwtRSASignedToken(final String keyId, final String audience, final String issuer,
                                            final String subject, final Date issuedAt, final Date expiredOn)
         throws JOSEException {
-        //RSA signatures require a public and private RSA key pair, the public key
+        // RSA signatures require a public and private RSA key pair, the public key
         // must be made known to the JWS recipient in order to verify the signatures
-// setRSAKey(keySize, keyId);
+        // setRSAKey(keySize, keyId);
         INSTANCE.setRSAKey();
 
         // prepare header
@@ -844,44 +843,79 @@ public enum JWTUtils {
     }
 
     /**
+     * Builds the <code>JwtClaims</code> object.
+     *
+     * @param clientId
+     * @param audience
+     * @param expiryTimeInMinutes
+     * @param addJwtId
+     * @return
+     */
+    public static JwtClaims jwtClaims(String clientId, String audience, int expiryTimeInMinutes, boolean addJwtId) {
+        LOGGER.debug("+jwtClaims({}, {}, {}, {})", clientId, audience, expiryTimeInMinutes, addJwtId);
+        final JwtClaims jwtClaims = new JwtClaims();
+        jwtClaims.setSubject(clientId);
+        jwtClaims.setIssuer(clientId);
+        jwtClaims.setAudience(audience);
+        jwtClaims.setIssuedAt(NumericDate.now());
+        jwtClaims.setExpirationTimeMinutesInTheFuture(expiryTimeInMinutes);
+        if (addJwtId) {
+            jwtClaims.setGeneratedJwtId();
+        }
+
+        LOGGER.debug("-jwtClaims(), jwtClaims:{}", jwtClaims);
+        return jwtClaims;
+    }
+
+    /**
+     * Builds the <code>JsonWebSignature</code> object.
+     *
+     * @param clientSecret
+     * @return
+     */
+    public static JsonWebSignature jsonWebSignature(String clientSecret) {
+        LOGGER.debug("+jsonWebSignature(clientSecret)");
+        JsonWebSignature jsonWebSignature = null;
+        try {
+            jsonWebSignature = new JsonWebSignature();
+            jsonWebSignature.setAlgorithmHeaderValue(AlgorithmIdentifiers.HMAC_SHA256);
+            jsonWebSignature.setHeader(JWTUtils.JWS_HEADER_TYPE, JWTUtils.JWS_HEADER_TYPE_VALUE);
+            jsonWebSignature.setKey(new HmacKey(clientSecret.getBytes(UTF_8)));
+            jsonWebSignature.setDoKeyValidation(false);
+        } catch (Exception ex) {
+            LOGGER.error(ex.getMessage(), ex);
+            throw new RuntimeException("Error creating JWT signature!", ex);
+        }
+
+        LOGGER.debug("-jsonWebSignature(), jsonWebSignature:{}", jsonWebSignature);
+        return jsonWebSignature;
+    }
+
+    /**
      * Generates the new JWT (Json Web Token).
      *
      * @param clientId
      * @param clientSecret
      * @param audience
-     * @param expirationTimeInMinutes
-     * @param withJwtId
+     * @param expiryTimeInMinutes
+     * @param addJwtId
      * @return
      */
     public static String jwtToken(final String clientId, final String clientSecret, String audience,
-                                  int expirationTimeInMinutes, boolean withJwtId) {
-        LOGGER.debug("+jwtToken({}, {}, {}, {})", clientId, audience, expirationTimeInMinutes, withJwtId);
-        String jwtString;
-        final JwtClaims jwtClaims = new JwtClaims();
-        jwtClaims.setIssuedAt(NumericDate.now());
-        jwtClaims.setExpirationTimeMinutesInTheFuture(expirationTimeInMinutes);
-        jwtClaims.setSubject(clientId);
-        jwtClaims.setIssuer(clientId);
-        jwtClaims.setAudience(audience);
-        if (withJwtId) {
-            jwtClaims.setGeneratedJwtId();
-        }
-
+                                  int expiryTimeInMinutes, boolean addJwtId) {
+        LOGGER.debug("+jwtToken({}, {}, {}, {})", clientId, audience, expiryTimeInMinutes, addJwtId);
+        String jwtString = null;
         try {
-            Key key = new HmacKey(clientSecret.getBytes(JWTUtils.UTF_8));
-            JsonWebSignature jws = new JsonWebSignature();
-            jws.setPayload(jwtClaims.toJson());
-            jws.setAlgorithmHeaderValue(AlgorithmIdentifiers.HMAC_SHA256);
-            jws.setHeader(JWTUtils.JWS_HEADER_TYPE, JWTUtils.JWS_HEADER_TYPE_VALUE);
-            jws.setKey(key);
-            jws.setDoKeyValidation(false);
-            jwtString = jws.getCompactSerialization();
+            JwtClaims jwtClaims = jwtClaims(clientId, audience, expiryTimeInMinutes, addJwtId);
+            JsonWebSignature jsonWebSignature = jsonWebSignature(clientSecret);
+            jsonWebSignature.setPayload(jwtClaims.toJson());
+            jwtString = jsonWebSignature.getCompactSerialization();
         } catch (Exception ex) {
-            LOGGER.error(ex.getLocalizedMessage(), ex);
-            throw new RuntimeException("JWT Generation is failed", ex);
+            LOGGER.error(ex.getMessage(), ex);
+            throw new RuntimeException("JWT Generation is failed!", ex);
         }
 
-        LOGGER.debug("-jwtToken(), jwtString={}", jwtString);
+        LOGGER.debug("-jwtToken(), jwtString:{}", jwtString);
         return jwtString;
     }
 
@@ -891,7 +925,7 @@ public enum JWTUtils {
      */
     public static String jwtToken(final JwtRequest jwtRequest) {
         return jwtToken(jwtRequest.getClientId(), jwtRequest.getClientSecret(), getAudienceUrl(jwtRequest),
-                        jwtRequest.getExpirationTimeInMinutes(), jwtRequest.isWithJwtId());
+                        jwtRequest.getExpiryTimeInMinutes(), jwtRequest.isWithJwtId());
     }
 
     /**

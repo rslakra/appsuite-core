@@ -43,6 +43,7 @@
         <!-- json -->
         <nimbus-jose-jwt.version>9.37.3</nimbus-jose-jwt.version>
         <jose4j.version>0.9.6</jose4j.version>
+        <java-jwt.version>4.4.0</java-jwt.version>
         <gson.version>2.10</gson.version>
 
         <!-- jackson -->
@@ -113,6 +114,13 @@
             <groupId>org.bitbucket.b_c</groupId>
             <artifactId>jose4j</artifactId>
             <version>${jose4j.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${java-jwt.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
@@ -198,7 +206,7 @@
         <plugins>
 
             <!-- Note:- Don't uncomment this plug-in for the common packages -->
-            <!-- frameworks-boot-maven-plugin -->
+            <!-- spring-boot-maven-plugin -->
             <!--            <plugin>-->
             <!--                <groupId>org.springframework.boot</groupId>-->
             <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
@@ -212,6 +220,11 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                <!-- exports java.base -->
+                    <!-- <release combine.self="override"></release>-->
+                    <!-- <compilerArgs>-->
+                    <!-- <arg>&#45;&#45;add-exports</arg><arg>java.base/sun.security.x509=ALL-UNNAMED</arg>-->
+                    <!-- </compilerArgs>-->
                 </configuration>
             </plugin>
 

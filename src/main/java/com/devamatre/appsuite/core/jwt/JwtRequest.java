@@ -23,7 +23,7 @@ public class JwtRequest {
     private String serverBaseUrl;
     private String pathSegment;
     private String realm;
-    private int expirationTimeInMinutes;
+    private int expiryTimeInMinutes;
     private String redirectUrl;
     private boolean withJwtId;
 
