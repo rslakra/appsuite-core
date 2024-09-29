@@ -154,17 +154,17 @@ public class IOUtilsTest {
         String JAR_PATH = IOUtils.pathString(IOUtils.getUserDir(), "target/test-classes/jarFile.jar");
         LOGGER.debug(JAR_PATH);
         Set<String> expectedClassNames = Sets.asSet(
-            "com.devamatre.frameworks.common.CharSets",
-            "com.devamatre.frameworks.common.MathUtils",
-            "com.devamatre.frameworks.common.UnsafeUtils",
-            "com.devamatre.frameworks.common.Pair",
-            "com.devamatre.frameworks.common.HashUtils",
-            "com.devamatre.frameworks.common.ArrayIterator",
-            "com.devamatre.frameworks.common.xml.XmlUtils",
-            "com.devamatre.frameworks.common.Payload",
-            "com.devamatre.frameworks.common.Sets",
-            "com.devamatre.frameworks.common.exception.ServerRuntimeException",
-            "com.devamatre.frameworks.common.exception.InvalidRequestException"
+            "com.rslakra.frameworks.common.CharSets",
+            "com.rslakra.frameworks.common.MathUtils",
+            "com.rslakra.frameworks.common.UnsafeUtils",
+            "com.rslakra.frameworks.common.Pair",
+            "com.rslakra.frameworks.common.HashUtils",
+            "com.rslakra.frameworks.common.ArrayIterator",
+            "com.rslakra.frameworks.common.xml.XmlUtils",
+            "com.rslakra.frameworks.common.Payload",
+            "com.rslakra.frameworks.common.Sets",
+            "com.rslakra.frameworks.common.exception.ServerRuntimeException",
+            "com.rslakra.frameworks.common.exception.InvalidRequestException"
         );
 
         LOGGER.debug("expectedClassNames: {}", expectedClassNames);
@@ -183,17 +183,17 @@ public class IOUtilsTest {
     public void testGetJarFileClasses() throws IOException, ClassNotFoundException {
         LOGGER.debug("-testGetJarFileClasses()");
         Set<String> expectedClassNames = Sets.asSet(
-            "com.devamatre.frameworks.common.CharSets",
-            "com.devamatre.frameworks.common.MathUtils",
-            "com.devamatre.frameworks.common.UnsafeUtils",
-            "com.devamatre.frameworks.common.Pair",
-            "com.devamatre.frameworks.common.HashUtils",
-            "com.devamatre.frameworks.common.ArrayIterator",
-            "com.devamatre.frameworks.common.xml.XmlUtils",
-            "com.devamatre.frameworks.common.Payload",
-            "com.devamatre.frameworks.common.Sets",
-            "com.devamatre.frameworks.common.exception.ServerRuntimeException",
-            "com.devamatre.frameworks.common.exception.InvalidRequestException"
+            "com.rslakra.frameworks.common.CharSets",
+            "com.rslakra.frameworks.common.MathUtils",
+            "com.rslakra.frameworks.common.UnsafeUtils",
+            "com.rslakra.frameworks.common.Pair",
+            "com.rslakra.frameworks.common.HashUtils",
+            "com.rslakra.frameworks.common.ArrayIterator",
+            "com.rslakra.frameworks.common.xml.XmlUtils",
+            "com.rslakra.frameworks.common.Payload",
+            "com.rslakra.frameworks.common.Sets",
+            "com.rslakra.frameworks.common.exception.ServerRuntimeException",
+            "com.rslakra.frameworks.common.exception.InvalidRequestException"
         );
 
         LOGGER.debug("expectedClassNames: {}", expectedClassNames);
