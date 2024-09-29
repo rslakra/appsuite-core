@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- appsuite-core -->
-    <groupId>com.devamatre.appsuite</groupId>
+    <groupId>com.rslakra.appsuite</groupId>
     <artifactId>appsuite-core</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
