@@ -25,6 +25,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+    # makes sure that workflow has access to the code.
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
@@ -33,15 +34,18 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
     
+    # Step for compiling code
     - name: Build Maven Package
       run: mvn -B clean package -DskipTests
       
 #    - name: Build with Maven
 #      run: mvn -B package --file pom.xml
     
+    # Step for running unit-tests
 #    - name: Maven Verify
 #      run: mvn -B clean verify
-#
+    
+    # Step for Publishing Package to GitHub
 #    - name: Publish to GitHub Packages Apache Maven
 #      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
 #      env:
