@@ -922,7 +922,7 @@ public class BeanUtilsTest {
     public void testGetAllFields() {
         List<Field> allFields = getAllFields(BeanUtils.class);
         assertNotNull(allFields);
-        assertEquals(22, allFields.size());
+        assertEquals(23, allFields.size());
     }
 
     @Test

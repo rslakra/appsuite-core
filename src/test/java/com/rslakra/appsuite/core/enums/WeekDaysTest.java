@@ -2,6 +2,7 @@ package com.rslakra.appsuite.core.enums;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.rslakra.appsuite.core.BeanUtils;
 import org.junit.jupiter.api.Test;
@@ -29,10 +30,13 @@ public class WeekDaysTest {
         assertNull(nullWeekDay);
 
         WeekDays weekDayByClass = BeanUtils.findEnumByClass(WeekDays.class, WeekDays.MONDAY.name());
+        LOGGER.debug("weekDayByClass: {}", weekDayByClass);
         assertEquals(WeekDays.MONDAY, weekDayByClass);
 
-        nullWeekDay = BeanUtils.findEnumByClass(WeekDays.class, "friday");
-        assertNull(nullWeekDay);
+        WeekDays weekDayByFieldName = BeanUtils.findEnumByClass(WeekDays.class, "friday");
+        LOGGER.debug("weekDayByFieldName: {}", weekDayByFieldName);
+        assertNotNull(weekDayByFieldName);
+        assertEquals(WeekDays.FRIDAY, weekDayByFieldName);
         LOGGER.debug("-testOfString()");
     }
 }

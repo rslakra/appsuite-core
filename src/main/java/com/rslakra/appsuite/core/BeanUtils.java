@@ -877,16 +877,16 @@ public enum BeanUtils {
     }
 
     /**
-     * Returns the enum type of the provided <code>nameOfEnum</code>.
+     * Returns the enum type of the provided <code>fieldName</code>.
      *
      * @param classType
-     * @param nameOfEnum
+     * @param fieldName
      * @param <T>
      * @return
      */
-    public static <T> T findEnumByClass(final Class<T> classType, final String nameOfEnum) {
+    public static <T> T findEnumByClass(final Class<T> classType, final String fieldName) {
         return Arrays.stream(classType.getEnumConstants())
-            .filter(e -> ((Enum<?>) e).name().equalsIgnoreCase(nameOfEnum))
+            .filter(e -> ((Enum<?>) e).name().equalsIgnoreCase(fieldName))
             .findAny()
             .orElse(null);
     }
