@@ -42,8 +42,8 @@ jobs:
 #      run: mvn -B package --file pom.xml
     
     # Step for running unit-tests
-#    - name: Maven Verify
-#      run: mvn -B clean verify
+    - name: Maven Verify
+      run: mvn -B clean verify
     
     # Step for Publishing Package to GitHub
 #    - name: Publish to GitHub Packages Apache Maven
