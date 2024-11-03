@@ -38,7 +38,7 @@
         <logback-classic.version>1.4.12</logback-classic.version>
 
         <!-- lombok -->
-        <lombok.version>1.18.28</lombok.version>
+        <lombok.version>1.18.34</lombok.version>
 
         <!-- json -->
         <nimbus-jose-jwt.version>9.37.3</nimbus-jose-jwt.version>
