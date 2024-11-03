@@ -43,7 +43,7 @@ jobs:
     
     # Step for running unit-tests
     - name: Maven Verify
-      run: mvn -B clean verify
+      run: mvn -B verify
     
     # Step for Publishing Package to GitHub
 #    - name: Publish to GitHub Packages Apache Maven
