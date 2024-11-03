@@ -22,18 +22,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      # makes sure that workflow has access to the code.
       - name: Set up JDK 21
       - uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
-
-      # Step for compiling code
       - name: Build Maven Package
         run: mvn -B clean package -DskipTests
-
-      # Step for running unit-tests
       - name: Maven Verify
         run: mvn -B clean verify
 
