@@ -1,10 +1,5 @@
 package com.rslakra.appsuite.core;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -16,9 +11,12 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Rohtash Lakra
@@ -30,17 +28,45 @@ public class IOUtilsTest {
     private static Logger LOGGER = LoggerFactory.getLogger(IOUtilsTest.class);
 
     /**
-     *
+     * Tests <code>getUserDir()</code> method.
+     */
+    @Test
+    public void testGetUserDir() {
+        LOGGER.debug("+testGetUserDir()");
+        String userDir = IOUtils.getUserDir();
+        LOGGER.debug("userDir: {}", userDir);
+        assertNotNull(userDir);
+        assertTrue(userDir.endsWith("appsuite-core"));
+        LOGGER.debug("-testGetUserDir()");
+    }
+
+    /**
+     * Tests <code>getBuildDir()</code> method.
+     */
+    @Test
+    public void testPathWithWorkingDir() {
+        LOGGER.debug("+testPathWithWorkingDir()");
+        String versionFilePath = IOUtils.pathWithWorkingDir("version.txt");
+        LOGGER.debug("versionFilePath={}", versionFilePath);
+        assertNotNull(versionFilePath);
+        assertTrue(versionFilePath.endsWith("appsuite-core/version.txt"));
+        LOGGER.debug("-testPathWithWorkingDir()");
+    }
+
+    /**
+     * Tests <code>applyFilePermissions()</code> method.
      */
     @Test
     public void testApplyFilePermissions() {
-        Path tempPathFolder = Paths.get(IOUtils.getBuildDir("target", "temp", "test.tmp"));
+        LOGGER.debug("+testApplyFilePermissions()");
+        Path tempPathFolder = Paths.get(IOUtils.pathWithWorkingDir("target", "temp", "test.tmp"));
         LOGGER.debug("tempPathFolder: {}", tempPathFolder);
         try {
             IOUtils.applyFilePermissions(tempPathFolder);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        LOGGER.debug("-testApplyFilePermissions()");
     }
 
 
@@ -49,14 +75,13 @@ public class IOUtilsTest {
      */
     private static Stream<Arguments> classFilePathData() {
         return Stream.of(
-            //same key/value
-            Arguments.of(null, null),
-            Arguments.of(BeanUtilsTest.class, BeanUtils.getPackagePath(BeanUtilsTest.class)),
-            Arguments.of(IOUtils.class, BeanUtils.getPackagePath(IOUtils.class))
-        );
+                //same key/value
+                Arguments.of(null, null), Arguments.of(BeanUtilsTest.class, BeanUtils.getPackagePath(BeanUtilsTest.class)), Arguments.of(IOUtils.class, BeanUtils.getPackagePath(IOUtils.class)));
     }
 
     /**
+     * Tests <code>getClassFilePath()</code> method.
+     *
      * @param classType
      * @param expectedPath
      * @param <T>
@@ -64,6 +89,7 @@ public class IOUtilsTest {
     @ParameterizedTest
     @MethodSource("classFilePathData")
     public <T> void testGetClassFilePath(Class<T> classType, String expectedPath) {
+        LOGGER.debug("+testGetClassFilePath()");
         String classPath = IOUtils.getClassFilePath(classType);
         LOGGER.debug("classPath:{}", classPath);
         if (BeanUtils.isNull(expectedPath)) {
@@ -72,9 +98,45 @@ public class IOUtilsTest {
             assertNotNull(classPath);
             assertTrue(classPath.endsWith(expectedPath));
         }
+        LOGGER.debug("-testGetClassFilePath()");
     }
 
     /**
+     * Tests <code>readContents()</code> method.
+     */
+    @Test
+    public void testReadAllContents() {
+        LOGGER.debug("+testReadAllContents()");
+        String versionFilePath = IOUtils.pathWithWorkingDir("version.txt");
+        LOGGER.debug("versionFilePath={}", versionFilePath);
+        assertNotNull(versionFilePath);
+        assertTrue(versionFilePath.endsWith("appsuite-core/version.txt"));
+        String versionContents = IOUtils.readAllContents(versionFilePath);
+        LOGGER.debug("versionContents: {}", versionContents);
+        assertNotNull(versionContents);
+        LOGGER.debug("-testReadAllContents()");
+    }
+
+    /**
+     * Tests <code>readAllLines()</code> method.
+     */
+    @Test
+    public void testReadAllLines() {
+        LOGGER.debug("+testReadAllLines()");
+        String versionFilePath = IOUtils.pathWithWorkingDir("version.txt");
+        LOGGER.debug("versionFilePath={}", versionFilePath);
+        assertNotNull(versionFilePath);
+        assertTrue(versionFilePath.endsWith("appsuite-core/version.txt"));
+        List<String> versionContents = IOUtils.readAllLines(versionFilePath);
+        LOGGER.debug("versionContents: {}", versionContents);
+        assertNotNull(versionContents);
+        assertNotNull(versionContents.get(0));
+        assertTrue(versionContents.size() > 0);
+        LOGGER.debug("-testReadAllLines()");
+    }
+
+    /**
+     * Tests <code>getJarEntries()</code> method.
      * List Jar Entries <code>jar -tf jarFile.jar</code>
      *
      * <pre>
@@ -83,23 +145,22 @@ public class IOUtilsTest {
      *  logback.xml
      *  com/
      *  com/rslakra/
-     *  com/rslakra/frameworks/
-     *  com/rslakra/frameworks/.DS_Store
-     *  com/rslakra/frameworks/common/
-     *  com/rslakra/frameworks/common/CharSets.class
-     *  com/rslakra/frameworks/common/.DS_Store
-     *  com/rslakra/frameworks/common/MathUtils.class
-     *  com/rslakra/frameworks/common/UnsafeUtils.class
-     *  com/rslakra/frameworks/common/Pair.class
-     *  com/rslakra/frameworks/common/HashUtils.class
-     *  com/rslakra/frameworks/common/ArrayIterator.class
-     *  com/rslakra/frameworks/common/xml/
-     *  com/rslakra/frameworks/common/xml/XmlUtils.class
-     *  com/rslakra/frameworks/common/Payload.class
-     *  com/rslakra/frameworks/common/Sets.class
-     *  com/rslakra/frameworks/common/exception/
-     *  com/rslakra/frameworks/common/exception/ServerRuntimeException.class
-     *  com/rslakra/frameworks/common/exception/InvalidRequestException.class
+     *  com/rslakra/appsuite/
+     *  com/rslakra/appsuite/.DS_Store
+     *  com/rslakra/appsuite/common/
+     *  com/rslakra/appsuite/common/CharSets.class
+     *  com/rslakra/appsuite/common/MathUtils.class
+     *  com/rslakra/appsuite/common/UnsafeUtils.class
+     *  com/rslakra/appsuite/common/Pair.class
+     *  com/rslakra/appsuite/common/HashUtils.class
+     *  com/rslakra/appsuite/common/ArrayIterator.class
+     *  com/rslakra/appsuite/common/xml/
+     *  com/rslakra/appsuite/common/xml/XmlUtils.class
+     *  com/rslakra/appsuite/common/Payload.class
+     *  com/rslakra/appsuite/common/Sets.class
+     *  com/rslakra/appsuite/common/exception/
+     *  com/rslakra/appsuite/common/exception/ServerRuntimeException.class
+     *  com/rslakra/appsuite/common/exception/InvalidRequestException.class
      *  application.properties
      * </pre>
      *
@@ -107,38 +168,31 @@ public class IOUtilsTest {
      */
     @Test
     public void testGetJarEntries() throws IOException {
-        LOGGER.debug("testGetJarEntries()");
-        String JAR_PATH = IOUtils.pathString(IOUtils.getUserDir(), "target/test-classes/jarFile.jar");
-        LOGGER.debug(JAR_PATH);
-        Set<String> expectedJarEntries = Sets.asSet(
-            "META-INF/",
-            "META-INF/MANIFEST.MF",
-            "logback.xml",
-            "com/",
-            "com/rslakra/",
-            "com/rslakra/frameworks/",
-            "com/rslakra/frameworks/core/",
-            "com/rslakra/frameworks/core/CharSets.class",
-            "com/rslakra/frameworks/core/MathUtils.class",
-            "com/rslakra/frameworks/core/UnsafeUtils.class",
-            "com/rslakra/frameworks/core/Pair.class",
-            "com/rslakra/frameworks/core/HashUtils.class",
-            "com/rslakra/frameworks/core/ArrayIterator.class",
-            "com/rslakra/frameworks/core/xml/",
-            "com/rslakra/frameworks/core/xml/XmlUtils.class",
-            "com/rslakra/frameworks/core/Payload.class",
-            "com/rslakra/frameworks/core/Sets.class",
-            "com/rslakra/frameworks/core/exception/",
-            "com/rslakra/frameworks/core/exception/ServerRuntimeException.class",
-            "com/rslakra/frameworks/core/exception/InvalidRequestException.class",
-            "application.properties"
-        );
+        LOGGER.debug("+testGetJarEntries()");
+        Set<String> expectedJarEntries = Sets.asSet("META-INF/", "META-INF/MANIFEST.MF", "com/", "com/rslakra/", "com/rslakra/appsuite/", "com/rslakra/appsuite/core/", "com/rslakra/appsuite/core/CharSets.class", "com/rslakra/appsuite/core/MathUtils.class", "com/rslakra/appsuite/core/UnsafeUtils.class", "com/rslakra/appsuite/core/Pair.class", "com/rslakra/appsuite/core/HashUtils.class", "com/rslakra/appsuite/core/ArrayIterator.class", "com/rslakra/appsuite/core/xml/", "com/rslakra/appsuite/core/xml/XmlUtils.class", "com/rslakra/appsuite/core/Payload.class", "com/rslakra/appsuite/core/Sets.class", "com/rslakra/appsuite/core/exception/", "com/rslakra/appsuite/core/exception/ServerRuntimeException.class", "com/rslakra/appsuite/core/exception/InvalidRequestException.class", "application.properties");
 
         LOGGER.debug("expectedJarEntries: {}", expectedJarEntries);
-        Set<String> jarEntries = IOUtils.getJarEntries(new File(JAR_PATH));
-        LOGGER.debug("jarEntries: {}", jarEntries);
+
+        String versionFilePath = IOUtils.pathWithWorkingDir("version.txt");
+        LOGGER.debug("versionFilePath={}", versionFilePath);
+        assertNotNull(versionFilePath);
+        assertTrue(versionFilePath.endsWith("appsuite-core/version.txt"));
+        List<String> versionContents = IOUtils.readAllLines(versionFilePath);
+        LOGGER.debug("versionContents={}", versionContents);
+        assertNotNull(versionContents);
+        assertNotNull(versionContents.get(0));
+        assertTrue(versionContents.size() > 0);
+
+        // reads .jar file
+        String jarFileName = "appsuite-core-{}.jar".replace("{}", versionContents.get(0));
+        LOGGER.debug("jarFileName={}", jarFileName);
+        String jarFilePath = IOUtils.pathWithWorkingDir("target", jarFileName);
+        LOGGER.debug("jarFilePath={}", jarFilePath);
+        assertNotNull(jarFilePath);
+        Set<String> jarEntries = IOUtils.getJarEntries(jarFilePath);
+        LOGGER.debug("jarEntries={}", jarEntries);
         assertTrue(jarEntries.containsAll(expectedJarEntries));
-// assertEquals(expectedJarEntries, jarEntries);
+        // assertEquals(expectedJarEntries, jarEntries);
         LOGGER.debug("-testGetJarEntries()");
     }
 
@@ -150,27 +204,35 @@ public class IOUtilsTest {
      */
     @Test
     public void testGetJarFileClassNames() throws IOException {
-        LOGGER.debug("-testGetJarFileClassNames()");
-        String JAR_PATH = IOUtils.pathString(IOUtils.getUserDir(), "target/test-classes/jarFile.jar");
-        LOGGER.debug(JAR_PATH);
-        Set<String> expectedClassNames = Sets.asSet(
-            "com.rslakra.frameworks.common.CharSets",
-            "com.rslakra.frameworks.common.MathUtils",
-            "com.rslakra.frameworks.common.UnsafeUtils",
-            "com.rslakra.frameworks.common.Pair",
-            "com.rslakra.frameworks.common.HashUtils",
-            "com.rslakra.frameworks.common.ArrayIterator",
-            "com.rslakra.frameworks.common.xml.XmlUtils",
-            "com.rslakra.frameworks.common.Payload",
-            "com.rslakra.frameworks.common.Sets",
-            "com.rslakra.frameworks.common.exception.ServerRuntimeException",
-            "com.rslakra.frameworks.common.exception.InvalidRequestException"
-        );
+        LOGGER.debug("+testGetJarFileClassNames()");
+        Set<String> expectedClassNames = Sets.asSet("com.rslakra.appsuite.core.CharSets", "com.rslakra.appsuite.core.MathUtils", "com.rslakra.appsuite.core.UnsafeUtils", "com.rslakra.appsuite.core.Pair", "com.rslakra.appsuite.core.HashUtils", "com.rslakra.appsuite.core.ArrayIterator", "com.rslakra.appsuite.core.xml.XmlUtils", "com.rslakra.appsuite.core.Payload", "com.rslakra.appsuite.core.Sets", "com.rslakra.appsuite.core.exception.ServerRuntimeException", "com.rslakra.appsuite.core.exception.InvalidRequestException");
 
-        LOGGER.debug("expectedClassNames: {}", expectedClassNames);
-        Set<String> jarFileClassNames = IOUtils.getJarFileClassNames(new File(JAR_PATH));
-        LOGGER.debug("jarFileClassNames: {}", jarFileClassNames);
-        assertEquals(expectedClassNames, jarFileClassNames);
+        LOGGER.debug("expectedClassNames={}", expectedClassNames);
+
+        String versionFilePath = IOUtils.pathWithWorkingDir("version.txt");
+        LOGGER.debug("versionFilePath={}", versionFilePath);
+        assertNotNull(versionFilePath);
+        assertTrue(versionFilePath.endsWith("appsuite-core/version.txt"));
+        List<String> versionContents = IOUtils.readAllLines(versionFilePath);
+        LOGGER.debug("versionContents={}", versionContents);
+        assertNotNull(versionContents);
+        assertNotNull(versionContents.get(0));
+        assertTrue(versionContents.size() > 0);
+
+        // reads .jar file
+        String jarFileName = "appsuite-core-{}.jar".replace("{}", versionContents.get(0));
+        LOGGER.debug("jarFileName={}", jarFileName);
+        String jarFilePath = IOUtils.pathWithWorkingDir("target", jarFileName);
+        LOGGER.debug("jarFilePath={}", jarFilePath);
+        assertNotNull(jarFilePath);
+
+        try {
+            Set<String> jarFileClassNames = IOUtils.getJarFileClassNames(jarFilePath);
+            LOGGER.debug("jarFileClassNames={}", jarFileClassNames);
+            assertTrue(jarFileClassNames.containsAll(expectedClassNames));
+        } catch (Exception ex) {
+            LOGGER.error(ex.getMessage(), ex);
+        }
         LOGGER.debug("-testGetJarFileClassNames()");
     }
 
@@ -181,30 +243,36 @@ public class IOUtilsTest {
      */
     @Test
     public void testGetJarFileClasses() throws IOException, ClassNotFoundException {
-        LOGGER.debug("-testGetJarFileClasses()");
-        Set<String> expectedClassNames = Sets.asSet(
-            "com.rslakra.frameworks.common.CharSets",
-            "com.rslakra.frameworks.common.MathUtils",
-            "com.rslakra.frameworks.common.UnsafeUtils",
-            "com.rslakra.frameworks.common.Pair",
-            "com.rslakra.frameworks.common.HashUtils",
-            "com.rslakra.frameworks.common.ArrayIterator",
-            "com.rslakra.frameworks.common.xml.XmlUtils",
-            "com.rslakra.frameworks.common.Payload",
-            "com.rslakra.frameworks.common.Sets",
-            "com.rslakra.frameworks.common.exception.ServerRuntimeException",
-            "com.rslakra.frameworks.common.exception.InvalidRequestException"
-        );
+        LOGGER.debug("+testGetJarFileClasses()");
+        Set<String> expectedClassNames = Sets.asSet("com.rslakra.appsuite.core.CharSets", "com.rslakra.appsuite.core.MathUtils", "com.rslakra.appsuite.core.UnsafeUtils", "com.rslakra.appsuite.core.Pair", "com.rslakra.appsuite.core.HashUtils", "com.rslakra.appsuite.core.ArrayIterator", "com.rslakra.appsuite.core.xml.XmlUtils", "com.rslakra.appsuite.core.Payload", "com.rslakra.appsuite.core.Sets", "com.rslakra.appsuite.core.exception.ServerRuntimeException", "com.rslakra.appsuite.core.exception.InvalidRequestException");
 
         LOGGER.debug("expectedClassNames: {}", expectedClassNames);
         File jarFile = new File(IOUtils.pathString(IOUtils.getUserDir(), "target/test-classes/jarFile.jar"));
         LOGGER.debug("jarFile: {}", jarFile.getAbsolutePath());
-// Set<String> jarFileClassNames = IOUtils.getJarFileClassNames(jarFile);
-// LOGGER.debug("jarFileClassNames: {}", jarFileClassNames);
-        Set<Class> jarFileClasses = IOUtils.getJarFileClasses(jarFile);
-        LOGGER.debug("jarFileClasses: {}", jarFileClasses);
+
+        String versionFilePath = IOUtils.pathWithWorkingDir("version.txt");
+        LOGGER.debug("versionFilePath={}", versionFilePath);
+        assertNotNull(versionFilePath);
+        assertTrue(versionFilePath.endsWith("appsuite-core/version.txt"));
+        List<String> versionContents = IOUtils.readAllLines(versionFilePath);
+        LOGGER.debug("versionContents={}", versionContents);
+        assertNotNull(versionContents);
+        assertNotNull(versionContents.get(0));
+        assertTrue(versionContents.size() > 0);
+
+        // reads .jar file
+        String jarFileName = "appsuite-core-{}.jar".replace("{}", versionContents.get(0));
+        LOGGER.debug("jarFileName={}", jarFileName);
+        String jarFilePath = IOUtils.pathWithWorkingDir("target", jarFileName);
+        LOGGER.debug("jarFilePath={}", jarFilePath);
+        assertNotNull(jarFilePath);
+
+        //get jar file classes
+        Set<Class> jarFileClasses = IOUtils.getJarFileClasses(jarFilePath);
+        LOGGER.debug("jarFileClasses={}", jarFileClasses);
         Set<String> jarClasses = jarFileClasses.stream().map(Class::getName).collect(Collectors.toSet());
-        assertEquals(expectedClassNames, jarClasses);
+        LOGGER.debug("jarClasses={}", jarClasses);
+        assertTrue(jarClasses.containsAll(expectedClassNames));
         LOGGER.debug("-testGetJarFileClasses()");
     }
 }

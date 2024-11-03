@@ -33,52 +33,14 @@ package com.rslakra.appsuite.core;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.RandomAccessFile;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.URI;
-import java.net.URL;
-import java.net.URLClassLoader;
+import java.io.*;
+import java.net.*;
 import java.nio.charset.Charset;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.attribute.PosixFilePermission;
 import java.nio.file.attribute.PosixFilePermissions;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.EnumSet;
-import java.util.Enumeration;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.zip.GZIPInputStream;
@@ -178,10 +140,12 @@ public enum IOUtils {
     }
 
     /**
+     * Returns the path with working dir.
+     *
      * @param pathSegments
      * @return
      */
-    public static String getBuildDir(final String... pathSegments) {
+    public static String pathWithWorkingDir(final String... pathSegments) {
         final StringBuilder pathBuilder = new StringBuilder(getUserDir());
         if (BeanUtils.isNotEmpty(pathSegments)) {
             for (int index = 0; index < pathSegments.length; index++) {
@@ -1075,7 +1039,7 @@ public enum IOUtils {
      * @return
      */
     public static byte[] readBytes(final InputStream inputStream, final boolean closeStream) {
-        System.out.println("+readBytes(" + inputStream + ", " + closeStream + ")");
+        LOGGER.debug("+readBytes({}, {})", inputStream, closeStream);
         byte[] dataBytes = null;
         if (inputStream != null) {
             ByteArrayOutputStream byteStream = null;
@@ -1090,7 +1054,7 @@ public enum IOUtils {
                 byteStream.flush();
                 dataBytes = byteStream.toByteArray();
             } catch (IOException ex) {
-                System.err.println(ex);
+                LOGGER.error(ex.getMessage(), ex);
             } finally {
                 /* close streams. */
                 closeSilently(byteStream);
@@ -1324,6 +1288,54 @@ public enum IOUtils {
      */
     public static byte[] readBytes(final String fileName) throws IOException {
         return readBytes(newFileInputStream(fileName), true);
+    }
+
+    /**
+     * Reads all the bytes from a file.
+     *
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
+    public static byte[] readAllBytes(final String fileName) throws IOException {
+        return Files.readAllBytes(Paths.get(fileName));
+    }
+
+    /**
+     * Reads all the contents from a file.
+     *
+     * @param filePath
+     * @return
+     * @throws IOException
+     */
+    public static String readAllContents(final String filePath) {
+        String fileContents = null;
+        try {
+            fileContents = new String(IOUtils.readAllBytes(filePath));
+        } catch (IOException ex) {
+            LOGGER.error(ex.getMessage(), ex);
+        }
+
+        return fileContents;
+    }
+
+
+    /**
+     * Returns: the lines from the file as a List; whether the List is modifiable or not is implementation dependent and therefore not specified.
+     *
+     * @param filePath
+     * @return
+     */
+    public static List<String> readAllLines(String filePath) {
+        List<String> allLines;
+        try {
+            allLines = Files.readAllLines(Paths.get(filePath));
+        } catch (IOException ex) {
+            allLines = new ArrayList<>();
+            LOGGER.error(ex.getMessage(), ex);
+        }
+
+        return allLines;
     }
 
     /**
@@ -2226,6 +2238,17 @@ public enum IOUtils {
 
     /**
      * Returns the set of jar file names.
+     *
+     * @param jarFilePath
+     * @return
+     * @throws IOException
+     */
+    public static Set<String> getJarEntries(String jarFilePath) throws IOException {
+        return getJarEntries(new File(jarFilePath));
+    }
+
+    /**
+     * Returns the set of jar file class names.
      * <pre>
      * Command:
      *
@@ -2266,18 +2289,28 @@ public enum IOUtils {
             while (jarEntries.hasMoreElements()) {
                 JarEntry jarEntry = jarEntries.nextElement();
                 if (jarEntry.getName().endsWith(".class")) {
-                    String className = jarEntry.getName()
-                        .replace("/", ".")
-                        .replace(".class", "");
+                    String className = jarEntry.getName().replace("/", ".").replace(".class", "");
 //                    className = className.substring(className.indexOf(".") + 1);
                     classNames.add(className);
                 }
             }
         }
 
-        LOGGER.debug("-getJarFileClassNames(), classNames: {}", classNames);
+        LOGGER.debug("-getJarFileClassNames(), classNames={}", classNames);
         return classNames;
     }
+
+    /**
+     * Returns the set of jar file class names.
+     *
+     * @param jarFilePath
+     * @return
+     * @throws IOException
+     */
+    public static Set<String> getJarFileClassNames(String jarFilePath) throws IOException {
+        return getJarFileClassNames(new File(jarFilePath));
+    }
+
 
     /**
      * @param jarFile
@@ -2289,6 +2322,8 @@ public enum IOUtils {
     }
 
     /**
+     * Returns the set of jar file classes.
+     *
      * @param jarFile
      * @return
      * @throws IOException
@@ -2309,5 +2344,18 @@ public enum IOUtils {
         LOGGER.debug("-getJarFileClasses(), classHashSet: {}", classHashSet);
         return classHashSet;
     }
+
+    /**
+     * Returns the set of jar file classes.
+     *
+     * @param jarFilePath
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public static Set<Class> getJarFileClasses(String jarFilePath) throws IOException, ClassNotFoundException {
+        return getJarFileClasses(new File(jarFilePath));
+    }
+
 
 }
