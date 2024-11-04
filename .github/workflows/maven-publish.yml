@@ -42,14 +42,14 @@ jobs:
 #      run: mvn -B package --file pom.xml
     
     # Step for running unit-tests
-    - name: Maven Verify
+    - name: Maven Verify Package
       run: mvn -B verify
     
     # Step for Publishing Package to GitHub
-#    - name: Publish to GitHub Packages Apache Maven
-#      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-#      env:
-#        GITHUB_TOKEN: ${{ github.token }}
+    - name: Publish to GitHub Packages Apache Maven
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
         
 
 #      - name: Maven Verify Integration Tests
