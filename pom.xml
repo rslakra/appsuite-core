@@ -7,8 +7,10 @@
     <artifactId>appsuite-core</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
+    <!-- project name, description and url -->
     <name>${project.artifactId}</name>
-    <description>The ${project.artifactId} Application</description>
+    <description>The ${project.artifactId} deployment to the Central Repository</description>
+    <url>https://github.com/rslakra/appsuite-core</url>
 
     <!-- Properties -->
     <properties>
@@ -16,8 +18,9 @@
         <revision>0.0.0</revision>
 
         <!-- sourceEncoding &  outputEncoding -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <defaultEncoding>UTF-8</defaultEncoding>
+        <project.build.sourceEncoding>${defaultEncoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${defaultEncoding}</project.reporting.outputEncoding>
 
         <!-- java version -->
         <java.version>21</java.version>
@@ -25,10 +28,15 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- maven plugins -->
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <mainClassInfo>com.example.ApplicationKt</mainClassInfo>
+        <mainClassInfo>com.rslakra.appsuite.core.App</mainClassInfo>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.10.1</maven-javadoc-plugin.version>
+        <maven-gpg-plugin.version>3.2.5</maven-gpg-plugin.version>
+        <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
         <maven-release-plugin.version>3.0.0</maven-release-plugin.version>
 
@@ -62,22 +70,59 @@
         <!-- junit-jupiter-params -->
         <junit-jupiter-params.version>5.9.2</junit-jupiter-params.version>
         <surefire-junit3.version>2.12.4</surefire-junit3.version>
-
     </properties>
 
-    <!-- distributionManagement -->
-    <!--    <distributionManagement>-->
-    <!--        <repository>-->
-    <!--            <id>nexus</id>-->
-    <!--            <name>nexus-release</name>-->
-    <!--            <url>file:${mavenGitRepository}/releases</url>-->
-    <!--        </repository>-->
-    <!--        <snapshotRepository>-->
-    <!--            <id>nexus</id>-->
-    <!--            <name>nexus-snapshot</name>-->
-    <!--            <url>file:${mavenGitRepository}/snapshots</url>-->
-    <!--        </snapshotRepository>-->
-    <!--    </distributionManagement>-->
+    <!-- licenses -->
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <!-- developers -->
+    <developers>
+        <developer>
+            <name>Rohtash Lakra</name>
+            <email>rohtash.singh@gmail.com</email>
+            <organization>Devamatre</organization>
+            <organizationUrl>https://www.devamatre.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <!-- scm -->
+    <scm>
+        <connection>scm:git:git://github.com/rslakra/appsuite-core.git</connection>
+        <developerConnection>scm:git:ssh://github.com:rslakra/appsuite-core.git</developerConnection>
+        <url>https://github.com/rslakra/appsuite-core/tree/master</url>
+    </scm>
+
+    <!-- DistributionManagement -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <!--
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>nexus-snapshot</name>
+            <url>file:${mavenGitRepository}/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus</id>
+            <name>nexus-release</name>
+            <url>file:${mavenGitRepository}/releases</url>
+        </repository>
+    </distributionManagement>
+    -->
 
     <!-- Dependencies -->
     <dependencies>
@@ -171,7 +216,7 @@
 
     </dependencies>
 
-    <!-- profiles -->
+    <!-- Profiles -->
     <profiles>
 
         <!-- snapshot -->
@@ -205,6 +250,7 @@
 
     <!-- Build -->
     <build>
+
         <!-- plugins -->
         <plugins>
 
@@ -273,6 +319,66 @@
                 </executions>
             </plugin>
 
+            <!-- maven-source-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- maven-javadoc-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- maven-gpg-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${maven-gpg-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- nexus-staging-maven-plugin -->
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>${nexus-staging-maven-plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <!-- Set this to true and the release will automatically proceed and sync to Central Repository will follow  -->
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+
             <!-- maven-checkstyle-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -312,7 +418,7 @@
 
     </build>
 
-    <!-- reporting -->
+    <!-- Reporting -->
     <reporting>
         <!-- plugins -->
         <plugins>
