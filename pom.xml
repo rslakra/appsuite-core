@@ -320,6 +320,7 @@
             </plugin>
 
             <!-- maven-source-plugin -->
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -333,6 +334,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
 
             <!-- maven-javadoc-plugin -->
             <!--
@@ -370,6 +372,7 @@
             -->
 
             <!-- nexus-staging-maven-plugin -->
+            <!--
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -378,10 +381,11 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <!-- Set this to true and the release will automatically proceed and sync to Central Repository will follow  -->
+                    <!- Set this to true and the release will automatically proceed and sync to Central Repository will follow  ->
                     <autoReleaseAfterClose>false</autoReleaseAfterClose>
                 </configuration>
             </plugin>
+            -->
 
             <!-- maven-checkstyle-plugin -->
             <plugin>
