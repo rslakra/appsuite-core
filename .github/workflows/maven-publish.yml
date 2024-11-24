@@ -55,9 +55,23 @@ jobs:
       
       # Step for compiling code
       - name: Build Maven Package
-        run: ./buildMaven.sh
-      # run: mvn -B clean package -DskipTests
-      
+        run: |
+          # Generate Build Version
+          VERSION="0.0"
+          GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
+          if [ $? -ne 0 ]; then
+            VERSION="${VERSION}.1"
+          else
+            VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
+          fi
+          echo "VERSION=${VERSION}"
+          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
+          RELEASE_VERSION="${VERSION}"
+          echo "${VERSION}" > version.txt
+          cat version.txt
+          echo "RELEASE_VERSION=${RELEASE_VERSION}, SNAPSHOT_VERSION=${SNAPSHOT_VERSION}"
+          mvn -B clean package -Drevision=$SNAPSHOT_VERSION
+          mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
       #    - name: Build with Maven
       #      run: mvn -B package --file pom.xml
       

@@ -6,7 +6,7 @@ VERSION="0.0"
 function buildVersion() {
   GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
   if [ $? -ne 0 ]; then
-    VERSION="${VERSION}.0"
+    VERSION="${VERSION}.1"
   else
     VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
   fi
