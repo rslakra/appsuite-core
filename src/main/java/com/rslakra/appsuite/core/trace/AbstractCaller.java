@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.Optional;
 
 /**
+ * TODO: <url>https://openjdk.org/jeps/411</url>
+ *
  * @author Rohtash Lakra
  * @created 6/9/21 3:31 PM
  */
@@ -79,7 +81,7 @@ public abstract class AbstractCaller extends SecurityManager implements Caller {
     protected int getOffset(final StackTraceElement[] stackTraceElements, final Class<?> classType) {
         for (int index = 0; index < stackTraceElements.length; index++) {
             if (stackTraceElements[index].getClassName().equals(classType.getName()) && "init"
-                .equals(stackTraceElements[index].getMethodName())) {
+                    .equals(stackTraceElements[index].getMethodName())) {
                 return index;
             }
         }
@@ -121,9 +123,9 @@ public abstract class AbstractCaller extends SecurityManager implements Caller {
     public String getLastMethodName() {
         if (BeanUtils.isEmpty(lastMethodName)) {
             Optional<StackTraceElement>
-                stackTraceElement =
-                Arrays.stream(Thread.currentThread().getStackTrace())
-                    .filter(element -> element.getClassName().equals(getCallerClass().getName())).findFirst();
+                    stackTraceElement =
+                    Arrays.stream(Thread.currentThread().getStackTrace())
+                            .filter(element -> element.getClassName().equals(getCallerClass().getName())).findFirst();
             if (stackTraceElement.isPresent()) {
                 setLastMethodName(stackTraceElement.get().getMethodName());
             }

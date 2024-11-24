@@ -2284,6 +2284,10 @@ public enum IOUtils {
     public static Set<String> getJarFileClassNames(File jarFilePath) throws IOException {
         LOGGER.debug("+getJarFileClassNames({})", jarFilePath);
         Set<String> classNames = new LinkedHashSet<>();
+        if (!jarFilePath.exists()) {
+            throw new NoSuchFileException(jarFilePath.getAbsolutePath());
+        }
+
         try (JarFile jarFile = new JarFile(jarFilePath)) {
             Enumeration<JarEntry> jarEntries = jarFile.entries();
             while (jarEntries.hasMoreElements()) {
