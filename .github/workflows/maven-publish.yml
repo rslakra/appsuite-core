@@ -40,8 +40,9 @@ jobs:
         run: |
           echo "Hello, ${NAME}"
           echo "envType=${ENV_TYPE}"
-          echo "JDK Version${{env.JDK_VERSION}}"
-      - name: Set up JDK ${{env.JDK_VERSION}}
+          echo "JDK Version ${{env.JDK_VERSION}}"
+          echo "GitHub Workspace=${GITHUB_WORKSPACE}"
+      - name: Setup JDK ${{env.JDK_VERSION}}
         uses: actions/setup-java@v4
         with:
           java-version: ${{env.JDK_VERSION}}
