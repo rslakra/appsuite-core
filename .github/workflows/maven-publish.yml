@@ -35,7 +35,16 @@ jobs:
     
     # Steps
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set Environment
+        run: |
+          BUILD_TIMESTAMP=$(date +%s)
+          BUILD_DATE=$(date -d @${BUILD_TIMESTAMP} +%Y/%m/%d)
+          echo "BUILD_TIMESTAMP=$BUILD_TIMESTAMP" >> "$GITHUB_ENV"
+          echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
+          echo "version: ${{ steps.get_version.outputs.version }}"
+          echo "version-without-v: ${{ steps.get_version.outputs.version-without-v }}"
       - name: Print Environment Variables
         run: |
           echo "Hello, ${NAME}"
@@ -52,7 +61,6 @@ jobs:
           architecture: x64
           cache: maven
           check-for-updates: 'true'
-      
       # Step for compiling code
       - name: Build Maven Package
         run: |
@@ -78,6 +86,9 @@ jobs:
       # Step for running unit-tests
       - name: Maven Verify Package
         run: mvn -B verify
+      - name: Build Artifact
+        run: |
+          git archive -v -o target/${BUILD_TIMESTAMP}_${GITHUB_REF_NAME//\//_}_${GITHUB_SHA}.zip --format=zip HEAD
         
 #      # Run the Maven 'verify' phase
 #      - name: Run the Maven's verify phase
