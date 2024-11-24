@@ -29,16 +29,17 @@
 
         <!-- maven plugins -->
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins -->
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <mainClassInfo>com.rslakra.appsuite.core.App</mainClassInfo>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.10.1</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.5</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
-        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.5.0</maven-checkstyle-plugin.version>
         <maven-release-plugin.version>3.0.0</maven-release-plugin.version>
+
+        <mainClassInfo>com.rslakra.appsuite.core.App</mainClassInfo>
 
         <!-- checkstyle -->
         <code-styles.dir>https://raw.githubusercontent.com/rslakra/code-styles/master</code-styles.dir>
@@ -68,7 +69,7 @@
         <swagger.skip>false</swagger.skip>
 
         <!-- junit-jupiter-params -->
-        <junit-jupiter-params.version>5.9.2</junit-jupiter-params.version>
+        <junit-jupiter-params.version>5.10.2</junit-jupiter-params.version>
         <surefire-junit3.version>2.12.4</surefire-junit3.version>
     </properties>
 
