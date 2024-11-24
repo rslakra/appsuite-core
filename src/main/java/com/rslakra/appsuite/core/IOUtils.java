@@ -2223,17 +2223,23 @@ public enum IOUtils {
      */
     public static Set<String> getJarEntries(File jarFilePath) throws IOException {
         LOGGER.debug("+getJarEntries({})", jarFilePath);
-        Set<String> jarAllEntries = new LinkedHashSet<>();
+        Set<String> jarEntriesSet = new LinkedHashSet<>();
+        if (!jarFilePath.exists()) {
+            throw new NoSuchFileException(jarFilePath.getAbsolutePath());
+        }
+
         try (JarFile jarFile = new JarFile(jarFilePath)) {
             Enumeration<JarEntry> jarEntries = jarFile.entries();
+            LOGGER.debug("jarEntries={}", jarEntries);
             while (jarEntries.hasMoreElements()) {
                 JarEntry jarEntry = jarEntries.nextElement();
-                jarAllEntries.add(jarEntry.getName());
+                LOGGER.debug("jarEntry={}", jarEntry);
+                jarEntriesSet.add(jarEntry.getName());
             }
         }
 
-        LOGGER.debug("-getJarEntries(), jarEntries: {}", jarAllEntries);
-        return jarAllEntries;
+        LOGGER.debug("-getJarEntries(), jarEntriesSet: {}", jarEntriesSet);
+        return jarEntriesSet;
     }
 
     /**

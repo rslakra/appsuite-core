@@ -55,7 +55,8 @@ jobs:
       
       # Step for compiling code
       - name: Build Maven Package
-        run: mvn -B clean package -DskipTests
+        run: ./buildMaven.sh
+      # run: mvn -B clean package -DskipTests
       
       #    - name: Build with Maven
       #      run: mvn -B package --file pom.xml
