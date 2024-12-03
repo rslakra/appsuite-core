@@ -79,8 +79,9 @@ jobs:
           echo "SNAPSHOT_VERSION=${SNAPSHOT_VERSION}, RELEASE_VERSION=${RELEASE_VERSION}"
           echo "${VERSION}" > $GITHUB_WORKSPACE/version.txt
           cat $GITHUB_WORKSPACE/version.txt
-          ls -la
-          mvn -B clean package -Drevision=$SNAPSHOT_VERSION
+          mvn -B clean package -DskipTests
+          mvn -B clean package -Drevision=$SNAPSHOT_VERSION -DskipTests
+          mvn -B test install
           mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
       #    - name: Build with Maven
       #      run: mvn -B package --file pom.xml
