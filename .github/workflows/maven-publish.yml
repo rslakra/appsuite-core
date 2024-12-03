@@ -46,12 +46,14 @@ jobs:
           echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
           echo "version: ${{ steps.get_version.outputs.version }}"
           echo "version-without-v: ${{ steps.get_version.outputs.version-without-v }}"
+          BUILD_FILE_NAME=${BUILD_TIMESTAMP}_${GITHUB_REF_NAME//\//_}_${GITHUB_SHA}.zip
       - name: Print Environment Variables
         run: |
           echo "Hello, ${NAME}"
           echo "envType=${ENV_TYPE}"
           echo "JDK Version ${{env.JDK_VERSION}}"
           echo "GitHub Workspace=${GITHUB_WORKSPACE}"
+          echo "Build Filename=${BUILD_FILE_NAME}"
       - name: Setup JDK ${{env.JDK_VERSION}}
         uses: actions/setup-java@v4
         with:
@@ -91,10 +93,9 @@ jobs:
         run: mvn -B verify
       - name: Build Artifact
         run: |
-          BUILD_FILE_NAME=${BUILD_TIMESTAMP}_${GITHUB_REF_NAME//\//_}_${GITHUB_SHA}.zip
           echo "BUILD_FILE_NAME=${BUILD_FILE_NAME}"
           git archive -v -o target/${BUILD_FILE_NAME} --format=zip HEAD
-          ls -la $BUILD_FILE_NAME
+          ls -la target/${BUILD_FILE_NAME}
         
 #      # Run the Maven 'verify' phase
 #      - name: Run the Maven's verify phase
