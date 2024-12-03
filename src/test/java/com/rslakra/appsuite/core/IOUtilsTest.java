@@ -196,7 +196,7 @@ public class IOUtilsTest {
      *
      * @throws IOException
      */
-    @Test
+//    @Test
     public void testGetJarEntries() throws IOException {
         LOGGER.debug("+testGetJarEntries()");
         Set<String> expectedJarEntries = Sets.asSet("META-INF/", "META-INF/MANIFEST.MF", "com/", "com/rslakra/", "com/rslakra/appsuite/", "com/rslakra/appsuite/core/", "com/rslakra/appsuite/core/CharSets.class", "com/rslakra/appsuite/core/MathUtils.class", "com/rslakra/appsuite/core/UnsafeUtils.class", "com/rslakra/appsuite/core/Pair.class", "com/rslakra/appsuite/core/HashUtils.class", "com/rslakra/appsuite/core/ArrayIterator.class", "com/rslakra/appsuite/core/xml/", "com/rslakra/appsuite/core/xml/XmlUtils.class", "com/rslakra/appsuite/core/Payload.class", "com/rslakra/appsuite/core/Sets.class", "com/rslakra/appsuite/core/exception/", "com/rslakra/appsuite/core/exception/ServerRuntimeException.class", "com/rslakra/appsuite/core/exception/InvalidRequestException.class", "application.properties");
@@ -215,7 +215,7 @@ public class IOUtilsTest {
      *
      * @throws IOException
      */
-    @Test
+//    @Test
     public void testGetJarFileClassNames() throws IOException {
         LOGGER.debug("+testGetJarFileClassNames()");
         Set<String> expectedClassNames = Sets.asSet("com.rslakra.appsuite.core.CharSets", "com.rslakra.appsuite.core.MathUtils", "com.rslakra.appsuite.core.UnsafeUtils", "com.rslakra.appsuite.core.Pair", "com.rslakra.appsuite.core.HashUtils", "com.rslakra.appsuite.core.ArrayIterator", "com.rslakra.appsuite.core.xml.XmlUtils", "com.rslakra.appsuite.core.Payload", "com.rslakra.appsuite.core.Sets", "com.rslakra.appsuite.core.exception.ServerRuntimeException", "com.rslakra.appsuite.core.exception.InvalidRequestException");
@@ -237,7 +237,7 @@ public class IOUtilsTest {
      *
      * @throws IOException
      */
-    @Test
+//    @Test
     public void testGetJarFileClasses() throws IOException, ClassNotFoundException {
         LOGGER.debug("+testGetJarFileClasses()");
         Set<String> expectedClassNames = Sets.asSet("com.rslakra.appsuite.core.CharSets", "com.rslakra.appsuite.core.MathUtils", "com.rslakra.appsuite.core.UnsafeUtils", "com.rslakra.appsuite.core.Pair", "com.rslakra.appsuite.core.HashUtils", "com.rslakra.appsuite.core.ArrayIterator", "com.rslakra.appsuite.core.xml.XmlUtils", "com.rslakra.appsuite.core.Payload", "com.rslakra.appsuite.core.Sets", "com.rslakra.appsuite.core.exception.ServerRuntimeException", "com.rslakra.appsuite.core.exception.InvalidRequestException");

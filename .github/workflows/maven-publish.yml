@@ -73,12 +73,13 @@ jobs:
           else
             VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
           fi
-          echo "VERSION=${VERSION}"
+          echo "GIT_COMMIT_COUNT=${GIT_COMMIT_COUNT}, VERSION=${VERSION}"
           SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
           RELEASE_VERSION="${VERSION}"
-          echo "${VERSION}" > version.txt
-          cat version.txt
-          echo "RELEASE_VERSION=${RELEASE_VERSION}, SNAPSHOT_VERSION=${SNAPSHOT_VERSION}"
+          echo "SNAPSHOT_VERSION=${SNAPSHOT_VERSION}, RELEASE_VERSION=${RELEASE_VERSION}"
+          echo "${VERSION}" > $GITHUB_WORKSPACE/version.txt
+          cat $GITHUB_WORKSPACE/version.txt
+          ls -la
           mvn -B clean package -Drevision=$SNAPSHOT_VERSION
           mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
       #    - name: Build with Maven
