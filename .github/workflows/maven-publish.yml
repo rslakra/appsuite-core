@@ -91,7 +91,10 @@ jobs:
         run: mvn -B verify
       - name: Build Artifact
         run: |
-          git archive -v -o target/${BUILD_TIMESTAMP}_${GITHUB_REF_NAME//\//_}_${GITHUB_SHA}.zip --format=zip HEAD
+          BUILD_FILE_NAME=${BUILD_TIMESTAMP}_${GITHUB_REF_NAME//\//_}_${GITHUB_SHA}.zip
+          echo "BUILD_FILE_NAME=${BUILD_FILE_NAME}"
+          git archive -v -o target/${BUILD_FILE_NAME} --format=zip HEAD
+          ls -la $BUILD_FILE_NAME
         
 #      # Run the Maven 'verify' phase
 #      - name: Run the Maven's verify phase
