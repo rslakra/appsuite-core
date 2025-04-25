@@ -9,4 +9,37 @@ package com.rslakra.appsuite.core;
 public enum NumberUtils {
     INSTANCE;
 
+    /**
+     * Returns true if the given string is a boolean.
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isBoolean(String str) {
+        if (BeanUtils.isEmpty(str)) {
+            return false;
+        }
+
+        return "true".equalsIgnoreCase(str) || "false".equalsIgnoreCase(str);
+    }
+
+    /**
+     * Returns true if the given string is a number.
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isNumber(String str) {
+        if (BeanUtils.isEmpty(str)) {
+            return false;
+        }
+
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
 }

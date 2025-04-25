@@ -43,13 +43,14 @@ public enum MathUtils {
     }
 
     /**
-     * Sets the scale to 2 decimal places with rounding half-up.
+     * Returns the <code>number</code> after right shifting the <code>number</code> to the given <code>rightShift</code>
+     * values.
      *
-     * @param newScale
      * @param bigDecimal
+     * @param newScale
      * @return
      */
-    public static final BigDecimal setRoundingScale(final int newScale, final BigDecimal bigDecimal) {
+    public static final BigDecimal setRoundingScale(BigDecimal bigDecimal, int newScale) {
         return (bigDecimal == null ? bigDecimal : bigDecimal.setScale(newScale, RoundingMode.HALF_UP));
     }
 
@@ -59,8 +60,8 @@ public enum MathUtils {
      * @param bigDecimal
      * @return
      */
-    public static final BigDecimal setRounding2Scale(final BigDecimal bigDecimal) {
-        return setRoundingScale(2, bigDecimal);
+    public static final BigDecimal setRounding2Scale(BigDecimal bigDecimal) {
+        return setRoundingScale(bigDecimal, 2);
     }
 
     /**

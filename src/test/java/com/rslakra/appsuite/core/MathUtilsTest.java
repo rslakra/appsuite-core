@@ -48,10 +48,10 @@ public class MathUtilsTest {
     public void testSetRoundingScale() {
         BigDecimal number = BigDecimal.valueOf(3893.3850983);
         LOGGER.debug("number:{}", number);
-        assertEquals(BigDecimal.valueOf(3893.3851), MathUtils.setRoundingScale(4, number));
-        assertEquals(BigDecimal.valueOf(3893.385), MathUtils.setRoundingScale(3, number));
-        assertEquals(BigDecimal.valueOf(3893.39), MathUtils.setRoundingScale(2, number));
-        assertEquals(BigDecimal.valueOf(3893.4), MathUtils.setRoundingScale(1, number));
+        assertEquals(BigDecimal.valueOf(3893.3851), MathUtils.setRoundingScale(number, 4));
+        assertEquals(BigDecimal.valueOf(3893.385), MathUtils.setRoundingScale(number, 3));
+        assertEquals(BigDecimal.valueOf(3893.39), MathUtils.setRoundingScale(number, 2));
+        assertEquals(BigDecimal.valueOf(3893.4), MathUtils.setRoundingScale(number, 1));
     }
 
     @Test

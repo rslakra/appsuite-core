@@ -1065,6 +1065,7 @@ public enum BeanUtils {
                 return INSTANCE.arrayFromCollection((Collection<T>) response, responseType);
             }
         } else if (isTypeOfMap(responseType)) {
+            return INSTANCE.arrayFromMap((Map) response, responseType, true);
         } else if (isTypeOfCollection(responseType)) {
             if (isTypeOfMap(response)) {
                 return INSTANCE.arrayFromMap((Map) response, responseType, true);
