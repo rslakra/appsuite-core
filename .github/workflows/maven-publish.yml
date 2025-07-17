@@ -75,45 +75,12 @@ jobs:
           fi
           
           # Read the content of the file into a variable
-          CURRENT_VERSION=$(cat "$VERSION_FILE")
-          echo "Current version: $CURRENT_VERSION"
+          VERSION=$(cat "$VERSION_FILE")
+          echo "VERSION: ${VERSION}"
           
-          # Generate Build Version
-          VERSION="0.0"
-          # Build Version Function
-          GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
-          if [ $? -ne 0 ]; then
-            VERSION="${VERSION}.1"
-          else
-            VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
-          fi
-          SNAPSHOT="${SNAPSHOT:-$!}"
-          if [[ ! -z ${SNAPSHOT} ]]; then
-            VERSION="${VERSION}-SNAPSHOT"
-          fi
-        
-          echo "${VERSION}"
           SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
-          RELEASE_VERSION="${VERSION}"
-          echo "${RELEASE_VERSION}" > version.txt
-          echo "RELEASE_VERSION: ${RELEASE_VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
-
-#          ./buildMaven.sh
-#          VERSION="0.0"
-#          GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
-#          if [ $? -ne 0 ]; then
-#            VERSION="${VERSION}.1"
-#          else
-#            VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
-#          fi
-#          echo "GIT_COMMIT_COUNT=${GIT_COMMIT_COUNT}, VERSION=${VERSION}"
-#          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
-#          RELEASE_VERSION="${VERSION}"
-#          echo "SNAPSHOT_VERSION=${SNAPSHOT_VERSION}, RELEASE_VERSION=${RELEASE_VERSION}"
-#          echo "${VERSION}" > $GITHUB_WORKSPACE/version.txt
-#          cat $GITHUB_WORKSPACE/version.txt
-##          mvn -B clean package -DskipTests
-#          mvn -B clean install -Drevision=$SNAPSHOT_VERSION
+          echo "RELEASE_VERSION: ${VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
+          mvn -B clean package -Drevision=$SNAPSHOT_VERSION
 #          mvn -B clean package -Drevision=$SNAPSHOT_VERSION -DskipTests
 #          mvn -B test install
 #          mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
