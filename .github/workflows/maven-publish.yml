@@ -168,7 +168,7 @@ jobs:
           echo "RELEASED_VERSION=0.0.73" >> "$GITHUB_ENV" 
 
       - name: Publish package to GitHub Packages
-        if: ${{ RELEASED_VERSION > RELEASE_VERSION }}
+        if: ${{ env.RELEASED_VERSION > env.RELEASE_VERSION }}
         run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
