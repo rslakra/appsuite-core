@@ -98,14 +98,16 @@
         <url>https://github.com/rslakra/appsuite-core/tree/master</url>
     </scm>
 
-    <!-- DistributionManagement -->
+    <!-- Distribution Management -->
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
+            <name>Central Repository OSSRH - Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
+            <name>Central Repository OSSRH</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
