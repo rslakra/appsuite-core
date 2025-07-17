@@ -61,7 +61,6 @@ jobs:
           settings-path: ${{ github.workspace }} # location for the settings.xml file
           architecture: x64
           cache: maven
-          check-for-updates: 'true'
       # Step for compiling code
       - name: Build Maven Package
         run: |
