@@ -1,7 +1,7 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
 
-name: Build Maven Package
+name: Build Maven Package and Publish
 
 on:
   push:
@@ -19,7 +19,6 @@ env:
 
 permissions:
   contents: read
-  packages: write
 
 jobs:
   build:
@@ -109,12 +108,6 @@ jobs:
           git archive -v -o target/${BUILD_FILE_NAME} --format=zip HEAD
           ls -la target/${BUILD_FILE_NAME}
 
-      - name: Publish package to GitHub Packages
-        run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION -DskipTests
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
 #      # Run the Maven 'verify' phase
 #      - name: Run the Maven's verify phase
 #        run: mvn --batch-mode --update-snapshots verify
@@ -139,6 +132,42 @@ jobs:
 #          name: Package
 #          path: releases
 
+
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Set Environment
+        run: |
+          #!/bin/bash
+          VERSION_FILE="version.txt"
+          
+          # Check if the version file exists
+          if [ ! -f "$VERSION_FILE" ]; then
+            echo "Error: Version file '$VERSION_FILE' not found."
+            exit 1
+          fi
+          
+          # Read the content of the file into a variable
+          VERSION=$(cat "$VERSION_FILE")
+          echo "VERSION: ${VERSION}"
+          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
+          echo "RELEASE_VERSION: ${VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"          
+          # Set Environment Variables
+          echo "RELEASE_VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "SNAPSHOT_VERSION=$SNAPSHOT_VERSION" >> "$GITHUB_ENV"
+      - name: Publish package to GitHub Packages
+        run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION -DskipTests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 # Keeping the following code commented for the time being
 
