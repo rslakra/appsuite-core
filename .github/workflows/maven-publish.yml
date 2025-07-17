@@ -53,8 +53,9 @@ jobs:
           
           # Read the content of the file into a variable
           VERSION=$(cat "$VERSION_FILE")
-          # Print Environment Variables
-          echo "VERSION: ${VERSION}"          
+          echo "VERSION: ${VERSION}"
+          # Set Environment Variables
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "BUILD_TIMESTAMP=$BUILD_TIMESTAMP" >> "$GITHUB_ENV"
           echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
           echo "version: ${{ steps.get_version.outputs.version }}"
