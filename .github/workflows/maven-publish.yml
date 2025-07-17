@@ -54,8 +54,11 @@ jobs:
           # Read the content of the file into a variable
           VERSION=$(cat "$VERSION_FILE")
           echo "VERSION: ${VERSION}"
+          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
+          echo "RELEASE_VERSION: ${VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"          
           # Set Environment Variables
-          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "RELEASE_VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "SNAPSHOT_VERSION=$SNAPSHOT_VERSION" >> "$GITHUB_ENV"
           echo "BUILD_TIMESTAMP=$BUILD_TIMESTAMP" >> "$GITHUB_ENV"
           echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
           echo "version: ${{ steps.get_version.outputs.version }}"
@@ -66,7 +69,8 @@ jobs:
           echo "envType=${ENV_TYPE}"
           echo "JDK Version ${{env.JDK_VERSION}}"
           echo "GitHub Workspace=${GITHUB_WORKSPACE}"
-          echo "VERSION: ${VERSION}"          
+          echo "RELEASE_VERSION: ${RELEASE_VERSION}"
+          echo "SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
       - name: Setup JDK ${{env.JDK_VERSION}}
         uses: actions/setup-java@v4
         with:
@@ -81,10 +85,9 @@ jobs:
       - name: Build Maven Package
         run: |
           #!/bin/bash
-          echo "VERSION: ${VERSION}"
-          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
-          echo "RELEASE_VERSION: ${VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
-          mvn -B clean package -Drevision=$VERSION
+          echo "RELEASE_VERSION: ${RELEASE_VERSION}"
+          echo "SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
+          mvn -B clean package -Drevision=$RELEASE_VERSION
 #          mvn -B clean package -Drevision=$SNAPSHOT_VERSION
 #          mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
       #    - name: Build with Maven
@@ -94,8 +97,9 @@ jobs:
       - name: Maven Verify Package
         run: |
           #!/bin/bash
-          echo "VERSION: ${VERSION}"
-          mvn -B verify -Drevision=$VERSION 
+          echo "RELEASE_VERSION: ${RELEASE_VERSION}"
+          echo "SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
+          mvn -B verify -Drevision=$RELEASE_VERSION
 
       - name: Build Artifact
         run: |
