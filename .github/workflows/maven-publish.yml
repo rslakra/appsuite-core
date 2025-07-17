@@ -109,7 +109,7 @@ jobs:
           ls -la target/${BUILD_FILE_NAME}
 
       - name: Publish package to GitHub Packages
-        run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION
+        run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
