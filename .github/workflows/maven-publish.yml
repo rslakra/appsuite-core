@@ -66,23 +66,25 @@ jobs:
       - name: Build Maven Package
         run: |
           # Generate Build Version
-          VERSION="0.0"
-          GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
-          if [ $? -ne 0 ]; then
-            VERSION="${VERSION}.1"
-          else
-            VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
-          fi
-          echo "GIT_COMMIT_COUNT=${GIT_COMMIT_COUNT}, VERSION=${VERSION}"
-          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
-          RELEASE_VERSION="${VERSION}"
-          echo "SNAPSHOT_VERSION=${SNAPSHOT_VERSION}, RELEASE_VERSION=${RELEASE_VERSION}"
-          echo "${VERSION}" > $GITHUB_WORKSPACE/version.txt
-          cat $GITHUB_WORKSPACE/version.txt
-          mvn -B clean package -DskipTests
-          mvn -B clean package -Drevision=$SNAPSHOT_VERSION -DskipTests
-          mvn -B test install
-          mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
+          ./buildMaven.sh
+#          VERSION="0.0"
+#          GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
+#          if [ $? -ne 0 ]; then
+#            VERSION="${VERSION}.1"
+#          else
+#            VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
+#          fi
+#          echo "GIT_COMMIT_COUNT=${GIT_COMMIT_COUNT}, VERSION=${VERSION}"
+#          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
+#          RELEASE_VERSION="${VERSION}"
+#          echo "SNAPSHOT_VERSION=${SNAPSHOT_VERSION}, RELEASE_VERSION=${RELEASE_VERSION}"
+#          echo "${VERSION}" > $GITHUB_WORKSPACE/version.txt
+#          cat $GITHUB_WORKSPACE/version.txt
+##          mvn -B clean package -DskipTests
+#          mvn -B clean install -Drevision=$SNAPSHOT_VERSION
+#          mvn -B clean package -Drevision=$SNAPSHOT_VERSION -DskipTests
+#          mvn -B test install
+#          mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
       #    - name: Build with Maven
       #      run: mvn -B package --file pom.xml
       
