@@ -165,7 +165,10 @@ jobs:
           # Set Environment Variables
           echo "RELEASE_VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "SNAPSHOT_VERSION=$SNAPSHOT_VERSION" >> "$GITHUB_ENV"
+          echo "RELEASED_VERSION=0.0.73" >> "$GITHUB_OUTPUT" 
+
       - name: Publish package to GitHub Packages
+        if: ${{ RELEASED_VERSION > RELEASE_VERSION }}
         run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
