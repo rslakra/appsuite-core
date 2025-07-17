@@ -65,8 +65,20 @@ jobs:
       # Step for compiling code
       - name: Build Maven Package
         run: |
+          #!/bin/bash
           # Generate Build Version
-          ./buildMaven.sh
+          VERSION_FILE="version.txt"
+          # Check if the version file exists
+          if [ ! -f "$VERSION_FILE" ]; then
+            echo "Error: Version file '$VERSION_FILE' not found."
+            exit 1
+          fi
+          
+          # Read the content of the file into a variable
+          CURRENT_VERSION=$(cat "$VERSION_FILE")
+          echo "Current version: $CURRENT_VERSION"
+
+#          ./buildMaven.sh
 #          VERSION="0.0"
 #          GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
 #          if [ $? -ne 0 ]; then
