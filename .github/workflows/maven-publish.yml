@@ -107,7 +107,13 @@ jobs:
           echo "BUILD_FILE_NAME=${BUILD_FILE_NAME}"
           git archive -v -o target/${BUILD_FILE_NAME} --format=zip HEAD
           ls -la target/${BUILD_FILE_NAME}
-        
+
+      - name: Publish package to GitHub Packages
+        run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
 #      # Run the Maven 'verify' phase
 #      - name: Run the Maven's verify phase
 #        run: mvn --batch-mode --update-snapshots verify
