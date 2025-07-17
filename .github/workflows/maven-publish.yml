@@ -66,8 +66,8 @@ jobs:
       - name: Build Maven Package
         run: |
           #!/bin/bash
-          # Generate Build Version
           VERSION_FILE="version.txt"
+          
           # Check if the version file exists
           if [ ! -f "$VERSION_FILE" ]; then
             echo "Error: Version file '$VERSION_FILE' not found."
@@ -77,6 +77,26 @@ jobs:
           # Read the content of the file into a variable
           CURRENT_VERSION=$(cat "$VERSION_FILE")
           echo "Current version: $CURRENT_VERSION"
+          
+          # Generate Build Version
+          VERSION="0.0"
+          # Build Version Function
+          GIT_COMMIT_COUNT=$(git rev-list HEAD --count)
+          if [ $? -ne 0 ]; then
+            VERSION="${VERSION}.1"
+          else
+            VERSION="${VERSION}.${GIT_COMMIT_COUNT}"
+          fi
+          SNAPSHOT="${SNAPSHOT:-$!}"
+          if [[ ! -z ${SNAPSHOT} ]]; then
+            VERSION="${VERSION}-SNAPSHOT"
+          fi
+        
+          echo "${VERSION}"
+          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
+          RELEASE_VERSION="${VERSION}"
+          echo "${RELEASE_VERSION}" > version.txt
+          echo "RELEASE_VERSION: ${RELEASE_VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
 
 #          ./buildMaven.sh
 #          VERSION="0.0"
