@@ -40,8 +40,21 @@ jobs:
         uses: actions/checkout@v4
       - name: Set Environment
         run: |
+          #!/bin/bash
           BUILD_TIMESTAMP=$(date +%s)
           BUILD_DATE=$(date -d @${BUILD_TIMESTAMP} +%Y/%m/%d)
+          VERSION_FILE="version.txt"
+          
+          # Check if the version file exists
+          if [ ! -f "$VERSION_FILE" ]; then
+            echo "Error: Version file '$VERSION_FILE' not found."
+            exit 1
+          fi
+          
+          # Read the content of the file into a variable
+          VERSION=$(cat "$VERSION_FILE")
+          # Print Environment Variables
+          echo "VERSION: ${VERSION}"          
           echo "BUILD_TIMESTAMP=$BUILD_TIMESTAMP" >> "$GITHUB_ENV"
           echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
           echo "version: ${{ steps.get_version.outputs.version }}"
@@ -52,6 +65,7 @@ jobs:
           echo "envType=${ENV_TYPE}"
           echo "JDK Version ${{env.JDK_VERSION}}"
           echo "GitHub Workspace=${GITHUB_WORKSPACE}"
+          echo "VERSION: ${VERSION}"          
       - name: Setup JDK ${{env.JDK_VERSION}}
         uses: actions/setup-java@v4
         with:
@@ -66,30 +80,22 @@ jobs:
       - name: Build Maven Package
         run: |
           #!/bin/bash
-          VERSION_FILE="version.txt"
-          
-          # Check if the version file exists
-          if [ ! -f "$VERSION_FILE" ]; then
-            echo "Error: Version file '$VERSION_FILE' not found."
-            exit 1
-          fi
-          
-          # Read the content of the file into a variable
-          VERSION=$(cat "$VERSION_FILE")
           echo "VERSION: ${VERSION}"
-          
           SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
           echo "RELEASE_VERSION: ${VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
-          mvn -B clean package -Drevision=$SNAPSHOT_VERSION
-#          mvn -B clean package -Drevision=$SNAPSHOT_VERSION -DskipTests
-#          mvn -B test install
+          mvn -B clean package -Drevision=$VERSION
+#          mvn -B clean package -Drevision=$SNAPSHOT_VERSION
 #          mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
       #    - name: Build with Maven
       #      run: mvn -B package --file pom.xml
       
       # Step for running unit-tests
       - name: Maven Verify Package
-        run: mvn -B verify
+        run: |
+          #!/bin/bash
+          echo "VERSION: ${VERSION}"
+          mvn -B verify -Drevision=$VERSION 
+
       - name: Build Artifact
         run: |
           BUILD_FILE_NAME=${BUILD_TIMESTAMP}_${GITHUB_REF_NAME//\//_}_${GITHUB_SHA}.zip
