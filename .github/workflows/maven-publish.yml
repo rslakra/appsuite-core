@@ -24,7 +24,7 @@ jobs:
   build:
     env:
       JDK_VERSION: '21'
-      Version: ${{ github.run_id }}.${{ github.run_number }}.${{ github.run_attempt }}
+      VERSION: ${{ github.run_id }}.${{ github.run_number }}.${{ github.run_attempt }}
     
     name: Build & Test (Units & Integrations)
     runs-on: ubuntu-latest
@@ -36,11 +36,14 @@ jobs:
     
     # Steps
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Set Environment
+
+      - name: Setup Environment
+        id: setup_env
         run: |
           #!/bin/bash
+          echo "VERSION: ${env.VERSION}"
           BUILD_TIMESTAMP=$(date +%s)
           BUILD_DATE=$(date -d @${BUILD_TIMESTAMP} +%Y/%m/%d)
           VERSION_FILE="version.txt"
@@ -52,25 +55,32 @@ jobs:
           fi
           
           # Read the content of the file into a variable
-          VERSION=$(cat "$VERSION_FILE")
-          echo "VERSION: ${VERSION}"
-          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
-          echo "RELEASE_VERSION: ${VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"          
+          RELEASED_VERSION=$(cat "$VERSION_FILE")
+          echo "RELEASED_VERSION: ${RELEASED_VERSION}"
+          
+          RELEASE_VERSION=0.0.73
+          # Generate New Release Version
+          SNAPSHOT_VERSION="${RELEASE_VERSION}-SNAPSHOT"
+          echo "RELEASE_VERSION: ${RELEASE_VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
+          
           # Set Environment Variables
-          echo "RELEASE_VERSION=$VERSION" >> "$GITHUB_ENV"
-          echo "SNAPSHOT_VERSION=$SNAPSHOT_VERSION" >> "$GITHUB_ENV"
           echo "BUILD_TIMESTAMP=$BUILD_TIMESTAMP" >> "$GITHUB_ENV"
           echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
-          echo "version: ${{ steps.get_version.outputs.version }}"
-          echo "version-without-v: ${{ steps.get_version.outputs.version-without-v }}"
+          echo "RELEASED_VERSION=$RELEASED_VERSION" >> "$GITHUB_ENV"
+          echo "RELEASE_VERSION=$RELEASE_VERSION" >> "$GITHUB_ENV"
+          echo "SNAPSHOT_VERSION=$SNAPSHOT_VERSION" >> "$GITHUB_ENV"
+
       - name: Print Environment Variables
         run: |
           echo "Hello, ${NAME}"
           echo "envType=${ENV_TYPE}"
           echo "JDK Version ${{env.JDK_VERSION}}"
+          echo "VERSION: ${{env.VERSION}}"
           echo "GitHub Workspace=${GITHUB_WORKSPACE}"
           echo "RELEASE_VERSION: ${RELEASE_VERSION}"
           echo "SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
+
+      # Sets JDK Version
       - name: Setup JDK ${{env.JDK_VERSION}}
         uses: actions/setup-java@v4
         with:
@@ -82,18 +92,20 @@ jobs:
           cache: maven
 
       # Step for compiling code
+      # Use -B or --batch-mode for non-interactive builds
       - name: Build Maven Package
         run: |
           #!/bin/bash
           echo "RELEASE_VERSION: ${RELEASE_VERSION}"
           echo "SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
           mvn -B clean package -Drevision=$RELEASE_VERSION
-#          mvn -B clean package -Drevision=$SNAPSHOT_VERSION
-#          mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
+      #    mvn -B clean package -Drevision=$SNAPSHOT_VERSION
+      #    mvn -B package -Drevision=$RELEASE_VERSION -DskipTests=true
       #    - name: Build with Maven
       #      run: mvn -B package --file pom.xml
       
       # Step for running unit-tests
+      # Use -B or --batch-mode for non-interactive builds
       - name: Maven Verify Package
         run: |
           #!/bin/bash
@@ -158,17 +170,24 @@ jobs:
           fi
           
           # Read the content of the file into a variable
-          VERSION=$(cat "$VERSION_FILE")
-          echo "VERSION: ${VERSION}"
-          SNAPSHOT_VERSION="${VERSION}-SNAPSHOT"
-          echo "RELEASE_VERSION: ${VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"          
+          RELEASED_VERSION=$(cat "$VERSION_FILE")
+          echo "RELEASED_VERSION: ${RELEASED_VERSION}"
+          
+          RELEASE_VERSION=0.0.73
+          # Generate New Release Version
+          SNAPSHOT_VERSION="${RELEASE_VERSION}-SNAPSHOT"
+          echo "RELEASE_VERSION: ${RELEASE_VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
+          
           # Set Environment Variables
-          echo "RELEASE_VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "BUILD_TIMESTAMP=$BUILD_TIMESTAMP" >> "$GITHUB_ENV"
+          echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
+          echo "RELEASED_VERSION=$RELEASED_VERSION" >> "$GITHUB_ENV"
+          echo "RELEASE_VERSION=$RELEASE_VERSION" >> "$GITHUB_ENV"
           echo "SNAPSHOT_VERSION=$SNAPSHOT_VERSION" >> "$GITHUB_ENV"
-          echo "RELEASED_VERSION=0.0.73" >> "$GITHUB_ENV" 
 
+        # Use -B or --batch-mode for non-interactive builds
       - name: Publish package to GitHub Packages
-        if: ${{ env.RELEASED_VERSION > env.RELEASE_VERSION }}
+        if: ${{ env.RELEASE_VERSION != env.RELEASED_VERSION }}
         run: mvn --batch-mode deploy -Drevision=$RELEASE_VERSION -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
