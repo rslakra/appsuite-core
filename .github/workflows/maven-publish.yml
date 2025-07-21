@@ -10,6 +10,12 @@ on:
         description: 'Branch to build from'
         required: true
         default: 'master'
+        type: choice
+        options:
+          - develop
+          - qa
+          - staging
+          - master
 
 jobs:
   build_and_publish:
