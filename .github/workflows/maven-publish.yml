@@ -43,7 +43,7 @@ jobs:
         id: setup_env
         run: |
           #!/bin/bash
-          echo "VERSION: ${env.VERSION}"
+          echo "VERSION: ${{ env.VERSION }}"
           BUILD_TIMESTAMP=$(date +%s)
           BUILD_DATE=$(date -d @${BUILD_TIMESTAMP} +%Y/%m/%d)
           VERSION_FILE="version.txt"
@@ -74,17 +74,17 @@ jobs:
         run: |
           echo "Hello, ${NAME}"
           echo "envType=${ENV_TYPE}"
-          echo "JDK Version ${{env.JDK_VERSION}}"
-          echo "VERSION: ${{env.VERSION}}"
+          echo "JDK Version ${{ env.JDK_VERSION }}"
+          echo "VERSION: ${{ env.VERSION }}"
           echo "GitHub Workspace=${GITHUB_WORKSPACE}"
           echo "RELEASE_VERSION: ${RELEASE_VERSION}"
           echo "SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
 
       # Sets JDK Version
-      - name: Setup JDK ${{env.JDK_VERSION}}
+      - name: Setup JDK ${{ env.JDK_VERSION }}
         uses: actions/setup-java@v4
         with:
-          java-version: ${{env.JDK_VERSION}}
+          java-version: ${{ env.JDK_VERSION }}
           distribution: 'temurin'
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
