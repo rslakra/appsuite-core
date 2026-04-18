@@ -63,7 +63,7 @@
         <jackson-core.version>2.21.2</jackson-core.version>
 
         <!-- bouncy castle -->
-        <bcprov-jdk18on.version>1.78</bcprov-jdk18on.version>
+        <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>
 
         <!-- swagger -->
         <swagger.skip>false</swagger.skip>
