@@ -1,9 +1,12 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
 
+# Publish package to GitHub Packages from release tags.
 name: Publish Maven Package to Github
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       branch:
@@ -17,70 +20,172 @@ on:
           - staging
           - master
 
-jobs:
-  build_and_publish:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.event.inputs.branch }} # Checkout the specified branch
+permissions:
+  contents: write
+  packages: write
 
-      - uses: actions/setup-java@v5
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      PUBLISH_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}
+    steps:
+      - name: Checkout tag/release commit
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ env.PUBLISH_BRANCH }}
+
+      - name: Print selected publish branch
+        run: echo "PUBLISH_BRANCH=${PUBLISH_BRANCH}"
+
+      - name: Detect releasable changes
+        id: detect_changes
+        run: |
+          #!/bin/bash
+          set -euo pipefail
+
+          # First-time publish path: if version.txt has no history yet, allow publish.
+          LAST_VERSION_COMMIT="$(git log --format=%H -n 1 -- version.txt || true)"
+          if [ -z "${LAST_VERSION_COMMIT}" ]; then
+            echo "No prior version.txt commit found. Publishing is allowed."
+            echo "should_publish=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Only publish when there are changes since the last version bump
+          # other than version.txt itself.
+          CHANGED_FILES="$(git diff --name-only "${LAST_VERSION_COMMIT}..HEAD" -- . ':(exclude)version.txt')"
+          if [ -z "${CHANGED_FILES}" ]; then
+            echo "No releasable changes found since last version update."
+            echo "should_publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Releasable changes detected:"
+            echo "${CHANGED_FILES}"
+            echo "should_publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up JDK + Maven auth
+        if: ${{ steps.detect_changes.outputs.should_publish == 'true' }}
+        uses: actions/setup-java@v5
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: maven
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
 
-      - name: Set Environment
+      - name: Resolve release version from version.txt
+        if: ${{ steps.detect_changes.outputs.should_publish == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           #!/bin/bash
+          set -euo pipefail
+
           VERSION_FILE="version.txt"
-          
-          # Check if the version file exists
+
+          # Check if the version file exists.
           if [ ! -f "$VERSION_FILE" ]; then
             echo "Error: Version file '$VERSION_FILE' not found."
             exit 1
           fi
-          
-          # Read the content of the file into a variable
-          RELEASED_VERSION=$(cat "$VERSION_FILE")
+
+          # Read current released version.
+          RELEASED_VERSION=$(tr -d '[:space:]' < "$VERSION_FILE")
           echo "RELEASED_VERSION: ${RELEASED_VERSION}"
-          
-          # Generate New Release Version
+
+          # Generate next release version by incrementing patch.
           VERSION_PARTS=(${RELEASED_VERSION//./ })
           MAJOR=${VERSION_PARTS[0]}
           MINOR=${VERSION_PARTS[1]}
           PATCH=$((VERSION_PARTS[2] + 1))
-          RELEASE_VERSION="$MAJOR.$MINOR.$PATCH"
+          RELEASE_VERSION="${MAJOR}.${MINOR}.${PATCH}"
           SNAPSHOT_VERSION="${RELEASE_VERSION}-SNAPSHOT"
+
+          BUILD_TIMESTAMP=$(date +%s)
+          BUILD_DATE=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
+
+          # If version already exists in GitHub Packages (for example, rerun after partial success),
+          # keep incrementing patch until we find the next free release version.
+          METADATA_URL="https://maven.pkg.github.com/rslakra/appsuite-core/com/rslakra/appsuite/appsuite-core/maven-metadata.xml"
+          METADATA_XML="$(curl -fsSL -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" "${METADATA_URL}" || true)"
+          while [[ -n "${METADATA_XML}" && "${METADATA_XML}" == *"<version>${RELEASE_VERSION}</version>"* ]]; do
+            PATCH=$((PATCH + 1))
+            RELEASE_VERSION="${MAJOR}.${MINOR}.${PATCH}"
+            SNAPSHOT_VERSION="${RELEASE_VERSION}-SNAPSHOT"
+            echo "Version already exists, trying next patch: ${RELEASE_VERSION}"
+          done
+
           echo "RELEASE_VERSION: ${RELEASE_VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
-          
-          # Set Environment Variables
-          echo "BUILD_TIMESTAMP=$BUILD_TIMESTAMP" >> "$GITHUB_ENV"
-          echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
-          echo "RELEASED_VERSION=$RELEASED_VERSION" >> "$GITHUB_ENV"
-          echo "RELEASE_VERSION=$RELEASE_VERSION" >> "$GITHUB_ENV"
-          echo "SNAPSHOT_VERSION=$SNAPSHOT_VERSION" >> "$GITHUB_ENV"
+          echo "Publishing version ${RELEASE_VERSION} (from ${RELEASED_VERSION})"
 
-#      - name: Update version.txt and commit
-#        run: |
-#          echo "${{ env.RELEASE_VERSION }}" > version.txt
-#          git config --global user.name "github-actions[bot]" # Configures the git username for committing
-#          git config --global user.email "github-actions[bot]@users.noreply.github.com" # Configures the git user email for committing
-#          git add version.txt
-#          git commit -m "Bump version to v${{ env.RELEASE_VERSION }}"
-#          git push
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Export env for subsequent steps.
+          echo "BUILD_TIMESTAMP=${BUILD_TIMESTAMP}" >> "$GITHUB_ENV"
+          echo "BUILD_DATE=${BUILD_DATE}" >> "$GITHUB_ENV"
+          echo "RELEASED_VERSION=${RELEASED_VERSION}" >> "$GITHUB_ENV"
+          echo "RELEASE_VERSION=${RELEASE_VERSION}" >> "$GITHUB_ENV"
+          echo "SNAPSHOT_VERSION=${SNAPSHOT_VERSION}" >> "$GITHUB_ENV"
 
-        # Use -B or --batch-mode for non-interactive builds
+      - name: Print resolved version
+        if: ${{ steps.detect_changes.outputs.should_publish == 'true' }}
+        run: |
+          echo "RELEASED_VERSION=${RELEASED_VERSION}"
+          echo "RELEASE_VERSION=${RELEASE_VERSION}"
+          echo "SNAPSHOT_VERSION=${SNAPSHOT_VERSION}"
+
       - name: Publish package to GitHub Packages
-        if: ${{ env.RELEASE_VERSION != env.RELEASED_VERSION }}
-        run: mvn -B clean deploy -Drevision=$RELEASE_VERSION -DskipTests
+        if: ${{ steps.detect_changes.outputs.should_publish == 'true' }}
+        run: mvn -B -ntp clean deploy -Drevision="${RELEASE_VERSION}" -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish summary
+        if: ${{ steps.detect_changes.outputs.should_publish == 'true' }}
+        run: |
+          {
+            echo "## Maven Publish Summary"
+            echo ""
+            echo "- Released version: \`${RELEASE_VERSION}\`"
+            echo "- Previous version: \`${RELEASED_VERSION}\`"
+            echo "- Snapshot version: \`${SNAPSHOT_VERSION}\`"
+            echo "- Branch: \`${PUBLISH_BRANCH}\`"
+            echo "- Trigger: \`${GITHUB_EVENT_NAME}\`"
+            echo "- Actor: \`${GITHUB_ACTOR}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Skip publish summary
+        if: ${{ steps.detect_changes.outputs.should_publish != 'true' }}
+        run: |
+          {
+            echo "## Maven Publish Summary"
+            echo ""
+            echo "- Status: skipped"
+            echo "- Reason: no releasable changes since last version update"
+            echo "- Branch: \`${PUBLISH_BRANCH}\`"
+            echo "- Trigger: \`${GITHUB_EVENT_NAME}\`"
+            echo "- Actor: \`${GITHUB_ACTOR}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Persist version bump to version.txt
+        if: ${{ steps.detect_changes.outputs.should_publish == 'true' }}
+        run: |
+          #!/bin/bash
+          set -euo pipefail
+
+          echo "${RELEASE_VERSION}" > version.txt
+          echo "Updated version.txt to ${RELEASE_VERSION}"
+
+          if git diff --quiet -- version.txt; then
+            echo "version.txt is already up to date. Nothing to commit."
+            exit 0
+          fi
+
+          git add version.txt
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "chore: bump version to v${RELEASE_VERSION}"
+          git push origin "HEAD:${PUBLISH_BRANCH}"
+
 
 # Keeping the following code commented for the time being
 
