@@ -8,17 +8,6 @@ on:
   release:
     types: [published]
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to build from'
-        required: true
-        default: 'master'
-        type: choice
-        options:
-          - develop
-          - qa
-          - staging
-          - master
 
 permissions:
   contents: write
@@ -28,7 +17,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      PUBLISH_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}
+      PUBLISH_BRANCH: ${{ github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}
     steps:
       - name: Checkout tag/release commit
         uses: actions/checkout@v6
