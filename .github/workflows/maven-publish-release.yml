@@ -32,6 +32,8 @@ jobs:
           server-password: GITHUB_TOKEN
 
       - name: Resolve release version from version.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           #!/bin/bash
           set -euo pipefail
@@ -58,6 +60,17 @@ jobs:
 
           BUILD_TIMESTAMP=$(date +%s)
           BUILD_DATE=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
+
+          # If version already exists in GitHub Packages (for example, rerun after partial success),
+          # keep incrementing patch until we find the next free release version.
+          METADATA_URL="https://maven.pkg.github.com/rslakra/appsuite-core/com/rslakra/appsuite/appsuite-core/maven-metadata.xml"
+          METADATA_XML="$(curl -fsSL -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" "${METADATA_URL}" || true)"
+          while [[ -n "${METADATA_XML}" && "${METADATA_XML}" == *"<version>${RELEASE_VERSION}</version>"* ]]; do
+            PATCH=$((PATCH + 1))
+            RELEASE_VERSION="${MAJOR}.${MINOR}.${PATCH}"
+            SNAPSHOT_VERSION="${RELEASE_VERSION}-SNAPSHOT"
+            echo "Version already exists, trying next patch: ${RELEASE_VERSION}"
+          done
 
           echo "RELEASE_VERSION: ${RELEASE_VERSION}, SNAPSHOT_VERSION: ${SNAPSHOT_VERSION}"
           echo "Publishing version ${RELEASE_VERSION} (from ${RELEASED_VERSION})"
