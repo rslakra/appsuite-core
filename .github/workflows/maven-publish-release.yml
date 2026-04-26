@@ -1,5 +1,5 @@
 # Publish package to GitHub Packages from release tags.
-name: Publish Maven Package to GitHub
+name: Release Maven Package to GitHub
 
 on:
   release:
