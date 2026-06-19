@@ -182,8 +182,8 @@ public class JWTUtilsTest {
             String text = "Rohtash Lakra";
             LOGGER.debug("text:{}", text);
             LOGGER.debug("text length:{}", text.getBytes(JWTUtils.UTF_8).length);
-            //encrypt the text.
-            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+            // Encrypt with OAEP padding (recommended over PKCS#1 v1.5).
+            Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
             PublicKey publicKey = JWTUtils.loadRSAPublicKey();
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
             byte[] encrypted = cipher.doFinal(text.getBytes(JWTUtils.UTF_8));
