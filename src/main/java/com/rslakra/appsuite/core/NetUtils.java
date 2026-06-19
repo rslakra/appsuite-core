@@ -88,11 +88,16 @@ public enum NetUtils {
      * @return
      */
     public static long toIPAddress(String ipAddress) {
+        // Split dotted IPv4 text into octets, expecting little-endian accumulation below.
         String[] ipTokens = ipAddress.split("\\.");
         long ipNumber = 0;
         for (int i = 0; i < ipTokens.length; i++) {
-            // IP address range is 0-255, so implicit casting it to the range.
-            ipNumber += ((Integer.parseInt(ipTokens[i]) % 256 * Math.pow(256, i)));
+            // Keep octet in byte range and avoid floating-point arithmetic.
+            int octet = Integer.parseInt(ipTokens[i]) % 256;
+            // Equivalent to 256^i using integer math only.
+            long factor = 1L << (8 * i);
+            // Add each octet into its shifted byte position.
+            ipNumber += (octet * factor);
         }
 
         return ipNumber;
