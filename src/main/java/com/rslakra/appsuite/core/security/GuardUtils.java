@@ -78,7 +78,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
-import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.TrustManagerFactory;
@@ -99,6 +99,7 @@ public enum GuardUtils {
     public static final String PROVIDER_BC = "BC";
     public static final String ALGO_RSA = "RSA";
     public static final String ALGO_RSA_NONE_NO_PADDING = "RSA/None/NoPadding";
+    public static final String ALGO_RSA_ECB_OAEP_SHA256_MGF1_PADDING = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
     public static final String ALGO_SHA_512 = "SHA-512";
     public static final String ALGO_SHA_256 = "SHA-256";
     public static final String ALGO_SHA_1 = "SHA-1";
@@ -107,7 +108,10 @@ public enum GuardUtils {
 
     /* Encryption ALGO - AES */
     public static final String ALGO_AES = "AES";
+    public static final String ALGO_AES_GCM_NO_PADDING = "AES/GCM/NoPadding";
     public static final String ALGO_AES_CBC_PKCS5PADDING = "AES/CBC/PKCS5Padding";
+    public static final int GCM_IV_SIZE = 12;
+    public static final int GCM_TAG_LENGTH_BITS = 128;
     public static final int IV_SIZE = 16;
     public static final boolean USE_FILE_EXTENSION_AS_IV = true;
 
@@ -386,7 +390,7 @@ public enum GuardUtils {
     private static String encryptWithPublicKey(final String rawText, PublicKey encryptionPublicKey) {
         String encryptedWithKey = null;
         try {
-            Cipher cipher = Cipher.getInstance(ALGO_RSA_NONE_NO_PADDING, PROVIDER_BC);
+            Cipher cipher = Cipher.getInstance(ALGO_RSA_ECB_OAEP_SHA256_MGF1_PADDING, PROVIDER_BC);
             cipher.init(Cipher.ENCRYPT_MODE, encryptionPublicKey);
             byte[] plainStringBytes = IOUtils.toUTF8Bytes(rawText);
             byte[] cipherBytes = cipher.doFinal(plainStringBytes);
@@ -528,7 +532,7 @@ public enum GuardUtils {
         String encryptedToken = null;
         try {
             PublicKey publicKey = getPublicKeyFromCertificate(encodedCertificate);
-            Cipher cipher = Cipher.getInstance(ALGO_RSA_NONE_NO_PADDING, PROVIDER_BC);
+            Cipher cipher = Cipher.getInstance(ALGO_RSA_ECB_OAEP_SHA256_MGF1_PADDING, PROVIDER_BC);
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
             byte[] encryptedBytes = cipher.doFinal(token.getBytes());
             encryptedToken = encodeToBase64String(encryptedBytes);
@@ -560,7 +564,7 @@ public enum GuardUtils {
         String decryptedWithKey = null;
         try {
             byte[] decodedBytes = decodeToBase64Bytes(encrptedString);
-            Cipher cipher = Cipher.getInstance(ALGO_RSA_NONE_NO_PADDING, PROVIDER_BC);
+            Cipher cipher = Cipher.getInstance(ALGO_RSA_ECB_OAEP_SHA256_MGF1_PADDING, PROVIDER_BC);
             cipher.init(Cipher.DECRYPT_MODE, decryptPublicKey);
             byte[] plainStringBytes = cipher.doFinal(decodedBytes);
             decryptedWithKey = IOUtils.toUTF8String(plainStringBytes);
@@ -631,7 +635,9 @@ public enum GuardUtils {
      * @return
      */
     public static String saltedPassword(final String password) {
-        return saltedPassword(String.format("%d##%d", Math.random() % 7516, System.currentTimeMillis()), password);
+        byte[] saltBytes = new byte[16];
+        newSecureRandom().nextBytes(saltBytes);
+        return saltedPassword(encodeToBase64String(saltBytes), password);
     }
 
     /**
@@ -842,19 +848,23 @@ public enum GuardUtils {
         stopWatch.startTimer();
         byte[] encryptedBytes = null;
         if (BeanUtils.isNotEmpty(dataBytes) && BeanUtils.isNotEmpty(keyBytes)) {
-            Cipher cipher = null;
             SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytes, ALGO_AES);
+            Cipher cipher = Cipher.getInstance(ALGO_AES_GCM_NO_PADDING);
             if (BeanUtils.isEmpty(ivBytes)) {
-                cipher = Cipher.getInstance(ALGO_AES);
-                cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
+                byte[] gcmIvBytes = new byte[GCM_IV_SIZE];
+                newSecureRandom().nextBytes(gcmIvBytes);
+                GCMParameterSpec gcmParameterSpec = new GCMParameterSpec(GCM_TAG_LENGTH_BITS, gcmIvBytes);
+                cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, gcmParameterSpec);
+                byte[] gcmCipherBytes = cipher.doFinal(dataBytes);
+                encryptedBytes = new byte[gcmIvBytes.length + gcmCipherBytes.length];
+                System.arraycopy(gcmIvBytes, 0, encryptedBytes, 0, gcmIvBytes.length);
+                System.arraycopy(gcmCipherBytes, 0, encryptedBytes, gcmIvBytes.length, gcmCipherBytes.length);
             } else {
-                cipher = Cipher.getInstance(ALGO_AES_CBC_PKCS5PADDING);
-                IvParameterSpec ivParameterSpec = new IvParameterSpec(ivBytes);
-                cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);
-                // rawBytes = checkPadding(dataBytes);
+                byte[] gcmIvBytes = toGcmIVBytes(ivBytes);
+                GCMParameterSpec gcmParameterSpec = new GCMParameterSpec(GCM_TAG_LENGTH_BITS, gcmIvBytes);
+                cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, gcmParameterSpec);
+                encryptedBytes = cipher.doFinal(dataBytes);
             }
-
-            encryptedBytes = cipher.doFinal(dataBytes);
         }
         stopWatch.stopTimer();
         LOGGER.debug("encryptWithSymmetricKey() took {} to encrypt: {} bytets", stopWatch.took(),
@@ -949,23 +959,38 @@ public enum GuardUtils {
         final StopWatch stopWatch = new StopWatch();
         stopWatch.startTimer();
         if (BeanUtils.isNotEmpty(dataBytes) && BeanUtils.isNotEmpty(keyBytes)) {
-            Cipher cipher = null;
             SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytes, ALGO_AES);
+            Cipher cipher = Cipher.getInstance(ALGO_AES_GCM_NO_PADDING);
             if (BeanUtils.isEmpty(ivBytes)) {
-                cipher = Cipher.getInstance(ALGO_AES);
-                cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
+                if (dataBytes.length <= GCM_IV_SIZE) {
+                    throw new SecurityException("Invalid encrypted payload. Missing GCM IV.");
+                }
+                byte[] gcmIvBytes = Arrays.copyOfRange(dataBytes, 0, GCM_IV_SIZE);
+                byte[] gcmCipherBytes = Arrays.copyOfRange(dataBytes, GCM_IV_SIZE, dataBytes.length);
+                GCMParameterSpec gcmParameterSpec = new GCMParameterSpec(GCM_TAG_LENGTH_BITS, gcmIvBytes);
+                cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, gcmParameterSpec);
+                rawBytes = cipher.doFinal(gcmCipherBytes);
             } else {
-                cipher = Cipher.getInstance(ALGO_AES_CBC_PKCS5PADDING);
-                IvParameterSpec ivParameterSpec = new IvParameterSpec(ivBytes);
-                cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParameterSpec);
+                byte[] gcmIvBytes = toGcmIVBytes(ivBytes);
+                GCMParameterSpec gcmParameterSpec = new GCMParameterSpec(GCM_TAG_LENGTH_BITS, gcmIvBytes);
+                cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, gcmParameterSpec);
+                rawBytes = cipher.doFinal(dataBytes);
             }
-
-            rawBytes = cipher.doFinal(dataBytes);
         }
 
         LOGGER.debug("decryptWithSymmetricKey() took {} to encrypt: {} bytets", stopWatch.took(),
                      BeanUtils.getLength(rawBytes));
         return rawBytes;
+    }
+
+    private static byte[] toGcmIVBytes(byte[] ivBytes) {
+        if (ivBytes.length == GCM_IV_SIZE) {
+            return ivBytes;
+        }
+
+        byte[] gcmIvBytes = new byte[GCM_IV_SIZE];
+        System.arraycopy(ivBytes, 0, gcmIvBytes, 0, Math.min(ivBytes.length, GCM_IV_SIZE));
+        return gcmIvBytes;
     }
 
     /**
